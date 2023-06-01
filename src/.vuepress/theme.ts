@@ -1,5 +1,5 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { zhNavbar } from "./navbar/index.js";
+import { Navbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
 const MR_HOPE_AVATAR =
@@ -14,7 +14,7 @@ export default hopeTheme({
   },
   iconAssets: "iconfont",
   logo: "/logo.svg", // 网站logo
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "songbaicheng/songbaicheng.github.io", // github地址
   docsDir: "docs",
   blog: { // 
     name: 'songbaicheng', // 博主姓名
@@ -24,17 +24,15 @@ export default hopeTheme({
     medias: { // 博主的媒体链接配置
       BiliBili: "https://space.bilibili.com/400378627",
       GitHub: "https://github.com/songbaicheng",
+      CNBlog: ["https://www.cnblogs.com/bc-song/", '/logo.svg'],
+      AliYun: ["http://47.93.240.83:8000/", '/logo.svg']
     },
     intro: "/zh/intro.html", // 博主的个人介绍地址
     articlePerPage: 6,
   },
 
-  encrypt: {
-    config: {
-      "/demo/encrypt.html": ["1234"],
-      "/zh/demo/encrypt.html": ["1234"],
-    },
-  },
+  navbar: Navbar, // 导航栏
+  sidebar: zhSidebar, // 侧边栏
 
   plugins: {
     blog: true,
