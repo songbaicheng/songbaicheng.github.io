@@ -99,4 +99,4 @@ public class TestReturnVoAspect {
 ```
 3. 请求方法就可以看到返回的 Vo 已经脱敏：
 
-![脱敏后的 Vo](/assets/images/work/development/log-desensitization/return-vo.png)
+![脱敏后的 Vo](/assets/images/work-task/development/log-desensitization/return-vo.png)
