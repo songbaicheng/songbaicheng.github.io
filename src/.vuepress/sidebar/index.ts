@@ -22,7 +22,18 @@ export const Sidebar = sidebar({
     {
       text: 'Java',
       collapsible: true,
-      children: ['/study/backend/java/dynamic-proxy.md']
+      children: [
+        {
+          text: 'Java基础',
+          collapsible: true,
+          children: ['/study/backend/java/basic/dynamic-proxy.md'],
+        },
+        {
+          text: 'Spring Cloud Alibaba',
+          collapsible: true,
+          children: ['/study/backend/java/spring-cloud-alibaba/README.md'],
+        }
+      ]
     },
     {
       text: '前端技术',

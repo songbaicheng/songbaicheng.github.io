@@ -25,9 +25,7 @@ export default hopeTheme({
     description: '我与我周旋久，宁做我', // 口号、座右铭或介绍语
     medias: { // 博主的媒体链接配置
       BiliBili: "https://space.bilibili.com/400378627",
-      GitHub: "https://github.com/songbaicheng",
-      CNBlog: ["https://www.cnblogs.com/bc-song/", '/logo.svg'],
-      AliYun: ["http://47.93.240.83:8000/", '/logo.svg']
+      GitHub: "https://github.com/songbaicheng"
     },
 
     intro: "/zh/intro.html", // 博主的个人介绍地址
