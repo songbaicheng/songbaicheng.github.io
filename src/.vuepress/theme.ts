@@ -1,5 +1,5 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { Navbar } from "./navbar/index.js";
+import { Navbar } from "./navbar";
 import { Sidebar } from "./sidebar/index.js";
 
 const MR_HOPE_AVATAR =
