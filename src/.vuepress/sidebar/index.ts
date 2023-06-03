@@ -1,4 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
+import { studySidebar } from "./study"
+import { workTaskSidebar } from "./work-task"
+import { booksSidebar } from "./books"
 
 export const Sidebar = sidebar({
   "/": [
@@ -18,69 +21,7 @@ export const Sidebar = sidebar({
     "intro",
     "slides",
   ],
-  '/study/': [
-    {
-      text: 'Java',
-      collapsible: true,
-      children: [
-        {
-          text: 'Java基础',
-          collapsible: true,
-          children: ['/study/backend/java/basic/dynamic-proxy.md'],
-        },
-        {
-          text: 'Spring Cloud Alibaba',
-          collapsible: true,
-          children: ['/study/backend/java/spring-cloud-alibaba/README.md'],
-        }
-      ]
-    },
-    {
-      text: '前端技术',
-      collapsible: true,
-      children: ['/study/frontend/README.md']
-    },
-    {
-      text: '设计模式',
-      collapsible: true,
-      children: [
-        '/study/design-pattern/README.md',
-        '/study/design-pattern/observer.md'
-      ]
-    },
-    {
-      text: '算法',
-      collapsible: true,
-      children: ['/study/ads/algorithms/README.md']
-    },
-    {
-      text: '数据结构',
-      collapsible: true,
-      children: ['/study/ads/data-structure/README.md']
-    }
-  ],
-  '/work-task/': [
-    {
-      text: '开发任务',
-      collapsible: true,
-      children: [
-        '/work-task/development/ant.md',
-        '/work-task/development/scheduled.md',
-        '/work-task/development/log-desensitization.md',
-        '/work-task/development/reflection.md'
-      ]
-    },
-    {
-      text: '设计任务',
-      collapsible: true,
-      children: [
-        '/work-task/design/cmds.md',
-        '/work-task/design/migrate-svn2git.md'
-      ]
-    }
-  ],
-  '/books/': [
-    '/books/java.md',
-    '/books/other-skills.md'
-  ]
+  '/study/': studySidebar,
+  '/work-task/': workTaskSidebar,
+  '/books/': booksSidebar
 });
