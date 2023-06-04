@@ -13,7 +13,10 @@ export const studySidebar = arraySidebar([
             {
                 text: 'Spring Cloud Alibaba',
                 collapsible: true,
-                children: ['/study/backend/java/spring-cloud-alibaba/README.md'],
+                children: [
+                    '/study/backend/java/spring-cloud-alibaba/README.md',
+                    '/study/backend/java/spring-cloud-alibaba/nacos.md',
+                ],
             }
         ]
     },
