@@ -3,10 +3,11 @@ home: true
 layout: BlogHome
 icon: home
 title: Home
-heroImage: /logo.svg
-heroText: Song Baicheng's Blog # 主标题
-tagline: love and share # 副标题
+heroImage: /home-hero-image.svg
+heroText: love and share # 主标题
 heroFullScreen: true
+# bgImage: /logo.png
+
 projects:
   - icon: project
     name: project name
@@ -38,5 +39,5 @@ projects:
     desc: Detailed description of this custom item
     link: https://link.to.your.friend
 
-footer: customize your footer text
+footer: 已经到底咯
 ---
