@@ -14,7 +14,7 @@ export default hopeTheme({
     email: "songbaicheng16@163.com" // 作者 Email
   },
   iconAssets: "iconfont",
-  logo: "/logo.svg", // 网站logo
+  logo: "/logo.png", // 网站左上角logo
   repo: "songbaicheng/songbaicheng.github.io", // github地址
   docsDir: "docs",
   blog: { // 
