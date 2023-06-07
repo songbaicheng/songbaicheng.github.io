@@ -14,5 +14,5 @@ projects:
     desc: a mall project used spirng cloud alibaba
     link: https://github.com/songbaicheng/cloud-mall
 
-footer: 已经到底咯
+footer: 风起于青萍之末  浪成于微澜之间
 ---

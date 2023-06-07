@@ -59,6 +59,8 @@ public class UserVo {
 @Component
 public class TestReturnVoAspect {
 
+    // 如果用切点表达式力度太大或者不够灵活的时候，可以使用自定义注解的方式代替切点表达：
+    // @Pointcut("@annotation(com.example.CustomAnnotation)")
     @Pointcut("execution(* com.sbc.springbootmoudle.controller.HelloController.testReturnVo(..))")
     public void servicePointcut() {
     }
