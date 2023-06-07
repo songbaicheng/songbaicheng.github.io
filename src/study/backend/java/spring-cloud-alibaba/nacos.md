@@ -21,19 +21,13 @@ tag:
 sh startup.sh -m standalone
 ```
 
-![Nacos 单机启动](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-startup-standalone.png "Nacos 单机启动")
+执行命令后可以根据自己的配置访问下面网址进行访问。如果启动失败，可以在日志文件夹中寻找 start.out 文件查看启动失败的原因，这里面的日志会根据你每次启动而更换，如果是想查看历来所有的日志则需要去 nacos.log 文件查看。
 
-> http://127.0.0.1:8848/nacos/
+> http://{ip}:{port}/nacos/
 - 默认账号：nacos
 - 默认密码：nacos
 
-![Nacos 登录界面](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-login.png "Nacos 登录界面")
-
-添加测试配置文件，查看数据库是否配置完成。
-
-![Nacos 配置列表](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-home.png "Nacos 配置列表")
-
-![Nacos MySQL](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-mysql.png "数据库是否配置生效")
+启动成功后可以通过添加配置文件来测试各功能是否好用，如果是外置数据源的情况可以配置完后查看数据库表中数据是否存在来判断。
 
 ### Nacos客户端启动后注册
 准备一个 Spring boot 项目，这里建议使用下面阿里云网站进行构建，如果你使用 Spring 官网的工具会发现在 IDEA 中添加依赖的时候找不到 Nacos ，还需要自己去添加。并且使用阿里云构建项目会在项目中给你添加 demo 示例，这里让我想到看过的一个视频里说：“这些生成的配置在我的代码里完全是画蛇添足！”哈哈哈哈，现在想到这句话我都觉得很逗。
@@ -86,3 +80,13 @@ spring:
         password: nacos
 ```
 ![Nacos 登录界面](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-server-list.png "服务注册成功")
+
+### Nacos服务端集群模式启动s
+
+![Nacos 集群](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-cluster.jpg "集群部署架构图")
+
+上图是从网络上找到的 Nacos 集群图，其实在官网也有集群部署的说明，但是没有展示出 Nacos 集群和数据交互的部分，但是在安全性方面，官网推荐**域名 + SLB模式**(内网SLB，不可暴露到公网，以免带来安全风险)，可读性好，而且换ip方便。不过我们先不讨论网关的部分，因为如果牵扯到网关到底是使用微服务网关（Netflix Zuul、Spring Cloud Gateway）还是 Nginx 还需要根据我们项目 API 管控治理能力的大小来决定。搭建 Nacos 集群我们需要使用先修改一下安装目录中 cong 下的 cluster.conf.exemple 文件，可以直接将该文件的 .exemple 后缀去掉后按照文件中例子添加自己创建的 Nacos 节点的 ip 和 port，至于数据源配置如果使用内置数据源则不需要修改，如果使用外置数据源则全部按照单机启动的部分配置成自己的数据库参数即可。
+
+![Nacos 集群节点](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-node.png "Nacos 集群节点列表")
+
+这个时候启动我们的注册服务会发现每个 Nacos 节点内都可以看到注册服务，Nacos 集群就搭建完成了。
