@@ -10,7 +10,7 @@ tag:
 > https://nacos.io/zh-cn/docs/v2/what-is-nacos.html
 
 ## 快速开始
-### Nacos服务端安装启动
+### Nacos服务端单机模式启动
 我们这里根据 Spring Cloud Alibaba 毕业版本推荐选择了 2.2.1 的版本，相比于 Eureka 来说，Nacos 同样也分为客户端和服务端，不过服务端不需要我们自行搭建，我们直接下载使用官方的即可，这里你可以选择下载二进制包直接使用或者 Docker 镜像的方式都可以，我们这里使用下载二进制包的方法，可以去下面网址找到你想要的版本进行下载。
 
 > https://github.com/alibaba/nacos/tags
@@ -35,7 +35,7 @@ sh startup.sh -m standalone
 
 ![Nacos MySQL](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-mysql.png "数据库是否配置生效")
 
-### Nacos客户端启动注册
+### Nacos客户端启动后注册
 准备一个 Spring boot 项目，这里建议使用下面阿里云网站进行构建，如果你使用 Spring 官网的工具会发现在 IDEA 中添加依赖的时候找不到 Nacos ，还需要自己去添加。并且使用阿里云构建项目会在项目中给你添加 demo 示例，这里让我想到看过的一个视频里说：“这些生成的配置在我的代码里完全是画蛇添足！”哈哈哈哈，现在想到这句话我都觉得很逗。
 
 > https://start.aliyun.com
