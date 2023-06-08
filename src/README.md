@@ -2,7 +2,7 @@
 home: true
 layout: BlogHome
 icon: home
-title: Home
+title: 主页
 heroImage: /home-hero-image.svg
 heroText: love and share # 主标题
 heroFullScreen: true

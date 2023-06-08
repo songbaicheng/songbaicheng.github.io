@@ -15,6 +15,7 @@ export default hopeTheme({
   },
   iconAssets: "iconfont",
   logo: "/logo.png", // 网站左上角logo
+  logoDark: "/logo-dark.png",
   repo: "songbaicheng/songbaicheng.github.io", // github地址
   docsDir: "docs",
   blog: { // 
