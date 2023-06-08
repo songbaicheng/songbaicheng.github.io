@@ -12,7 +12,7 @@ tag:
 一提到 Java 基础，难免绕不开每个语言的圣经，要知道计算机不比其他行业，大部分的学习资料都来自互联网，而能靠其内容质量击败视频、电子书和技术文章成为圣经的绝对是传奇著作，而 Java 的圣经绝对就是下面这本 《_Thinking in Java_》(Java 编程思想)。
 
 <div style="text-align: center;">
-  <img src="/assets/images/books/thinking-in-java.png" alt="Thinking in java" style="width:350px;height:500px;">
+  <img src="/assets/images/resource/books/thinking-in-java.png" alt="Thinking in java" style="width:350px;height:500px;">
 </div>
 
 这本书我大学期间看过大半，至于为什么没有读完，是因为这本书确实细，细到令你发指，主打一本工具书的定位，而且其内容也是略显晦涩，当时我也是走马观花，只读了个大概就跑去B站“深造”了。
