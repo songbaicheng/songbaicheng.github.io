@@ -19,6 +19,7 @@ export const studySidebar = arraySidebar([
                 children: [
                     '/study/backend/java/spring-cloud-alibaba/README.md',
                     '/study/backend/java/spring-cloud-alibaba/nacos.md',
+                    '/study/backend/java/spring-cloud-alibaba/gateway.md',
                 ],
             }
         ]
