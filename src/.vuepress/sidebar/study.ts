@@ -14,6 +14,13 @@ export const studySidebar = arraySidebar([
                 ],
             },
             {
+                text: 'Spring Boot',
+                collapsible: true,
+                children: [
+                    '/study/backend/java/spring-boot/spring-security.md'
+                ],
+            },
+            {
                 text: 'Spring Cloud Alibaba',
                 collapsible: true,
                 children: [
