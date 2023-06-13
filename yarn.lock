@@ -2061,9 +2061,9 @@
     markdown-it "^13.0.1"
     markdown-it-container "^3.0.0"
 
-"@vuepress/plugin-docsearch@^2.0.0-beta.63":
+"@vuepress/plugin-docsearch@^2.0.0-beta.62":
   version "2.0.0-beta.50-pre.1"
-  resolved "https://registry.npmmirror.com/@vuepress/plugin-docsearch/-/plugin-docsearch-2.0.0-beta.50-pre.1.tgz#550c5b8456d7bf831eb01d02d10ef2cbb332e04b"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-docsearch/-/plugin-docsearch-2.0.0-beta.50-pre.1.tgz#550c5b8456d7bf831eb01d02d10ef2cbb332e04b"
   integrity sha512-eY6btel2VbbjAHmFE6E3kDb4kw+JAnUwZso7eZiHi+kMxzoh+fsPKkSC3xHdtdBcHOlAbap98aqJoxWGaWZI5A==
   dependencies:
     "@docsearch/css" "^3.2.0"

@@ -10,3 +10,25 @@
 > https://spring.io/projects/spring-security
 
 ## 快速开始
+### 引入依赖
+```gradle
+implementation 'org.springframework.boot:spring-boot-starter-security'
+```
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+```
+
+### 简单配置启动
+
+```yml
+spring:
+  security:
+    user:
+      name: user # 用户名
+      password: songbaicheng # 密码
+```
+
+项目启动后随便访问一个路径就会跳转到自带的 /login 窗口进行登录。如果不指定用户名和密码，用户名默认是 ```user```，密码会在项目启动的时候生成一个 UUID 在控制台打印出来。
