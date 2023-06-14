@@ -32,3 +32,93 @@ spring:
 ```
 
 项目启动后随便访问一个路径就会跳转到自带的 /login 窗口进行登录。如果不指定用户名和密码，用户名默认是 ```user```，密码会在项目启动的时候生成一个 UUID 在控制台打印出来。
+
+## 配置登录用户
+Spring Security 提供了基于内存和持久化两种添加用户的方式，工作中常用的当然是选择持久化的方式居多，外加基于持久化的方式加 ORM 框架新增总共三种方式实现，进行下面几种测试点的时候，一定要注意只能同时存在一种添加用户的方式，如果存在的方式过多则会存在异常。
+
+### 基于内存添加用户
+
+```java
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public InMemoryUserDetailsManager inMemoryUserDetailsManager () {
+
+        UserDetails userDetails1 = User.withUsername("songbaicheng").password("{noop}songbaicheng").roles("role1").build();
+        UserDetails userDetails2 = User.withUsername("songbaicheng1").password("{noop}songbaicheng").roles("role2").build();
+        UserDetails userDetails3 = User.withUsername("songbaicheng2").password("{noop}songbaicheng").roles("role3").build();
+
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2, userDetails3);
+    }
+}
+```
+
+### 基于 JDBC 添加用户
+首先需要引入数据库持久化依赖
+```gradle
+implementation 'mysql:mysql-connector-java:8.0.25'
+```
+
+```xml
+<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+<dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.25</version>
+</dependency>
+```
+创建对应数据库并配置连接，具体的建表语句官方已经帮我们放在下面路径中的依赖包里了,其中的语法可能并不支持所有数据库，如果你使用 MySQL 数据库可以使用以下语句。
+> /spring-security-core-6.1.0.jar!/org/springframework/security/core/userdetails/jdbc/users.ddl
+
+```sql
+create table users(
+  username varchar(50) not null primary key,
+  password varchar(500) not null,
+  enabled boolean not null
+);
+
+create table authorities (
+  username varchar(50) not null,
+  authority varchar(50) not null,
+  constraint fk_authorities_users foreign key(username) references users(username)
+);
+
+create unique index ix_auth_username on authorities (username,authority);
+```
+
+```yml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/[database-name] # 数据库地址
+    driver-class-name: com.mysql.cj.jdbc.Driver # 驱动
+    username: [username] # 账号
+    password: [password] # 密码
+```
+最后添加配置类并配置 JdbcUserDetailsManager，启动项目后 admin 用户就自动添加到数据库当中了。
+
+```java
+@Configuration
+public class SecurityConfig {
+
+    @Resource
+    private DataSource dataSource;
+
+    @Bean
+    public JdbcUserDetailsManager jdbcUserDetailsManager() {
+
+        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+
+        if (!jdbcUserDetailsManager.userExists("admin")) {
+            jdbcUserDetailsManager.createUser(User.withUsername("admin").password("{noop}songbaicheng").roles("role4").build());
+        }
+
+        return jdbcUserDetailsManager;
+    }
+}
+```
+
+### 基于 Mybitas 添加用户
