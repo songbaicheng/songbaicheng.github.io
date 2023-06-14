@@ -21,7 +21,7 @@ implementation 'org.springframework.boot:spring-boot-starter-security'
 </dependency>
 ```
 
-### 简单配置启动
+## 简单配置启动
 
 ```yml
 spring:
@@ -32,6 +32,11 @@ spring:
 ```
 
 项目启动后随便访问一个路径就会跳转到自带的 /login 窗口进行登录。如果不指定用户名和密码，用户名默认是 ```user```，密码会在项目启动的时候生成一个 UUID 在控制台打印出来。
+
+
+## 流程介绍
+
+![Spring Security 流程图](/assets/images/study/backend/java/spring-boot/spring-security/spring-security-process.png "Spring Security 流程图")
 
 ## 配置登录用户
 Spring Security 提供了基于内存和持久化两种添加用户的方式，工作中常用的当然是选择持久化的方式居多，外加基于持久化的方式加 ORM 框架新增总共三种方式实现，进行下面几种测试点的时候，一定要注意只能同时存在一种添加用户的方式，如果存在的方式过多则会存在异常。
@@ -121,4 +126,78 @@ public class SecurityConfig {
 }
 ```
 
-### 基于 Mybitas 添加用户
+### 基于 Mybitas Plus 添加用户
+该方法需要根据自己的业务定义自己的 UserDetails 和重写 UserDetailsService 类中的 loadUserByUsername 方法，下面只是一个 demo 演示，将数据库中的用户数据验证并赋值到自定义的 UserDetails 中返回。
+
+```java
+@Data
+@Builder
+public class SecurityUser implements UserDetails {
+
+    private String username;
+    private String password;
+    private String authority;
+    private boolean enabled;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+}
+```
+
+
+```java
+@Service
+@RequiredArgsConstructor
+public class SecurityService implements UserDetailsService {
+
+    private final IAuthoritiesMapper iAuthoritiesMapper;
+    private final IUsersMapper iUsersMapper;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        String realUsername = iAuthoritiesMapper.getUsernameById(username);
+
+        if (ObjectUtils.isEmpty(realUsername)) {
+            throw new UsernameNotFoundException("用户不存在！");
+        }
+
+        return SecurityUser.builder()
+                .username(realUsername)
+                .password(iUsersMapper.getPasswordById(username))
+                .build();
+    }
+}
+```
