@@ -6,6 +6,8 @@ export const resourceSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/resource/books/java.md',
+            '/resource/books/database.md',
+            '/resource/books/ads.md',
             '/resource/books/other-skills.md'
         ]
     },
