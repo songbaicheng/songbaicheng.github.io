@@ -27,6 +27,7 @@ export const studySidebar = arraySidebar([
                     '/study/backend/java/spring-cloud-alibaba/README.md',
                     '/study/backend/java/spring-cloud-alibaba/nacos.md',
                     '/study/backend/java/spring-cloud-alibaba/gateway.md',
+                    '/study/backend/java/spring-cloud-alibaba/spring-boot-admin.md',
                 ],
             }
         ]
