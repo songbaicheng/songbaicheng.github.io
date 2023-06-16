@@ -27,7 +27,7 @@ export default hopeTheme({
     medias: { // 博主的媒体链接配置
       BiliBili: "https://space.bilibili.com/400378627",
       GitHub: "https://github.com/songbaicheng",
-      LeetCode: "https://leetcode.cn/u/songbaicheng/",
+      // LeetCode: "https://leetcode.cn/u/songbaicheng/",
     },
 
     intro: "/zh/intro.html", // 博主的个人介绍地址
