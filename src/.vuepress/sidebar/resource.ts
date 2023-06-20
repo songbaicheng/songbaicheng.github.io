@@ -15,7 +15,7 @@ export const resourceSidebar = arraySidebar([
         text: '工具推荐',
         collapsible: true,
         children: [
-            '/resource/tools/idea.md',
+            '/resource/tools/development-tools.md',
         ]
     },
 ])

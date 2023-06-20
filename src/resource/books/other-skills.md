@@ -2,6 +2,7 @@
 category: 书籍推荐
 tag: 
   - book
+  - skills
 ---
 
 # 其他技能
