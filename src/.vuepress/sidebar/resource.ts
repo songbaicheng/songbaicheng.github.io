@@ -11,4 +11,11 @@ export const resourceSidebar = arraySidebar([
             '/resource/books/other-skills.md'
         ]
     },
+    {
+        text: '工具推荐',
+        collapsible: true,
+        children: [
+            '/resource/tools/idea.md',
+        ]
+    },
 ])
