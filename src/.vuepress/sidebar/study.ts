@@ -33,6 +33,14 @@ export const studySidebar = arraySidebar([
         ]
     },
     {
+        text: '持久化',
+        collapsible: true,
+        children: [
+            '/study/backend/persistence/README.md',
+            '/study/backend/persistence/redis.md'
+        ]
+    },
+    {
         text: '前端技术',
         collapsible: true,
         children: ['/study/frontend/README.md']
