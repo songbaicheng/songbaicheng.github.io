@@ -15,6 +15,4 @@ tag:
 ## MySQL
 如果是平时使用和找工作大部分公司在用的话，MySQL 在 CN 的使用率肯定是名列前茅，如果只是想快速了解或复习语法的话，推荐这本 **_《MySQL必知必会》_**，薄薄一本，定位和 **_《剑指Offer》_** 一样，都是最实用的语法，用来入门非常不错。
 
-<div style="text-align: center;">
-  <img src="/assets/images/resource/books/mysql-crash-course.png" alt="Thinking in java" style="width:350px;height:500px;">
-</div>
+![MySQL必知必会](/assets/images/resource/books/mysql-crash-course.png "MySQL必知必会" =350x500)

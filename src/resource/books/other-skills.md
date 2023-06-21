@@ -12,10 +12,7 @@ tag:
 
 ### 《_Pro Git_》
 
-<br/>
-<div style="text-align: center;">
-  <img src="/assets/images/resource/books/pro-git.png" alt="pro git" style="width:350px;height:500px;">
-</div>
+![pro git](/assets/images/resource/books/pro-git.png "pro git" =350x500)
 
 这本书的作者是 Git 在 GitHub 公司的最早的托管者之一编写的，当我了解到这本书的时候就已经是第二版了。这本书涵盖了 Git 的基础用法、分支特性、搭建和配置 Git 服务器、分布式工作流程、GitHub 的使用方法、Git 工具、Git 内部原理等各个方面内容，最后还附带了 Git 命令参考。零基础的初学者可以通过前 3 章的学习就已经可以应付日常的开发场景了，后几章能够满足中高阶用户深入了解的需求。书中提供了大量的应用案例，不同开发工作模式有不同的用法，配合插图演示版本变化的状态，十分易于理解。
 
@@ -26,10 +23,7 @@ tag:
 ## 设计模式
 ### 《_Head First Design Patterns_》
 
-<br/>
-<div style="text-align: center;">
-  <img src="/assets/images/resource/books/head-first-design-patterns.png" alt="Head First Design Patterns" style="width:400px;height:500px;">
-</div>
+![Head First Design Patterns](/assets/images/resource/books/head-first-design-patterns.png "Head First Design Patterns" =350x500)
 
 几乎每个经典系列书籍中都会有讲设计模式的书，像大话系列、图解系列还有 Head First 系列，这些书都是基于设计模式开山之作《_设计模式：可复用面向对象软件的基础_》中23中设计模式结合后来的实践和发展又重新总结出来的更完善生动的作品，内容上都是按照每一种设计模式作为一个章节并结合情景和图片进行讲解，我自己学习看的是第一版的《_Head First Design Patterns_》，上图中的是2022年发行的第二版，学习的时候一边阅读一边自己实现还是挺容易理解的，直到现在我看到某种设计模式还会想到当时书中的案例。
 

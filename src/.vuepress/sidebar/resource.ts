@@ -16,6 +16,7 @@ export const resourceSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/resource/tools/development-tools.md',
+            '/resource/tools/daily-tools.md',
         ]
     },
 ])
