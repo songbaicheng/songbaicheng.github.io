@@ -1,8 +1,7 @@
 ---
-category: 书籍推荐
+category: 资源分享
 tag: 
-  - book
-  - development tools
+  - tools
 ---
 
 # 开发工具
