@@ -12,16 +12,27 @@ tag:
 
 在微服务架构风格的核心就是管理和维护服务实例，而实现其服务中心化的重要组件正是注册中心，它简化了服务发现、负载均衡、故障转移和容错等关键功能的实现，提高了微服务系统的弹性、可靠性和可扩展性。这里我们要谈的 Nacos 作为 Spring Cloud Alibaba 的重要组件对微服务的以上优点都有所涵盖，相对于已经发展成熟的 Eureka 而言，在综合性、灵活性上更上一筹，确也在稳定性和自我保护机制上有些不足，所以对于这两种最主流的注册中心来说，使用哪一种还是要根据项目的具体的大小和需求、团队技术栈和规模等因素决定。
 
-这里值得一提的是相比于中心化思想，最近去中心化思想也开始声名鹊起，越来越多的集群采用去中心化的模式来部署，所以像 Nacos 也支持集群模式，服务实例的注册和发现分散在多个节点上，每个节点都具有自己的注册和发现能力。
+这里值得一提的是相比于中心化思想，最近去中心化思想也开始声名鹊起，越来越多的集群采用去中心化的模式来部署，所以像 Nacos 也支持集群模式，服务实例的注册和发现分散在多个节点上，每个节点都具有自己的注册和发现能力，具体其他详情详见官方文档。
 
-## 官方文档地址
-> https://nacos.io/zh-cn/docs/v2/what-is-nacos.html
+```card
+title: Nacos 中文官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos_colorful.png
+link: https://nacos.io/zh-cn/index.html
+color: rgba(173, 216, 590, 0.15)
+```
 
 ## 快速开始
 ### Nacos服务端单机模式启动
 我们这里根据 Spring Cloud Alibaba 毕业版本推荐选择了 2.2.1 的版本，相比于 Eureka 来说，Nacos 同样也分为客户端和服务端，不过服务端不需要我们自行搭建，我们直接下载使用官方的即可，这里你可以选择下载二进制包直接使用或者 Docker 镜像的方式都可以，我们这里使用下载二进制包的方法，可以去下面网址找到你想要的版本进行下载。
 
-> https://github.com/alibaba/nacos/tags
+```card
+title: Nacos 版本下载网址
+desc: 点击跳转官网查看详细内容
+logo: /assets/common-icon/spring-initializr.svg
+link: https://github.com/alibaba/nacos/tags
+color: rgba(173, 216, 590, 0.15)
+```
 
 下载完成后启动前，这里值得注意的是 Nacos 在**2.2.0.1**和**2.2.1**版本后，必须修改 conf 目录下的 application.properties 文件设置其中的 **nacos.core.auth.plugin.nacos.token.secret.key** 值，否则不能启动，该参数是鉴权用于生成用户登陆临时accessToken所使用的密钥，默认可以使用```SecretKey012345678901234567890123456789012345678901234567890123456789```，该值可用于临时测试，实际使用时请务必更换为自定义的其他有效值。如果你不想使用内置数据库想绑定数据库实现持持久化，需要把 **Config Module Related Configurations** 中的配置全部打开并配置正确的数据库参数，并且把 conf 目录中对应数据库的sql文件执行生成工作表。一切准备完毕后启动即可。
 

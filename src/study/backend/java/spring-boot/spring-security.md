@@ -2,7 +2,13 @@
 ## 介绍
 目前提到安全框架，Shiro 和 Spring Security 算得上是分庭抗争了，并且 Shiro 主打的是简单、轻量，但却没有 Spring Security 灵活，在 Spring Security 支持 OAuth2 之后更加贴合当前社会需求，并且我们如果使用 Spring 框架的话，学习 Spring Security 更是如鱼得水，并且是重中之重。如果想要更加深入的了解 Spring Security ，请预览下面官方文档的链接进行研读。
 
-> https://spring.io/projects/spring-security
+```card
+title: Spring Security 官网文档
+desc: 点击跳转官网查看详细内容
+logo: /assets/common-icon/spring-initializr.svg
+link: https://spring.io/projects/spring-security
+color: rgba(173, 216, 590, 0.15)
+```
 
 官方的解释是 Spring Security 是一个提供身份验证、授权和防止常见攻击的框架，正如它说的那样，其核心功能就是 **_认证_** 和 **_授权_**。
 

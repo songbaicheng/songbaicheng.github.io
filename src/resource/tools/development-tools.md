@@ -10,9 +10,15 @@ tag:
 
 ## IntelliJ IDEA
 
-> https://www.jetbrains.com/idea/
-
 吃饭的家伙，一提到 IDEA 我就不得不说一个事情，不是吧不是吧，这都2023年了还有人在用 \b\w{7}\b 做开发吧（狗头保命）。使用正版需要订购 JetBrains 的许可证，因为是订阅型的，意味着你需要按照订阅期限支付费用，今年居然比去年更贵了！工具要想用的好，配置插件少不了，我把我认为平时好用的和最常用的配置贴出来，供交流讨论啦。
+
+```card
+title: IntelliJ IDEA 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/IntelliJ IDEA.svg
+link: https://www.jetbrains.com/idea/
+color: rgba(173, 216, 590, 0.15)
+```
 
 ### 配置
 
@@ -20,15 +26,24 @@ tag:
 
 ## Visual Studio Code
 
-> https://code.visualstudio.com/
-
 地表最强 IDE ，具目前的数据来看，全世界受访的程序员中有 81% 的人都在使用，当然我现在就是在用它码字，它依托丰富的插件库可以支持你在开发中遇到的大多数的场景，现在它在我的手里也是“身兼数职”。
+
+```card
+title: Visual Studio Code 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/Visual Studio Code.png
+link: https://code.visualstudio.com/
+color: rgba(173, 216, 590, 0.15)
+```
 
 ## DBeaver Community
 
-> https://dbeaver.io/
-
 一个免费的跨平台数据库工具，其 UI 也是十分对味，虽然 Navicat 如日中天，但是谁能拒绝免费呢。
 
-
-
+```card
+title: DBeaver Community 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/beaver-head.png
+link: https://dbeaver.io/
+color: rgba(173, 216, 590, 0.15)
+```

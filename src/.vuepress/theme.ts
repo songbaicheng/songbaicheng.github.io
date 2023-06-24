@@ -14,12 +14,11 @@ export default hopeTheme({
     email: "songbaicheng16@163.com" // 作者 Email
   },
   iconAssets: "iconfont",
-  logo: "/logo.png", // 网站左上角logo
-  logoDark: "/logo-dark.png",
+  logo: "/icon/logo.png", // 网站左上角logo
+  logoDark: "/icon/logo-dark.png",
   repo: "songbaicheng/songbaicheng.github.io", // github地址
   docsDir: "docs",
-  blog: { // 
-
+  blog: { // 主题中日志模式配置
     name: 'songbaicheng', // 博主姓名
     avatar: 'favicon.ico', // 博主头像
     roundAvatar: true, // 是否剪裁头像为圆形形状
@@ -46,7 +45,7 @@ export default hopeTheme({
       provider: "Giscus",
     },
 
-    // all features are enabled for demo, only preserve features you need here
+    // 主题中选择启用的功能
     mdEnhance: {
       align: true,
       attrs: true,
@@ -63,6 +62,7 @@ export default hopeTheme({
       katex: true,
       mark: true,
       mermaid: true,
+      card: true,
       playground: {
         presets: ["ts", "vue"],
       },
