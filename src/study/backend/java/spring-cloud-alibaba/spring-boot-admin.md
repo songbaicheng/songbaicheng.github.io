@@ -1,3 +1,11 @@
+---
+category: 微服务
+tag: 
+  - Spring Cloud Alibaba
+  - Java
+  - Spring Boot Admin
+---
+
 # Spring Boot Admin
 ## 介绍
 Spring Boot Admin是一个用于管理和监控 Spring Boot 应用程序的开源项目。它提供了一个用户界面，可以集中管理多个 Spring Boot 应用程序，并提供有关这些应用程序的详细信息和指标。
