@@ -64,3 +64,15 @@ link: https://www.apipost.cn/
 color: rgba(173, 216, 590, 0.15)
 ```
 :::
+
+## RedisInsight
+
+Redis 的可视化工具有很多，但是早起的大部分 UI 都很丑，可视化和没可视化一样，后来像 Redis Desktop Manager 这种简约多彩的几款突出重围，但是美中不足的是要收费，后来 Redis 官方自己推出了自家的 RedisInsight 后，无论是操作逻辑还是 UI 界面都是更胜一筹，我想应该目前应该没有人还在用第三方的了吧。
+
+```card
+title: RedisInsight 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/redisinsigh.svg
+link: https://redis.com/redis-enterprise/redis-insight/
+color: rgba(173, 216, 590, 0.15)
+```
