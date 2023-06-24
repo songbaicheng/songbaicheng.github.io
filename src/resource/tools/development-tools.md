@@ -18,7 +18,6 @@ logo: /assets/images/resource/tools/development-tools/IntelliJ IDEA.svg
 link: https://www.jetbrains.com/idea/
 color: rgba(173, 216, 590, 0.15)
 ```
-
 ### 配置
 
 ### 插件
@@ -34,7 +33,6 @@ logo: /assets/images/resource/tools/development-tools/Visual Studio Code.png
 link: https://code.visualstudio.com/
 color: rgba(173, 216, 590, 0.15)
 ```
-
 ## DBeaver Community
 
 一个免费的跨平台数据库工具，其 UI 也是十分对味，虽然 Navicat 如日中天，但是谁能拒绝免费呢。
@@ -46,3 +44,23 @@ logo: /assets/images/resource/tools/development-tools/beaver-head.png
 link: https://dbeaver.io/
 color: rgba(173, 216, 590, 0.15)
 ```
+## Apifox/Apipost
+
+集文档、调试、Mock、测试于一身的API 一体化协作平台，感觉大部分开发者大部分都在使用 Swagger 作为 API 文档协同工具，个人感觉核心的优点还是在每次修改参数后并不需要重新编辑接口就可以自动更新，并且还有测试功能，这已经可以满足开发人员大部分的需求了，可是当你需要更加喜爱丰富的功能的话，比如说出一个手册、Mock等复杂功能还是力不从心，所以 Apifox 和 Apipost 两款国产软件成功问世，主打一个 Postman + Swagger + Mock + Jmeter 的设计理念。个人两个用下来感觉功能差别不大，具体想体验哪一个就看个人喜好了。
+
+::: card
+```card
+title: Apifox 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/apifox.png
+link: https://apifox.com/
+color: rgba(173, 216, 590, 0.15)
+```
+```card
+title: Apipost 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/apipost.png
+link: https://www.apipost.cn/
+color: rgba(173, 216, 590, 0.15)
+```
+:::
