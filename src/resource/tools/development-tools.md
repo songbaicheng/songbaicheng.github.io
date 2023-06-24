@@ -35,7 +35,7 @@ color: rgba(173, 216, 590, 0.15)
 ```
 ## DBeaver Community
 
-一个免费的跨平台数据库工具，其 UI 也是十分对味，虽然 Navicat 如日中天，但是谁能拒绝免费呢。
+一个免费的跨平台数据库工具，其 UI 也是十分对味，并且在多数据库支持和数据的导入导出功能上也是十分优秀，并且还开源免费，简直吊打 Navicat。
 
 ```card
 title: DBeaver Community 官网
