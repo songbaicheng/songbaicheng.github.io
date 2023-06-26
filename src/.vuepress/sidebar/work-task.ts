@@ -8,7 +8,8 @@ export const workTaskSidebar = arraySidebar([
             '/work-task/development/ant.md',
             '/work-task/development/scheduled.md',
             '/work-task/development/log-desensitization.md',
-            '/work-task/development/reflection.md'
+            '/work-task/development/reflection.md',
+            '/work-task/development/mockito.md'
         ]
     },
     {
