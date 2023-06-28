@@ -18,9 +18,33 @@ logo: /assets/images/resource/tools/development-tools/IntelliJ IDEA.svg
 link: https://www.jetbrains.com/idea/
 color: rgba(173, 216, 590, 0.15)
 ```
-### 配置
+### 配置推荐
+配置的话就是见仁见智了，因为每个人有每个人的习惯，虽然很多时候有些设置确实可以提高效率，但是有些人习惯了之前自己的一些方式就觉得还是保持原状效率更高，所以这里我整理一下自己常用的一些可以提高效率的设置供大家参考。
 
-### 插件
+这里我就按照 preferences 界面从上到下罗列了，首先字体大小什么的这就是按照自己的显示器或者窗口习惯自己决定，但是字体一定是推荐 JetBrains Mono，这是 JetBrains 公司设计的更适合开发人员使用的字体，在阅读体验和符号区分度上下了很大功夫，这套字体在从 v2019.3 开始这套字体就随 JetBrains IDE 一起提供了，如果用起来的一定要用起来。
+
+第一个推荐的配置是自动导入包的配置，虽然平时也有快捷键清理多余的包，但是哪有自动清理来的方便快捷，打开这个设置需要勾选下面两个勾选框。
+
+![auto import](/assets/images/resource/tools/development-tools/auto-import.png "auto import" =650x500)
+
+其次就是方法间增加分割线，因为发现很多人方法间不换行导致可读性很差，这个时候分割线就显得尤为重要了。
+
+![method split line](/assets/images/resource/tools/development-tools/method-split-line.png "method split line" =650x500)
+
+### 插件推荐
+#### One Dark theme 主题
+相信大部分的程序员还是喜欢黑色的主题吧，虽然很大一部分原因还是护眼，但是黑色真的很高级炫酷啊。
+
+![One Dark theme](/assets/images/resource/tools/development-tools/one-dark-theme.png "One Dark theme" =650x500)
+#### Rainbow Brackets 彩虹括号
+一开始觉得花里胡哨没什么用，但是当你括号不能对齐的时候就是真香了。
+
+![Rainbow Brackets](/assets/images/resource/tools/development-tools/rainbow-brackets.png "Rainbow Brackets" =650x500)
+
+#### Alibaba Java Coding Guidelines 阿里巴巴代码规范
+idea 自带的代码提示可以帮你优化一些简单代码，让代码看上去可以变得更优雅，可是代码规范还是主观性太强，虽然相信大部分 Java 开发都看过 _《阿里巴巴Java开发手册》_，但是真正能在写代码的时候约束自己的还是的靠插件。
+
+![Alibaba Java Coding Guidelines](/assets/images/resource/tools/development-tools/alibaba-java-coding-guidelines.png "Alibaba Java Coding Guidelines" =650x500)
 
 ## Visual Studio Code
 
