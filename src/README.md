@@ -1,7 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
+icon: blog
 title: 主页
 heroImage: /icon/home-hero-image.svg
 heroText: love and share # 主标题

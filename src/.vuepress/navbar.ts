@@ -4,7 +4,7 @@ export const Navbar = navbar([
     "/",
     { text: "学习之路", icon: "study", link: "/study/" },
     { text: "工作任务", icon: "workingDirectory", link: "/work-task/" },
-    { text: "资源分享", icon: "repo", link: "/resource/" },
+    { text: "资源分享", icon: "box", link: "/resource/" },
     {
         text: "过去", icon: "time", children: [{
             text: "阿里云",

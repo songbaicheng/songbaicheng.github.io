@@ -3,6 +3,7 @@ import { arraySidebar } from "vuepress-theme-hope";
 export const studySidebar = arraySidebar([
     {
         text: '开发技能',
+        icon: 'computer',
         collapsible: true,
         children: [
             '/study/development/READNE.md'
@@ -25,8 +26,10 @@ export const studySidebar = arraySidebar([
                 text: 'Spring Boot',
                 collapsible: true,
                 children: [
+
                     '/study/backend/java/spring-boot/spring-security.md',
-                    '/study/backend/java/spring-boot/spring-data-redis.md',
+                    '/study/backend/java/spring-boot/spring-data-redis.md'
+
                 ],
             },
             {
@@ -43,6 +46,7 @@ export const studySidebar = arraySidebar([
     },
     {
         text: '持久化',
+        icon: 'storage',
         collapsible: true,
         children: [
             '/study/backend/persistence/README.md',
@@ -51,11 +55,13 @@ export const studySidebar = arraySidebar([
     },
     {
         text: '前端技术',
+        icon: 'chrome',
         collapsible: true,
         children: ['/study/frontend/README.md']
     },
     {
         text: '设计模式',
+        icon: 'quote',
         collapsible: true,
         children: [
             '/study/design-pattern/README.md',
@@ -64,11 +70,13 @@ export const studySidebar = arraySidebar([
     },
     {
         text: '算法',
+        icon: 'calculate',
         collapsible: true,
         children: ['/study/ads/algorithms/README.md']
     },
     {
         text: '数据结构',
+        icon: 'tree',
         collapsible: true,
         children: ['/study/ads/data-structure/README.md']
     }

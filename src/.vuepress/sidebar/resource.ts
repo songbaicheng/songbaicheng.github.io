@@ -3,6 +3,7 @@ import { arraySidebar } from "vuepress-theme-hope";
 export const resourceSidebar = arraySidebar([
     {
         text: '书籍分享',
+        icon: 'read',
         collapsible: true,
         children: [
             '/resource/books/java.md',
@@ -13,6 +14,7 @@ export const resourceSidebar = arraySidebar([
     },
     {
         text: '工具推荐',
+        icon: 'tool',
         collapsible: true,
         children: [
             '/resource/tools/development-tools.md',
