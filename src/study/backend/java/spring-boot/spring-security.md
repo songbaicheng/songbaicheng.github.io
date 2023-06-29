@@ -1,12 +1,11 @@
 ---
+star: true
 category: Spring Boot
 tag: 
   - Spring Security
-  - OAuth2
-  - JWT
 ---
 
-# Spring Security
+# Spring Security 基础
 ## 介绍
 目前提到安全框架，Shiro 和 Spring Security 算得上是分庭抗争了，并且 Shiro 主打的是简单、轻量，但却没有 Spring Security 灵活，在 Spring Security 支持 OAuth2 之后更加贴合当前社会需求，并且我们如果使用 Spring 框架的话，学习 Spring Security 更是如鱼得水，并且是重中之重。如果想要更加深入的了解 Spring Security ，请预览下面官方文档的链接进行研读。
 
@@ -51,7 +50,7 @@ spring:
 
 项目启动后随便访问一个路径就会跳转到自带的 /login 窗口进行登录。如果不指定用户名和密码，用户名默认是 ```user```，密码会在项目启动的时候生成一个 UUID 在控制台打印出来。
 
-### 配置登录用户
+### 配置登录认证用户
 Spring Security 提供了基于内存和持久化两种添加用户的方式，工作中常用的当然是选择持久化的方式居多，外加基于持久化的方式加 ORM 框架新增总共三种方式实现，进行下面几种测试点的时候，一定要注意只能同时存在一种添加用户的方式，如果存在的方式过多则会存在异常。
 
 #### 基于内存添加用户
@@ -214,8 +213,8 @@ public class SecurityService implements UserDetailsService {
 }
 ```
 
-### 配置授权
-通过对路由的匹配并对其指定相应的授权规则，可以创建多条授权规则，建议根据从细到粗的粒度来进行匹配。
+### 配置资源授权角色
+通过对路由的匹配并对其指定相应的授权规则，可以创建多条授权规则，建议根据从细到粗的粒度来进行匹配。下面就是对 /hello 下的资源限制为有 user 身份的用户才能访问，其他资源则只需要认证通过即可访问。
 
 ```java
 @Bean

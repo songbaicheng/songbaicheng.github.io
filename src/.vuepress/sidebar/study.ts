@@ -26,10 +26,10 @@ export const studySidebar = arraySidebar([
                 text: 'Spring Boot',
                 collapsible: true,
                 children: [
-
+                    '/study/backend/java/spring-boot/spring-data-redis.md',
                     '/study/backend/java/spring-boot/spring-security.md',
-                    '/study/backend/java/spring-boot/spring-data-redis.md'
-
+                    '/study/backend/java/spring-boot/spring-security-jwt.md',
+                    '/study/backend/java/spring-boot/spring-security-jwt-oauth2.md',
                 ],
             },
             {

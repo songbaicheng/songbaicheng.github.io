@@ -487,6 +487,10 @@ public class BaseRedisConfig {
         return new LettuceConnectionFactory();
     }
 
+    /**
+     * RedisTemplate 自定义配置
+     * @param redisConnectionFactory Redis 连接工厂
+     */
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
 
@@ -509,6 +513,10 @@ public class BaseRedisConfig {
         return redisTemplate;
     }
 
+    /**
+     * Redis 自定义序列化方法
+     * @return 自定义序列化器
+     */
     public RedisSerializer<Object> redisSerializer() {
 
         ObjectMapper objectMapper = new ObjectMapper();

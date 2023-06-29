@@ -5,6 +5,8 @@ import theme from "./theme";
 export default defineUserConfig({
   base: "/",
   title: "宋柏成的技术博客",
+  lang: "zh-CN",
+
   head: [
     [ // 百度统计
       'script',
