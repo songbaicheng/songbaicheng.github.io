@@ -23,23 +23,23 @@ export const studySidebar = arraySidebar([
                 ],
             },
             {
-                text: 'Spring Boot',
+                text: 'Spring 全家桶',
                 collapsible: true,
                 children: [
-                    '/study/backend/java/spring-boot/spring-data-redis.md',
-                    '/study/backend/java/spring-boot/spring-security.md',
-                    '/study/backend/java/spring-boot/spring-security-jwt.md',
-                    '/study/backend/java/spring-boot/spring-security-oauth2.md',
+                    '/study/backend/java/spring/spring-data-redis.md',
+                    '/study/backend/java/spring/spring-security.md',
+                    '/study/backend/java/spring/spring-security-jwt.md',
+                    '/study/backend/java/spring/spring-security-oauth2.md',
                 ],
             },
             {
-                text: 'Spring Cloud Alibaba',
+                text: '分布式 + 微服务',
                 collapsible: true,
                 children: [
-                    '/study/backend/java/spring-cloud-alibaba/README.md',
-                    '/study/backend/java/spring-cloud-alibaba/nacos.md',
-                    '/study/backend/java/spring-cloud-alibaba/gateway.md',
-                    '/study/backend/java/spring-cloud-alibaba/spring-boot-admin.md',
+                    '/study/backend/java/micro-services/README.md',
+                    '/study/backend/java/micro-services/nacos.md',
+                    '/study/backend/java/micro-services/gateway.md',
+                    '/study/backend/java/micro-services/spring-boot-admin.md',
                 ],
             }
         ]

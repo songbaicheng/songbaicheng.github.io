@@ -4,21 +4,28 @@ category: 微服务
 tag: 
   - Spring Cloud Alibaba
   - Java
-  - nacos
+  - Nacos
 ---
 
 # Nacos
-## 浅聊微服务注册中心
-提到微服务就不得不提到单体地狱的问题，所谓单体地狱就是整个应用程序作为一个单独的单元进行开发、部署和扩展。单体应用通常具有紧耦合的组件和共享数据库，随着应用规模的增长，单体应用会变得复杂且难以维护。为了解决这个问题，后来又出现了模块化拆分和服务化拆分的方案，这也就是微服务的前身了，后来随着模块间的自治独立和通讯方案的完善，就演变成了现在我们看到的微服务框架，在 DevOps 和自动化的浪潮下，微服务的架构风格更是如鱼得水。
+## 浅聊微服务配置和注册中心
+### 配置中心
+传统的静态配置方式要想修改某个配置只能修改之后重新发布应用，要实现动态性，可以选择使用数据库，通过定时轮询访问数据库来感知配置的变化。轮询频率低感知配置变化的延时就长，轮询频率高，感知配置变化的延时就短，但比较损耗性能，需要在实时性和性能之间做折中。配置中心专门针对这个业务场景，兼顾实时性和一致性来管理动态配置。配置中心兼往往顾了集中管理、动态更新和版本控制等优点。
 
-在微服务架构风格的核心就是管理和维护服务实例，而实现其服务中心化的重要组件正是注册中心，它简化了服务发现、负载均衡、故障转移和容错等关键功能的实现，提高了微服务系统的弹性、可靠性和可扩展性。这里我们要谈的 Nacos 作为 Spring Cloud Alibaba 的重要组件对微服务的以上优点都有所涵盖，相对于已经发展成熟的 Eureka 而言，在综合性、灵活性上更上一筹，确也在稳定性和自我保护机制上有些不足，所以对于这两种最主流的注册中心来说，使用哪一种还是要根据项目的具体的大小和需求、团队技术栈和规模等因素决定。
+### 注册中心
+注册中心用于管理和维护微服务的注册信息，包括微服务的网络位置（IP地址和端口）以及其他元数据。每个微服务在启动时向注册中心注册自己的信息，并定期发送心跳以保持活动状态。其他微服务可以通过查询注册中心获取所需服务的信息，从而实现服务的发现和调用。
 
-这里值得一提的是相比于中心化思想，最近去中心化思想也开始声名鹊起，越来越多的集群采用去中心化的模式来部署，所以像 Nacos 也支持集群模式，服务实例的注册和发现分散在多个节点上，每个节点都具有自己的注册和发现能力，具体其他详情详见官方文档。
+### 微服务中的使用
+配置中心和注册中心通常会一起使用，配合实现微服务的配置管理、服务发现和通信。它们为微服务架构的可伸缩性、弹性和灵活性提供了重要的基础设施。
+
+作为配置中心应该要求支持集中化管理、配置存储和分发、动态更新、版本控制、安全性和权限控制和监控和告警；作为注册中心要做到服务注册和注销、服务发现、心跳和健康检查、负载均衡、高可用性和容错性和监控和告警。目前市面上现在针对配置中心和注册中心分别都有很多产品，像百度的 **Disconf**、Spirng的 **Spring Cloud Config**、携程的 **Apollo**、阿里的 **Nacos**、网飞的 **Eureka**等。
+
+结合网络上的综合评价来看总，作为配置中心的话，Apollo 和 Nacos 相对于 Spring Cloud Config 的生态支持更广，在配置管理流程上做的更好。Apollo 相对于 Nacos 在配置管理做的更加全面，不过使用起来也要麻烦一些。Nacos 使用起来相对比较简洁，在对性能要求比较高的大规模场景更适合。在注册中心上来看，Eureka 在跨区域部署和大规模集群上可能面临一些性能和可扩展性方面的挑战，并且在广泛的生态上来看， Nacos 是更好的选择。结合双方的优点，Nacos 非常适合作为微服务学习的第一选择，想要更加详细了解 Nacos 请点击下方官网链接访问。
 
 ```card
 title: Nacos 中文官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos_colorful.png
+logo: /assets/images/study/backend/java/micro-services/nocas/nacos_colorful.png
 link: https://nacos.io/zh-cn/index.html
 color: rgba(173, 216, 590, 0.15)
 ```
@@ -85,14 +92,14 @@ spring:
         username: nacos
         password: nacos
 ```
-![Nacos 登录界面](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-server-list.png "服务注册成功")
+![Nacos 登录界面](/assets/images/study/backend/java/micro-services/nocas/nacos-server-list.png "服务注册成功")
 
 ### Nacos服务端集群模式启动
 
-![Nacos 集群](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-cluster.jpg "集群部署架构图")
+![Nacos 集群](/assets/images/study/backend/java/micro-services/nocas/nacos-cluster.jpg "集群部署架构图")
 
 上图是从网络上找到的 Nacos 集群图，其实在官网也有集群部署的说明，但是没有展示出 Nacos 集群和数据交互的部分，但是在安全性方面，官网推荐**域名 + SLB模式**(内网SLB，不可暴露到公网，以免带来安全风险)，可读性好，而且换 ip 方便。不过我们先不讨论网关的部分，因为如果牵扯到网关到底是使用微服务网关（Netflix Zuul、Spring Cloud Gateway）还是 Nginx 还需要根据我们项目 API 管控治理能力的大小来决定。搭建 Nacos 集群我们需要使用先修改一下安装目录中 cong 下的 cluster.conf.exemple 文件，可以直接将该文件的 .exemple 后缀去掉后按照文件中例子添加自己创建的 Nacos 节点的 ip 和 port，至于数据源配置如果使用内置数据源则不需要修改，如果使用外置数据源则全部按照单机启动的部分配置成自己的数据库参数即可。**_这里如果使用的的单机多端口搭建集群的话注意，使用 nacos2.0 之后需要开放两个8848偏移后的端口_**。
 
-![Nacos 集群节点](/assets/images/study/backend/java/spring-cloud-alibaba/nocas/nacos-node.png "Nacos 集群节点列表")
+![Nacos 集群节点](/assets/images/study/backend/java/micro-services/nocas/nacos-node.png "Nacos 集群节点列表")
 
 这个时候启动我们的注册服务会发现每个 Nacos 节点内都可以看到注册服务，Nacos 集群就搭建完成了。

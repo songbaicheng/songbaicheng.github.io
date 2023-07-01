@@ -42,7 +42,7 @@ Spring Boot Admin 可以选择和服务注册中心搭配使用，当与服务�
 #### 简单配置
 启动类增加```@EnableAdminServer```注解，启动后访问项目根目录即自动跳转服务端界面。
 
-![Spring Boot admin 主页](/assets/images/study/backend/java/spring-cloud-alibaba/spring-boot-admin/admin-home.png "Spring Boot admin 主页")
+![Spring Boot admin 主页](/assets/images/study/backend/java/micro-services/spring-boot-admin/admin-home.png "Spring Boot admin 主页")
 
 ### 客户端
 #### 引入依赖
@@ -71,6 +71,6 @@ management:
       exposure:
         include: '*' # 暴露给监控全部接口
 ```
-![客户端服务注册](/assets/images/study/backend/java/spring-cloud-alibaba/spring-boot-admin/admin-wallboard.png "客户端服务注册")
+![客户端服务注册](/assets/images/study/backend/java/micro-services/spring-boot-admin/admin-wallboard.png "客户端服务注册")
 
-![客户端服务详情](/assets/images/study/backend/java/spring-cloud-alibaba/spring-boot-admin/admin-details.png "客户端服务详情")
+![客户端服务详情](/assets/images/study/backend/java/micro-services/spring-boot-admin/admin-details.png "客户端服务详情")

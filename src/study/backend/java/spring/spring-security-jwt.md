@@ -39,7 +39,7 @@ tag:
 ```card
 title: JWT 官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/backend/java/spring-boot/spring-security/jwt.svg
+logo: /assets/images/study/backend/java/spring/spring-security/jwt.svg
 link: https://jwt.io/
 color: rgba(173, 216, 590, 0.15)
 ```
