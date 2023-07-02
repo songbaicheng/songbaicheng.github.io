@@ -11,11 +11,11 @@ heroFullScreen: true
 projects:
   - icon: java
     name: cloud-mall
-    desc: a mall project used spirng cloud alibaba
+    desc: a mall project used spring cloud alibaba
     link: https://github.com/songbaicheng/cloud-mall
   - icon: vue
     name: vue-mall
-    desc: a mall project used spirng cloud alibaba
+    desc: a mall project used vue
     link: https://github.com/songbaicheng/vue-mall
 
 footer: 风起于青萍之末  浪成于微澜之间

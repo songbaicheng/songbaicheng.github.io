@@ -24,7 +24,7 @@ color: rgba(173, 216, 590, 0.15)
 
 Spring Security 的重点是对所有进入系统的请求进行拦截，校验其是否可以访问其所期望的资源。而 Spring Security 对于 Web 资源的保护都是通过 Filter 进行保护的，而这些 Filter 都是通过注入到 Spring 容器中的 SecurityFilterChain 过滤器链来实现的，
 
-![Spring Security 流程图](/assets/images/study/backend/java/spirng/spring-security/spring-security-process.png "Spring Security 流程图")
+![Spring Security 流程图](/assets/images/study/backend/java/spring/spring-security/spring-security-process.png "Spring Security 流程图")
 
 ## 快速开始
 ### 引入依赖
