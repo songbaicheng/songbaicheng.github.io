@@ -30,6 +30,7 @@ export const studySidebar = arraySidebar([
                     '/study/backend/java/spring/spring-security.md',
                     '/study/backend/java/spring/spring-security-jwt.md',
                     '/study/backend/java/spring/spring-security-oauth2.md',
+                    '/study/backend/java/spring/spring-boot-logging.md',
                 ],
             },
             {
