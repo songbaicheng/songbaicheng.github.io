@@ -49,8 +49,8 @@ export const studySidebar = arraySidebar([
         icon: 'storage',
         collapsible: true,
         children: [
-            '/study/backend/persistence/README.md',
-            '/study/backend/persistence/redis.md'
+            '/study/persistence/README.md',
+            '/study/persistence/redis.md'
         ]
     },
     {
