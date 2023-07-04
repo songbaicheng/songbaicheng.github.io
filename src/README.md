@@ -17,6 +17,10 @@ projects:
     name: vue-mall
     desc: a mall project used vue
     link: https://github.com/songbaicheng/vue-mall
+  - icon: code
+    name: study-demo
+    desc: Demo records during the learning process.
+    link: https://github.com/songbaicheng/study-demo
 
 footer: 风起于青萍之末  浪成于微澜之间
 ---
