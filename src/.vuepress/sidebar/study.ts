@@ -70,15 +70,18 @@ export const studySidebar = arraySidebar([
         ]
     },
     {
-        text: '算法',
-        icon: 'calculate',
-        collapsible: true,
-        children: ['/study/ads/algorithms/README.md']
-    },
-    {
         text: '数据结构',
         icon: 'tree',
         collapsible: true,
         children: ['/study/ads/data-structure/README.md']
-    }
+    },
+    {
+        text: '算法',
+        icon: 'calculate',
+        collapsible: true,
+        children: [
+            '/study/ads/algorithms/README.md',
+            '/study/ads/algorithms/leetcode.md',
+        ]
+    },
 ])
