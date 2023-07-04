@@ -39,22 +39,11 @@ logging:
 ![默认日志格式](/assets/images/study/backend/java/spring/spring-boot-logging/spring-boot-log-format.png "Spring Boot 默认日志格式")
 
 - 日期和时间：毫秒精度且易于排序。
-- 日志级别：ERROR、WARN、INFO、DEBUG或TRACE。
+- 日志级别：TRACE, DEBUG, INFO, WARN, ERROR, FATAL，要知道 Logback 没有 FATAL 级别，它被映射到 ERROR 里。
 - 线程名称：用方括号括起来（可能会被截断以用于控制台输出）。
 - 记录器名称：这通常是源类名称（通常是缩写）。
 - 日志消息：对应你代码中答应的日志信息。
 
-### 日志等级
-默认日志配置会在写入消息时将消息回显到控制台，如果您的终端支持 ANSI，则会使用颜色输出来提高可读性，下面是每种日志登记显示的颜色。
-
-| 日志等级 | 颜色 | 备注 |
-| :---: | :---: | --- |
-| FATAL | 红色 | Logback 没有 FATAL 级别，它被映射到 ERROR。 |
-| ERROR | 红色 | |
-| WARN | 黄色 | |
-| INFO | 绿色 | |
-| DEBUG | 绿色 | |
-| TRACE | 绿色 | |
 
 ## 实际使用
 在我工作中正常服务器的日志使用的话，通常是搭配 pom.xml 来构建多环境打包的方案，使用 logback.xml 搭配一些输出类型进行输出日志文件，常用的输出类型有以下几种：

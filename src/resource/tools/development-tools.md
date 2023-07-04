@@ -100,3 +100,15 @@ logo: /assets/images/resource/tools/development-tools/redisinsigh.svg
 link: https://redis.com/redis-enterprise/redis-insight/
 color: rgba(173, 216, 590, 0.15)
 ```
+
+## Tabby
+
+这个工具也是最近在社区里火起来的，打着 “A terminal for a more modern age” 的大旗，那就让我康康你有多 modern 。其实我自己是卸载过一次的，当时还是刚用 Mac 不久，几乎找教程都是在用 iTerm2 + Oh My Zsh 这一套，而且第一次用 Tabby 真是没用明白，可是最近又刷到了它，就好奇又下载下来用了，虽然内置的也是用 zsh 的界面，无非就是 iterm 的换壳版，而且还不支持一些系统状态的展示，但是它在 SSH Client 方面可太香了，直接就是 terminal 和 XShell 的合体版本，而且界面真的干爽，建议一上来还是用中文的熟悉一下设置，要不然也会像我第一次一样错过好工具。
+
+```card
+title: Tabby 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/tabby.svg
+link: https://tabby.sh/
+color: rgba(173, 216, 590, 0.15)
+```
