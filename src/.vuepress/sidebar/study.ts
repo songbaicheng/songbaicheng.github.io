@@ -58,7 +58,10 @@ export const studySidebar = arraySidebar([
         text: '前端技术',
         icon: 'chrome',
         collapsible: true,
-        children: ['/study/frontend/README.md']
+        children: [
+            '/study/frontend/README.md',
+            '/study/frontend/language/typescript.md',
+        ]
     },
     {
         text: '设计模式',
