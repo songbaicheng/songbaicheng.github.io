@@ -3,7 +3,7 @@ import { arraySidebar } from "vuepress-theme-hope";
 export const studySidebar = arraySidebar([
     {
         text: '开发技能',
-        icon: 'computer',
+        icon: 'more',
         collapsible: true,
         children: [
             '/study/development/READNE.md'
@@ -89,6 +89,15 @@ export const studySidebar = arraySidebar([
         children: [
             '/study/ads/algorithms/README.md',
             '/study/ads/algorithms/leetcode.md',
+        ]
+    },
+    {
+        text: 'Linux 运维',
+        icon: 'linux',
+        collapsible: true,
+        children: [
+            '/study/maintenance/README.md',
+            '/study/maintenance/1panel.md',
         ]
     },
 ])
