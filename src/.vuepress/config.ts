@@ -1,4 +1,5 @@
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { searchProPlugin } from 'vuepress-plugin-search-pro';
 import { defineUserConfig } from "vuepress";
 import theme from "./theme";
 
@@ -30,5 +31,11 @@ export default defineUserConfig({
     //   indexName: 'songbaichengio',
     //   appId: 'XLRE2KQH6J',
     // }),
+    searchProPlugin({
+      // 配置选项
+      autoSuggestions: true,
+      // 自定义热键
+      hotKeys: [{ key: 'k', ctrl: true }],
+    }),
   ],
 });
