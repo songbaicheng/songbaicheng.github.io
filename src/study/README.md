@@ -77,3 +77,94 @@ root((Java 学习路线))
     代码质量检查
       sonar
 ```
+
+```mindmap
+root((前端开发学习路线))
+  三剑客
+    HTML
+      常用标签
+      常用属性
+      HTML5
+    CSS
+      选择器
+      盒模型
+      定位
+      布局
+      CSS3
+    JavaScript
+      语法基础
+      函数
+      对象
+      BOM
+      DOM
+      网络请求
+      ES6
+  封装/工具库
+    数据可视化
+      Highcharts
+      Echarts
+      AntV
+      D3.js
+    UI框架
+      Bootstrap
+      Layui
+      Semantic UI
+      Foundation
+    编辑器
+      TinyMCE
+      UEditor
+      CKEditor
+      Draft.js
+      Slate.js
+    组件库
+      Element
+      iView
+      antd
+      Material UI
+    动画
+      Animate.css
+      Anime.js
+      mo.js
+    mock数据
+    实用工具库
+      UnderScore
+      Lodash
+      Moment.js
+    字体/图标
+      Font Awesome
+      Iconfont
+  前端工程化
+    Node.js
+    组件化开发
+      Vue
+      React
+      Angular
+    构建工具
+      Grunt
+      Gulp
+    打包工具
+      Webpack
+      Rollup
+      Snowpack
+    校验/格式化/规范化
+      ESlint
+      Prettier
+    测试框架
+      Jest
+      Mocha
+    前端性能
+      性能指标
+      性能测试
+      性能优化方案
+  多端/跨端/融合
+    移动端/小程序
+      React Native
+      Weex
+      Taro
+      uniapp
+      Chameleon
+      Flutter
+    桌面应用
+      Electron
+      NW.js
+```
