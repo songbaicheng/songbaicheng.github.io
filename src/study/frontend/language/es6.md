@@ -385,3 +385,31 @@ let proxy = new Proxy(exam, handler)
 proxy.name = "Jerry"
 proxy.name // "Jerry"
 ```
+
+### 函数
+这里我们主要介绍一下**箭头函数**，它提供了一种更加简洁的函数书写方式，基本语法是：参数 => 函数体。并且箭头函数体中的 this 对象，是定义函数时的对象，而不是使用函数时的对象。
+
+```js
+// 回调函数
+var Person = {
+    'age': 18,
+    'sayHello': function () {
+      setTimeout(function () {
+        console.log(this.age);
+      });
+    }
+};
+var age = 20;
+Person.sayHello();  // 20
+ 
+var Person1 = {
+    'age': 18,
+    'sayHello': function () {
+      setTimeout(()=>{
+        console.log(this.age);
+      });
+    }
+};
+var age = 20;
+Person1.sayHello();  // 18
+```
