@@ -321,3 +321,67 @@ var a = new Set([1, 2, 3]);
 var b = new Set([4, 3, 2]);
 var difference = new Set([...a].filter(x => !b.has(x))); // {1}
 ```
+
+### Reflect 与 Proxy
+#### Proxy
+可以对目标对象的读取、函数调用等操作进行拦截，然后进行操作处理。它不直接操作对象，而是像代理模式，通过对象的代理对象进行操作，在进行这些操作时，可以添加一些需要的额外操作。
+
+```js
+let target = {
+    name: 'Tom',
+    age: 24
+}
+let handler = {
+    get: function(target, key) {
+        console.log('getting '+key);
+        return target[key]; // 不是target.key
+    },
+    set: function(target, key, value) {
+        console.log('setting '+key);
+        target[key] = value;
+    }
+}
+
+let proxy = new Proxy(target, handler)
+proxy.name     // 实际执行 handler.get
+proxy.age = 25 // 实际执行 handler.set
+```
+
+#### Reflect
+可以用于获取目标对象的行为，它与 Object 类似，但是更易读，为操作对象提供了一种更优雅的方式。它的方法与 Proxy 是对应的。
+
+```js
+// 定义对象
+let exam = {
+    name: "Tom",
+    age: 24,
+    get info(){
+        return this.name + this.age;
+    }
+}
+
+Reflect.get(exam, 'name'); // "Tom"
+```
+
+#### 组合使用
+```js
+// 定义一个对象
+let exam = {
+    name: "Tom",
+    age: 24
+}
+// 定义拦截方法
+let handler = {
+    get: function(target, key){
+        console.log("getting " + key);
+        return Reflect.get(target, key);
+    },
+    set: function(target, key, value){
+        console.log("setting " + key + " to " + value)
+        Reflect.set(target, key, value);
+    }
+}
+let proxy = new Proxy(exam, handler)
+proxy.name = "Jerry"
+proxy.name // "Jerry"
+```
