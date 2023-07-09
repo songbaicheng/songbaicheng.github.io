@@ -390,7 +390,7 @@ proxy.name // "Jerry"
 这里我们主要介绍一下**箭头函数**，它提供了一种更加简洁的函数书写方式，基本语法是：参数 => 函数体。并且箭头函数体中的 this 对象，是定义函数时的对象，而不是使用函数时的对象。
 
 ```js
-// 回调函数
+// 正常
 var Person = {
     'age': 18,
     'sayHello': function () {
@@ -402,6 +402,7 @@ var Person = {
 var age = 20;
 Person.sayHello();  // 20
  
+ // 箭头函数
 var Person1 = {
     'age': 18,
     'sayHello': function () {
@@ -412,4 +413,62 @@ var Person1 = {
 };
 var age = 20;
 Person1.sayHello();  // 18
+```
+
+### Class 类
+在ES6中，class (类)作为对象的模板被引入，可以通过 class 关键字定义类。class 的本质是 function，它可以看作一个语法糖，让对象原型的写法更加清晰、更像面向对象编程的语法。
+
+```js
+// 匿名类
+let Example = class {
+    constructor(a) {
+        this.a = a;
+    }
+}
+// 命名类
+let Example = class Example {
+    constructor(a) {
+        this.a = a;
+    }
+}
+```
+
+要注意：类不可以重复声明；类定义不会被提升，这意味着，必须在访问前对类进行定义，否则就会报错；类中方法不需要 function 关键字，方法间也不能加分号；类的实例化需要 new 关键字。
+
+```js
+class Example {
+    constructor(a, b) {
+        this.a = a;
+        this.b = b;
+        console.log('Example');
+    }
+    sum() {
+        return this.a + this.b;
+    }
+}
+let exam1 = new Example(2, 1);
+let exam2 = new Example(3, 1);
+```
+
+ES6 的类也有类似封装和继承的概念，不过类中的 getter 与 setter 必须同级出现。通过 extends 实现类的继承，子类 constructor 方法中必须有 super ，且必须出现在 this 之前。
+
+```js
+class Father {
+    constructor(){}
+    // 或者都放在子类中
+    get a() {
+        return this._a;
+    }
+    set a(a) {
+        this._a = a;
+    }
+}
+class Child extends Father {
+    constructor(){
+        super();
+    }
+}
+let test1 = new Child();
+test1.a = 2;
+console.log(test1.a); // 2
 ```
