@@ -62,7 +62,6 @@ export const studySidebar = arraySidebar([
             '/study/frontend/README.md',
             '/study/frontend/language/es6.md',
             '/study/frontend/language/typescript.md',
-            '/study/frontend/package-managers/vite.md',
             '/study/frontend/framework/vue3.md',
             '/study/frontend/framework/pinia.md',
         ]
