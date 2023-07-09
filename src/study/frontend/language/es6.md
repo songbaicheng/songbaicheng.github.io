@@ -2,10 +2,10 @@
 star: true
 category: 前端
 tag: 
-  - ES6
+  - ES6+
 ---
 
-# ECMAScript 6.0 
+# ECMAScript 6+
 ## 知识总览
 
 ```mindmap
@@ -472,3 +472,92 @@ let test1 = new Child();
 test1.a = 2;
 console.log(test1.a); // 2
 ```
+
+### 模块
+ES6 引入了模块化，分为导出（export） @与导入（import）两个模块，其设计思想是在编译时就能确定模块的依赖关系，以及输入和输出的变量。
+
+```js
+// 正常导入导出
+// 导出
+let myName = "Tom";
+export { myName as exportName }
+// 导入
+import { exportName } from "./test.js";
+console.log(exportName);// Tom
+
+// export default
+// 导出
+var a = "My name is Tom!";
+export default a; // export default 仅有一个
+
+// 导入
+import b from "./xxx.js"; // 不需要加{}， 使用任意变量接收
+```
+
+### Promise 对象
+Promise 对象是异步编程的一种解决方案，从它可以获取异步操作的消息。Promise 异步操作有三种状态：pending（进行中）、fulfilled（已成功）和 rejected（已失败），而且只有从 pending 变为 fulfilled 和从 pending 变为 rejected 的状态改变。只要处于 fulfilled 和 rejected ，状态就不会再改变了。
+
+Promise 对象往往搭配 then 方法使用，then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise 执行失败时的回调，两个函数只会有一个被调用。搭配使用的时候要遵守链式编程的规则，保持扁平化，不要嵌套 Promise。
+
+```js
+const p = new Promise(function(resolve,reject){
+  resolve(1);
+}).then(function(value){ // 第一个then // 1
+  console.log(value);
+  return value * 2;
+}).then(function(value){ // 第二个then // 2
+  console.log(value);
+}).then(function(value){ // 第三个then // undefined
+  console.log(value);
+  return Promise.resolve('resolve'); 
+}).then(function(value){ // 第四个then // resolve
+  console.log(value);
+  return Promise.reject('reject'); 
+})
+.then(
+  function(value){ 
+    // 第五个then // reject:reject !!!这里不会打印,因为上一个then方法返回的是一个reject状态的promise
+    console.log('resolve:' + value);
+  }, 
+  function(err) {
+    // 此行会打印, 因第五个than只能接受 resolve状态的promise, 而第四个than返回的是reject状态的promise
+    // 所以会被本行 err 捕获
+    console.log('reject:' + err);
+  }
+);
+```
+
+### Generator 函数
+ES6 新引入了 Generator 函数，可以通过 yield 关键字，把函数的执行流挂起，为改变执行流程提供了可能，从而为异步编程提供解决方案。
+
+Generator 有两个区分于普通函数的部分：在 function 后面，函数名之前有个 * ；函数内部有 yield 表达式。调用 Generator 函数和调用普通函数一样，在函数名后面加上()即可，但是 Generator 函数不会像普通函数一样立即执行，而是返回一个指向内部状态对象的指针，所以要调用遍历器对象Iterator 的 next 方法，指针就会从函数头部或者上一次停下来的地方开始执行。
+
+```js
+function* func(){
+ console.log("one");
+ yield '1';
+ console.log("two");
+ yield '2'; 
+ console.log("three");
+ return '3';
+}
+
+let f = func();
+f.next();
+// one
+// {value: "1", done: false}
+ 
+f.next();
+// two
+// {value: "2", done: false}
+ 
+f.next();
+// three
+// {value: "3", done: true}
+ 
+f.next();
+// {value: undefined, done: true}
+```
+
+### async 函数
+看都没看明白，等我用明白了再说
