@@ -79,7 +79,10 @@ export const studySidebar = arraySidebar([
         text: '数据结构',
         icon: 'tree',
         collapsible: true,
-        children: ['/study/ads/data-structure/README.md']
+        children: [
+            '/study/ads/data-structure/README.md',
+            '/study/ads/data-structure/linear-list.md',
+        ]
     },
     {
         text: '算法',
