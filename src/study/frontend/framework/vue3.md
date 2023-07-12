@@ -17,7 +17,9 @@ tag:
 - 新增全局规则和针对插槽内容的规则
 - Suspense
 
-新特性还是非常多的，其中最直观也是最重要的就是 组合式API 的出现，它取代了 Vue2 的 选项式API 的风格，在灵活性和逻辑的复用性上有了很大的提升，官网也是推荐开发使用组合式 API + 单文件组件（SFC）的方式，所以我们也遵循此道来进行 Vue3 的学习
+新特性还是非常多的，其中最直观也是最重要的就是 组合式API 的出现，它取代了 Vue2 的 选项式API 的风格，在灵活性和逻辑的复用性上有了很大的提升，官网也是推荐开发使用组合式 API + 单文件组件（SFC）的方式，所以我们也遵循此道来进行 Vue3 的学习。
+
+> 所有的测试代码都在博客[首页](/README.md)中的 vue3-study-demo 中找到。
 
 ::: card
 ```card
@@ -37,3 +39,18 @@ color: rgba(173, 216, 590, 0.15)
 :::
 
 ## 快速开始
+确保在安装了最新版本的 Node.js，并且你的当前工作目录正是打算创建项目的目录下执行下面命令。
+
+```js
+npm init vue@latest
+```
+
+根据安装指引可能根据个人不同的选项初始化出目录结构不太相同的项目，但是我们只关注 Vue 的文件，我们只关注根目录中 src 里的文件。
+
+![初始化目录](/assets/images/study/frontend/framework/vue3/init-vue3-project.png "初始化目录" =300x500)
+
+我们把将目光聚集在 App.vue 这个文件上，作为 Vue 的全局入口文件，我们可以先把其他扰乱视线的东西删除，把它作为一个干净的单文件组件来写第一个 demo 案例。
+
+![第一个 Vue3 demo](/assets/images/study/frontend/framework/vue3/vue3-first-demo.png "第一个 Vue3 demo")
+
+根据项目中 package.json 的 scripts 的命令启动项目，就可以在网页得到一个点击就会增加的按钮了。
