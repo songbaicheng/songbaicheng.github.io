@@ -4,7 +4,7 @@ layout: BlogHome
 icon: blog # 主页图标
 title: 主页 # 导航栏文本
 heroImage: /icon/home-hero-image.svg # 主log by swent
-heroText: love and share # 主标题
+heroText: LOVE AND SHARE # 主标题
 heroFullScreen: true # 背景全屏显示
 bgImage: /icon/background.png # 日间背景图
 bgImageDark: /icon/background-dark.png # 夜晚背景图
