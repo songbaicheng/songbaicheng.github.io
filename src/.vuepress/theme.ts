@@ -4,17 +4,19 @@ import { Sidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
 
-  hostname: "https://github.com/songbaicheng/songbaicheng.github.io", // 当前网站部署到的域名
   author: {
     name: "songbaicheng", // 作者姓名
     url: "https://github.com/songbaicheng", // 作者网站
     email: "songbaicheng16@163.com" // 作者 Email
   },
+  hostname: "https://github.com/songbaicheng/songbaicheng.github.io", // 当前网站部署到的域名
   iconAssets: "iconfont",
   logo: "/icon/logo.png", // 网站左上角logo
   logoDark: "/icon/logo-dark.png",
   repo: "songbaicheng/songbaicheng.github.io", // github地址
   docsDir: "docs",
+  navbar: Navbar, // 导航栏
+  sidebar: Sidebar, // 侧边栏
 
   blog: { // 主题中日志模式配置
     name: 'songbaicheng', // 博主姓名
@@ -32,16 +34,14 @@ export default hopeTheme({
     articlePerPage: 10, // 每页的文章数量
   },
 
-  navbar: Navbar, // 导航栏
-
-  sidebar: Sidebar, // 侧边栏
+  encrypt: { // 文章加密
+    config: {
+      "/hobbies/": "songbaicheng",
+    }
+  },
 
   plugins: {
     blog: true,
-
-    comment: {
-      provider: "Giscus",
-    },
 
     // 主题中选择启用的功能
     mdEnhance: {
