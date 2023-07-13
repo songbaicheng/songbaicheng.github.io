@@ -15,3 +15,13 @@ tag:
 - 表中的元素具有抽象性。
 
 ## 基本操作
+- initList：初始化表，构造一个空的线性表。
+- length：求表长，返回线性表的长度即其中的元素个数。
+- locationElem：按值查找元素。
+- getElem：按位查找元素。
+- listInsert：插入操作。
+- listDelete：删除操作。
+- printList：输出操作。
+- empty：判空操作。
+- destoryList：销毁操作。
+
