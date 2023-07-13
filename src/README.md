@@ -26,6 +26,10 @@ projects:
     name: java-study-demo
     desc: Demo records during the learning process.
     link: https://github.com/songbaicheng/java-study-demo
+  - icon: typescript
+    name: typescript-study-demo
+    desc: Demo records during the learning process.
+    link: https://github.com/songbaicheng/typescript-study-demo
 
 footer: 风起于青萍之末  浪成于微澜之间
 ---

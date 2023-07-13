@@ -22,5 +22,13 @@ export const workTaskSidebar = arraySidebar([
             '/work-task/design/migrate-svn2git.md',
             '/work-task/design/environment-variable-configuration.md'
         ]
+    },
+    {
+        text: '开发问题',
+        icon: 'ask',
+        collapsible: true,
+        children: [
+            '/work-task/problems/README.md',
+        ]
     }
 ])
