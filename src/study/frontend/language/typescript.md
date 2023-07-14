@@ -80,6 +80,7 @@ console.log(booleand2) // true
 ```
 
 ### 数组类型
+数组中如果是any类型的可以用元组来代替。
 ```typescript
 // 在元素类型后面加上[]
 let arr: number[] = [1, 2];
@@ -88,6 +89,9 @@ let arr1: Array<number> = [1, 2];
 
 console.log(arr) // [ 1, 2 ]
 console.log(arr1) // [ 1, 2 ]
+
+// 多维数组
+let arr2: number[][] = [[1], [2]]
 ```
 
 ### 元组
@@ -155,4 +159,81 @@ let o4:Object = () => 123
 let o5: object = {}
 
 let n: {} = {}
+```
+## 接口 interface
+规定类型的属性模版。
+
+```typescript
+// 对象的接口
+interface father {
+    a: string
+}
+
+interface people extends father {
+    name: string
+    age: number
+    occupation?: string
+    [props: string]: any // 其他参数不做硬性需要
+}
+
+interface people {
+    tel: number
+}
+
+let p1: people = {
+    name: 'songbaicheng',
+    age: 23,
+    tel: 123456789,
+    occupation: '',
+    local: 'beijing',
+    a: 'fater'
+}
+
+console.log(p1)
+/**
+ * {
+ *  name: 'songbaicheng',
+ *  age: 23,
+ *  tel: 123456789,
+ *  occupation: '',
+ *  local: 'beijing',
+ *  a: 'fater'
+ * }
+ */
+
+// 函数的接口
+interface Fn {
+    (name: string): number[]
+}
+
+const fn: Fn = function(p: string) {
+    console.log(p)
+    return [1]
+}
+
+fn('songbaicheng')
+```
+
+## 函数
+```typescript
+// 基础类型参数
+function add(a: number, b: number): number {
+    return a + b
+}
+
+const sum = (a: number, b: number): number {
+    return a + b
+}
+
+console.log(add(1, 2))
+console.log(sum(3, 2))
+
+// 对象参数
+interface body {
+    name: string
+}
+
+const people = (a: body): void => console.log(a.name)
+
+people({ name: 'songbaicheng' })
 ```
