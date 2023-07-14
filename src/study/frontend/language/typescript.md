@@ -134,11 +134,25 @@ let u: undefined = undefined;
 ### never
 never 是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值。
 
-### any
-不明确的变量使用的一种数据类型。
+### any & unknown
+不明确的变量使用的一种数据类型。unknown更安全。
 ```typescript
 let arrayList: any[] = [1, false, 'fine'];
 arrayList[1] = 100;
 
 console.log(arrayList) // [ 1, 100, 'fine' ]
+```
+
+### Object & object & {}
+Object是一切对象的父类，object是所有的引用类型，而{}相当于 new Object的效果
+```typescript
+let o:Object = 123
+let o1:Object = '123'
+let o2:Object = []
+let o3:Object = {}
+let o4:Object = () => 123
+
+let o5: object = {}
+
+let n: {} = {}
 ```
