@@ -76,21 +76,28 @@ export const studySidebar = arraySidebar([
         ]
     },
     {
-        text: '数据结构',
-        icon: 'tree',
+        text: '计算机基础',
+        icon: 'computer',
         collapsible: true,
         children: [
-            '/study/ads/data-structure/README.md',
-            '/study/ads/data-structure/linear-list.md',
-        ]
-    },
-    {
-        text: '算法',
-        icon: 'calculate',
-        collapsible: true,
-        children: [
-            '/study/ads/algorithms/README.md',
-            '/study/ads/algorithms/leetcode.md',
+            {
+                text: '数据结构',
+                icon: 'tree',
+                collapsible: true,
+                children: [
+                    '/study/computer-basis/ads/data-structure/README.md',
+                    '/study/computer-basis/ads/data-structure/linear-list.md',
+                ]
+            },
+            {
+                text: '算法',
+                icon: 'calculate',
+                collapsible: true,
+                children: [
+                    '/study/computer-basis/ads/algorithms/README.md',
+                    '/study/computer-basis/ads/algorithms/leetcode.md',
+                ]
+            },
         ]
     },
     {

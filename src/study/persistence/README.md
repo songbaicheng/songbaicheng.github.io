@@ -7,7 +7,7 @@
 ```card
 title: db-engines 官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/backend/persistence/db-engines.png
+logo: /assets/images/study/persistence/db-engines.png
 link: https://db-engines.com/en/ranking
 color: rgba(173, 216, 590, 0.15)
 ```
