@@ -236,4 +236,54 @@ interface body {
 const people = (a: body): void => console.log(a.name)
 
 people({ name: 'songbaicheng' })
+
+// ts可以定义函数中this的类型，js中并不支持，如果要指定必须放在参数的第一位
+interface human {
+    occupations: string[]
+    add: (this: human, occupation: string) => void
+}
+
+const zhangsan: human = {
+    occupations: ['teacher'],
+    add(this: human, occupation: string) {
+        this.occupations.push(occupation)
+    }
+}
+
+zhangsan.add('work')
+console.log(zhangsan.occupations) // [ 'teacher', 'work' ]
 ```
+
+## 类型
+### 联合类型
+```typescript
+const getTel = (tel: number | string) => console.log(tel);
+
+getTel('010-12345456') // 010-12345456
+getTel(123456) // 123456
+```
+
+### 交叉类型
+```typescript
+interface OneType {
+    first: string
+}
+
+interface TwoType {
+    second: number
+}
+
+const mixType = (mix: OneType & TwoType) => console.log(mix)
+
+mixType({ first: 'songbaicheng', second: 23 }) // { first: 'songbaicheng', second: 23 }
+```
+
+### 类型断言
+```typescript
+let typeFn = (num: string | number) => console.log((num as string).length)
+
+typeFn(123) // undefined
+typeFn('123') // 3
+```
+
+## Class类
