@@ -226,3 +226,137 @@ public class SequenceList<T> implements Iterable<T> {
 :::
 
 ## 线性表的链式表示
+### 单链表
+线性表的链式存储又被称为单链表，指通过一组任意的存储单元来存储线性表中的数据元素，为了建立数据元素之间的线性关系，对于每个额链表的节点，除了存放元素自身外，还需要存放一个指向其后继的指针。
+
+```java
+public class LNode<T> {
+
+    /**
+     * 当前节点的值
+     */
+    public T data;
+    /**
+     * 下一个节点的指针
+     */
+    public LNode<T> next;
+
+    /**
+     * 初始化节点
+     * @param data 节点的值
+     */
+    LNode (T data) {
+        this.data = data;
+    }
+}
+```
+
+虽然单链表解决了顺序表需要大量连续存储单元的缺点，但是也因为存储附加指针域倒是浪费存储空间，正是是由于过于分散的存储，所以单链表是非随机存取的存储结构。
+
+我们通常用**头指针**来标识一个单链表，如果头指针为Null，则表示一个空表。注意，我们刚才提到的是**头指针**，与此相区别的定义是**头结点**，头结点是为了方便操作而在单链表第一个结点之前附加的一个结点，头结点的数据域可以不设任何信息，也可以记录表长等信息，而指针域则必须指向线性表的第一个元素结点。引入头结点之后有两个优点：
+1. 由于第一个数据结点的位置被存放在头结点的指针域中，因此在链表的第一个位置上的操作和在表中其他位置的操作一致。
+2. 无论链表是否为空，其头指针都是只想头结点的非空指针，所以空表和非空表得到了统一。
+
+### 头插法
+::: normal-demo 头插法
+```java
+/**
+  * 没有头结点的头插法
+  */
+@Test
+void headInsertNoHead() {
+    LNode<Integer> head = null;
+
+    for (int i = 0; i < 10; i++) {
+        LNode<Integer> node = new LNode<>(i);
+        node.next = head;
+        head = node;
+    }
+
+    while (head != null) {
+        System.out.println(head.data); // 9 8 7 6 5 4 3 2 1 0
+        head = head.next;
+    }
+}
+
+/**
+  * 有头结点的头插法
+  */
+@Test
+void headInsertWithHead() {
+    LNode<Integer> head = new LNode<>(null);
+
+    for (int i = 0; i < 10; i++) {
+        LNode<Integer> node = new LNode<>(i);
+        node.next = head.next;
+        head.next = node;
+    }
+
+    while (head != null) {
+        System.out.println(head.data); // null 9 8 7 6 5 4 3 2 1 0
+        head = head.next;
+    }
+}
+```
+:::
+
+### 尾插法
+```java
+/**
+  * 有头结点的尾插法
+  */
+@Test
+void tailInsertWithHead() {
+    LNode<Integer> head = new LNode<>(null);
+    // 方便每次找到插入点，创建尾结点指针
+    LNode<Integer> listFlag = head;
+
+    for (int i = 0; i < 10; i++) {
+        listFlag.next = new LNode<>(i);
+        listFlag = listFlag.next;
+    }
+
+    listFlag.next = null;
+
+    while (head != null) {
+        System.out.println(head.data); // null 0 1 2 3 4 5 6 7 8 9
+        head = head.next;
+    }
+}
+```
+
+### 查找第i个结点
+```java
+/**
+  * 查找第target个结点，假设有头结点
+  */
+private <T> T getById(LNode<T> head, int target) {
+
+    // 安全性校验
+    if (target < 0) {
+        return null;
+    }
+
+    LNode<T> currNode = head.next;
+    int flag = 1;
+
+    while (currNode != null && flag++ < target) {
+        currNode = currNode.next;
+    }
+
+    return currNode.data;
+}
+
+@Test
+void getByIdTest() {
+    LNode<Integer> head = new LNode<>(null);
+
+    for (int i = 0; i < 10; i++) {
+        LNode<Integer> node = new LNode<>(i);
+        node.next = head.next;
+        head.next = node;
+    }
+
+    System.out.println(getById(head, 5)); // 5
+}
+```
