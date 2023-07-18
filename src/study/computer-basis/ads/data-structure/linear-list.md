@@ -257,7 +257,7 @@ public class LNode<T> {
 1. 由于第一个数据结点的位置被存放在头结点的指针域中，因此在链表的第一个位置上的操作和在表中其他位置的操作一致。
 2. 无论链表是否为空，其头指针都是只想头结点的非空指针，所以空表和非空表得到了统一。
 
-### 头插法
+#### 头插法
 ::: normal-demo 头插法
 ```java
 /**
@@ -300,7 +300,8 @@ void headInsertWithHead() {
 ```
 :::
 
-### 尾插法
+#### 尾插法
+::: normal-demo 尾插法
 ```java
 /**
   * 有头结点的尾插法
@@ -324,8 +325,10 @@ void tailInsertWithHead() {
     }
 }
 ```
+:::
 
-### 查找第i个结点
+#### 查找第i个结点
+::: normal-demo 单链表查找第i个结点
 ```java
 /**
   * 查找第target个结点，假设有头结点
@@ -360,3 +363,4 @@ void getByIdTest() {
     System.out.println(getById(head, 5)); // 5
 }
 ```
+:::

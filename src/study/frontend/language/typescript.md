@@ -4,7 +4,7 @@ tag:
   - TypeScript
 ---
 
-# TypeScript
+# TypeScript + ES6+
 ## 前言
 
 TypeScript 与 JavaScript 有着不同寻常的关系。TypeScript 提供了 JavaScript 的所有功能，并在这些功能之上添加了一层：TypeScript 的类型系统,所以很多人都说 TS 是 JS 的超集。更多的细节详见官网，话不多说，我们直接开始准备工作。
@@ -287,3 +287,84 @@ typeFn('123') // 3
 ```
 
 ## Class类
+
+## 枚举类
+### 常规枚举
+```typescript
+enum Color1 {
+    RED,
+    BLUE,
+    YELLOW,
+    GREEN
+}
+
+console.log(Color1.RED) // 0
+console.log(Color1.BLUE) // 1
+console.log(Color1.YELLOW) // 2
+console.log(Color1.GREEN) // 3
+```
+
+### 递增枚举 & 自定义枚举
+```typescript
+enum Color2 {
+    RED = 2,
+    BLUE,
+    YELLOW = 6,
+    GREEN
+}
+
+console.log(Color2.RED) // 2
+console.log(Color2.BLUE) // 3
+console.log(Color2.YELLOW) // 6
+console.log(Color2.GREEN) // 7
+```
+
+### 字符串枚举
+```typescript
+enum Color3 {
+    RED = 'red',
+    BLUE = 'blue',
+    YELLOW = 'yellow',
+    GREEN = 'green'
+}
+
+console.log(Color3.RED) // red
+console.log(Color3.BLUE) // blue
+console.log(Color3.YELLOW) // yellow
+console.log(Color3.GREEN) // green
+```
+
+### 异构枚举
+```typescript
+enum isRight {
+    YES = 1,
+    NO = 'no'
+}
+
+console.log(isRight.YES) // 1
+console.log(isRight.NO) // no
+```
+
+### 反向映射
+```typescript
+enum Type {
+    SUCCESS,
+    ERROR
+}
+
+let value = Type.SUCCESS
+let key = Type[value]
+
+console.log(`key:${key}`, `value:${value}`) // value:0 key:SUCCESS
+```
+想要支持这种反向映射，对应的value值必须是number类型，string类型是不支持的，具体的实现可以看下面编译的js代码，如果为string类型，则不能定义默认的反向定义的值。
+```javascript
+var Type;
+(function (Type) {
+    Type[Type["SUCCESS"] = 0] = "SUCCESS";
+    Type[Type["ERROR"] = 1] = "ERROR";
+})(Type || (Type = {}));
+var value = Type.SUCCESS;
+var key = Type[value];
+console.log("key:".concat(key), "value:".concat(value));
+```
