@@ -484,3 +484,109 @@ let fun = <T extends object, K extends keyof T>(obj: T, key: K): void => {
 
 fun(obj, age)
 ```
+
+## tsconfig 文件
+::: normal-demo tsconfig 文件
+```
+{
+  "compilerOptions": {
+      /* 项目配置 */
+      "incremental": true,
+      "composite": true,
+      "tsBuildInfoFile": "./.tsbuildinfo",
+      "disableSourceOfProjectReferenceRedirect": true,
+      "disableSolutionSearching": true,
+      "disableReferencedProjectLoad": true,
+      /* 语言和环境配置 */
+      "target": "es2016",
+      "lib": [],
+      "jsx": "preserve",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "jsxFactory": "",
+      "jsxFragmentFactory": "",
+      "jsxImportSource": "",
+      "reactNamespace": "",
+      "noLib": true,
+      "useDefineForClassFields": true,
+      "moduleDetection": "auto",
+      /* 模块配置 */
+      "module": "commonjs",
+      "rootDir": "./",
+      "moduleResolution": "node10",
+      "baseUrl": "./",
+      "paths": {},
+      "rootDirs": [],
+      "typeRoots": [],
+      "types": [],
+      "allowUmdGlobalAccess": true,
+      "moduleSuffixes": [],
+      "allowImportingTsExtensions": true,
+      "resolvePackageJsonExports": true,
+      "resolvePackageJsonImports": true,
+      "customConditions": [],
+      "resolveJsonModule": true,
+      "allowArbitraryExtensions": true,
+      "noResolve": true,
+      /* js支持，不推荐js和ts混合使用 */
+      "allowJs": true,
+      "checkJs": true,
+      "maxNodeModuleJsDepth": 1,
+      /* Emit */
+      "declaration": true,
+      "declarationMap": true,
+      "emitDeclarationOnly": true,
+      "sourceMap": true,
+      "inlineSourceMap": true,
+      "outFile": "./",
+      "outDir": "./",
+      "removeComments": true,
+      "noEmit": true,
+      "importHelpers": true,
+      "importsNotUsedAsValues": "remove",
+      "downlevelIteration": true,
+      "sourceRoot": "",
+      "mapRoot": "",
+      "inlineSources": true,
+      "emitBOM": true,
+      "newLine": "crlf",
+      "stripInternal": true,
+      "noEmitHelpers": true,
+      "noEmitOnError": true,
+      "preserveConstEnums": true,
+      "declarationDir": "./",
+      "preserveValueImports": true,
+      /* Interop Constraints */
+      "isolatedModules": true,
+      "verbatimModuleSyntax": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "preserveSymlinks": true,
+      "forceConsistentCasingInFileNames": true,
+      /* 类型检查 */
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitThis": true,
+      "useUnknownInCatchVariables": true,
+      "alwaysStrict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "exactOptionalPropertyTypes": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUncheckedIndexedAccess": true,
+      "noImplicitOverride": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "allowUnusedLabels": true,
+      "allowUnreachableCode": true,
+      /* Completeness */
+      "skipDefaultLibCheck": true,
+      "skipLibCheck": true
+  }
+}
+```
+:::
