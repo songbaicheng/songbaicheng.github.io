@@ -263,6 +263,7 @@ public class LNode<T> {
 ```java
 /**
   * 没有头结点的头插法
+  * 每个结点的插入时间为O(1)，所以整条单链表的时间负责度为O(n)
   */
 @Test
 void headInsertNoHead() {
@@ -282,6 +283,7 @@ void headInsertNoHead() {
 
 /**
   * 有头结点的头插法
+  * 每个结点的插入时间为O(1)，所以整条单链表的时间负责度为O(n)
   */
 @Test
 void headInsertWithHead() {
@@ -306,6 +308,7 @@ void headInsertWithHead() {
 ```java
 /**
   * 有头结点的尾插法
+  * 每个结点的插入时间为O(1)，所以整条单链表的时间负责度为O(n)
   */
 @Test
 void tailInsertWithHead() {
@@ -333,6 +336,7 @@ void tailInsertWithHead() {
 ```java
 /**
 * 查找第target个结点，假设有头结点
+* 需要从头遍历单链表，时间负责度为O(n)
 */
 private <T> LNode<T> getById(LNode<T> head, int target) {
 
@@ -371,11 +375,50 @@ void getByIdTest() {
 ```
 :::
 
+#### 查找某个元素结点
+::: normal-demo 返回链表中第一个目标元素结点
+```java
+/**
+* 返回第一个element结点，假设有头结点
+* 需要从第一个节点开始遍历，时间复杂度为O(n)
+*/
+private <T> LNode<T> getElement(LNode<T> head, T element) {
+
+    LNode<T> currNode = head.next;
+
+    while (currNode != null && currNode.data != element) {
+        currNode = currNode.next;
+    }
+
+    return currNode;
+}
+
+@Test
+void getElementTest() {
+    LNode<Integer> head = new LNode<>(null);
+
+    for (int i = 0; i < 10; i++) {
+        LNode<Integer> node = new LNode<>(i);
+        node.next = head.next;
+        head.next = node;
+    }
+
+    LNode<Integer> lNode1 = getElement(head, 5);
+    assertNotNull(lNode1);
+    System.out.println(lNode1.data); // 5
+    LNode<Integer> lNode2 = getElement(head, 19);
+    assertNotNull(lNode2, "结点不存在！");
+    System.out.println(lNode2.data); // 结点不存在！
+}
+```
+:::
+
 #### 插入结点
 ::: normal-demo 插入结点操作
 ```java
 /**
 * 前插法插入结点
+* 需要从第一个节点开始遍历，时间复杂度为O(n)
 * @param head 单链表
 * @param target 插入位置
 * @param element 待插入元素
@@ -395,6 +438,7 @@ private <T> void frontInsertNode(LNode<T> head, int target, T element) {
 
 /**
 * 后插法插入结点
+* 需要从第一个节点开始遍历，时间复杂度为O(n)
 * @param head 单链表
 * @param target 插入位置
 * @param element 待插入元素
@@ -471,6 +515,7 @@ private <T> void frontDeleteNode(LNode<T> head, int target) {
 
 /**
 * 后删法删除目标结点
+* 需要从第一个节点开始遍历，时间复杂度为O(n)
 * @param head 单链表
 * @param target 目标顺序
 * @param <T> 元素类型
@@ -526,7 +571,8 @@ void deleteNodeTest() {
 ::: normal-demo 求表长
 ```java
 /**
-*
+* 求链表长度
+* 需要从第一个节点开始遍历，时间复杂度为O(n)
 * @param head 单链表
 * @param <T> 元素类型
 * @return 链表长度
@@ -559,3 +605,156 @@ void getListLengthTest() {
 :::
 
 ### 双链表
+为了克服访问单链表访问结点需要从头遍历的问题，引入了双链表的概念，双链表结点中有两个指针 prior 和 next，分别指向了前驱和后继结点，有了这两个指针的存在，插入和删除操作的时间复杂度仅为O(1)。
+
+> 这里说的“插入和删除操作的时间复杂度仅为O(1)”只是说插入和删除这个节点的过程复杂度为O(1)，而并不包括找到这个节点的过程。
+
+```java
+public class DNode<T> {
+
+    /**
+     * 当前节点的值
+     */
+    public T data;
+    /**
+     * 前驱指针
+     */
+    public DNode<T> prior;
+    /**
+     * 后继指针
+     */
+    public DNode<T> next;
+
+    /**
+     * 初始化节点
+     * @param data 节点的值
+     */
+    DNode (T data) {
+        this.data = data;
+        this.prior = null;
+        this.next = null;
+    }
+}
+```
+
+#### 双链表的插入
+::: normal-demo 双链表的插入
+```java
+/**
+* 双链表插入元素，有头结点
+* @param head 双链表
+* @param target 目标位置
+* @param element 待插入元素
+* @param <T> 元素类型
+*/
+private <T> void insertNode(DNode<T> head, int target, T element) {
+
+    // 安全性校验
+    if (target < 0) {
+        return;
+    }
+
+    DNode<T> flagNode = head.next;
+
+    for (int i = 1; i < target; i++) {
+        flagNode = flagNode.next;
+    }
+
+    if (flagNode == null || flagNode.next == null) {
+        return;
+    }
+
+    DNode<T> newNode = new DNode<>(element);
+    flagNode.next.prior = newNode;
+    newNode.next = flagNode.next;
+    newNode.prior = flagNode;
+    flagNode.next = newNode;
+}
+
+@Test
+void insertTest() {
+
+    DNode<Integer> head = new DNode<>(null);
+    DNode<Integer> flagNode = head;
+
+    for (int i = 0; i < 5; i++) {
+        DNode<Integer> newNode = new DNode<>(i);
+
+        flagNode.next = newNode;
+        newNode.prior = flagNode;
+        flagNode = flagNode.next;
+    }
+
+    insertNode(head, 3, 9);
+
+    while (head != null) {
+        System.out.println(head.data); // null 0 1 2 9 3 4
+        head = head.next;
+    }
+}
+:::
+
+#### 双链表的删除
+::: normal-demo 双链表的删除
+```java
+/**
+* 双链表删除元素，有头结点
+* @param head 双链表
+* @param target 目标位置
+* @param <T> 元素类型
+*/
+private <T> void deleteNode(DNode<T> head, int target) {
+
+    // 安全性校验
+    if (target < 0) {
+        return;
+    }
+
+    DNode<T> flagNode = head.next;
+
+    for (int i = 1; i < target; i++) {
+        flagNode = flagNode.next;
+    }
+
+    if (flagNode == null || flagNode.next == null) {
+        return;
+    }
+
+    flagNode.next = flagNode.next.next;
+    flagNode.next.prior = flagNode;
+}
+
+@Test
+void insertTest() {
+
+    DNode<Integer> head = new DNode<>(null);
+    DNode<Integer> flagNode = head;
+
+    for (int i = 0; i < 5; i++) {
+        DNode<Integer> newNode = new DNode<>(i);
+
+        flagNode.next = newNode;
+        newNode.prior = flagNode;
+        flagNode = flagNode.next;
+    }
+
+    deleteNode(head, 2);
+
+    while (head != null) {
+        System.out.println(head.data); // null 0 2 3 4
+        head = head.next;
+    }
+}
+:::
+
+### 循环链表
+#### 循环单链表
+循环单链表和单链表的区别就是最后一个结点的指针不是 Null 而是改为指向头指针，从而使链表形成一个环状。这个时候的判空操作就是头结点的指针是否为头结点。
+
+因为循环单链表是一个“环”，因此在任何一个位置上的插入和删除都是等价的，无需判断表尾，而且每次操作无需寻找表头，可以从任意结点开始遍历。有时对循环单链表不设置头指针而设置尾指针，因为设置尾指针可以直用next找到头指针并且可以直接在队尾插入元素，省去了在头指针遍历的麻烦。
+
+#### 循环双链表
+照葫芦画瓢，循环双链表即为头结点的prior指向尾结点，尾结点的next指向头结点。这时的判空条件为头结点的prior和next都为本身。
+
+### 静态链表
+静态链表借助数组来描述线性表的链式存储结构，结点也有数据域和指针域，不过这里的指针用数组的下标来代替，又称为游标，因为是数组的原因，静态链表也需要一块连续的内存空间。
