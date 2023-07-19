@@ -164,6 +164,7 @@ let o5: object = {}
 
 let n: {} = {}
 ```
+
 ## 接口 interface
 规定类型的属性模版。
 
@@ -371,4 +372,66 @@ var Type;
 var value = Type.SUCCESS;
 var key = Type[value];
 console.log("key:".concat(key), "value:".concat(value));
+```
+
+## Symbol
+```typescript
+let key1: symbol = Symbol(1)
+let key2: symbol = Symbol(1)
+
+let obj = {
+    [key1]: 'value',
+    [key2]: 'value',
+    key: 'value',
+}
+
+for (let key in obj) {
+    console.log(key) // key
+}
+
+console.log(Object.keys(obj)) // [ 'key' ]
+
+console.log(Object.getOwnPropertySymbols(obj)) // [ Symbol(1), Symbol(1) ]
+
+console.log(Reflect.ownKeys(obj)) // [ 'key', Symbol(1), Symbol(1) ]
+```
+
+### 迭代器
+for of 循环就是支持存在 iterator 的结构遍历的语法糖，像Set,Map,String,Array。而for in额外支持对象的遍历，而且for in在便利数组的时候遍历的是数组的下标，而for of则是每个数组的值。
+
+```typescript
+let set: Set<number> = new Set([1, 1, 2, 2, 3, 3, 4, 4, 5, 5])
+
+let map: Map<string, number> = new Map()
+map.set('one', 1)
+map.set('two', 2)
+map.set('three', 3)
+
+let arrs = [1, 2, 3, 4, 5, 6, 7]
+
+// 手动实现通用迭代器
+const each = (col: any) => {
+    let iterator: any = col[Symbol.iterator]()
+    let next: any = { done: false }
+
+    while (!next.done) {
+        next = iterator.next()
+
+        if (!next.done) {
+            console.log(next.value)
+        }
+    }
+}
+
+each(set) // 1 2 3 4 5 
+each(map) // [ 'one', 1 ][ 'two', 2 ][ 'three', 3 ]
+each(arrs) // 1 2 3 4 5 6 7
+
+for (let key of arrs) {
+    console.log(key) // 1 2 3 4 5 6 7
+}
+
+for (let key in arrs) {
+    console.log(key) // 0 1 2 3 4 5 6
+}
 ```
