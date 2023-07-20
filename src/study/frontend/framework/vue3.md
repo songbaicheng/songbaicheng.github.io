@@ -73,3 +73,51 @@ function increment() {
 这样我们就得到了一个最简单的自增按钮的界面，至于其中的setup、ref等“新面孔”在下面的学习里再缓缓道来。
 
 ## 三种书写风格
+Vue3 支持三种书写风格，一种是延续 Vue2 的 Option API，这种可以让有 Vue2 基础的人无缝衔接 Vue3 的开发；第二种是使用 Vue3 提供的 setup 函数来实现，setup 函数中的代码会在每次组件实例被创建的时候执行，并且能直接在模版中直接使用；第三种方式则是 Vue3 提供的 setup 函数的语法糖，也是比较推荐和以后常用的方式。
+
+### Option API
+```vue
+<template>
+    {{ name }}
+</template>
+    
+<script>
+export default {
+    data() {
+        return {
+            name: 'songbaicheng'
+        }
+    }
+}
+</script>
+```
+
+### setup()
+```vue
+<template>
+    {{ name }}
+</template>
+    
+<script>
+export default {
+    setup() {
+        const name = 'songbaicheng'
+
+        return {
+            name
+        }
+    }
+}
+</script>
+```
+
+###  ```<script setup>```
+  ```vue
+<template>
+    {{ name }}
+</template>
+    
+<script setup>
+const name = 'songbaicheng'
+</script>
+```
