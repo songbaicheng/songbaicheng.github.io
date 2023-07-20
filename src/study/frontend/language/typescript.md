@@ -595,3 +595,33 @@ fun(obj, age)
 :::
 
 ## 声明文件 _d.ts_
+这里的d指的是关键字 _declare_，这是在使用第三方库的时候引入其声明文件使代码获得对应补全和接口提示。目前我创建Vue3+TS模版的时候，就会有很多包引用不到，这都是TS不认识.vue文件和一些变量没有用declare声明的原因。
+
+## Mixins 混入
+### 对象混入
+```typescript
+interface Name {
+    name: string
+}
+
+interface Age {
+    age: number
+}
+
+interface Sex {
+    sex: number
+}
+
+let one: Name = { name: 'songbaicheng' }
+let two: Age = { age: 23 }
+let three: Sex = { sex: 1 }
+
+const obj = Object.assign(one, two, three)
+console.log(obj) // { name: 'songbaicheng', age: 23, sex: 1 }
+```
+
+### 类混入
+```typescript
+```
+
+## 装饰器 Decorator
