@@ -121,3 +121,6 @@ export default {
 const name = 'songbaicheng'
 </script>
 ```
+
+## 指令
+### v-text
