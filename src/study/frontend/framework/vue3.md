@@ -1,4 +1,5 @@
 ---
+star: true
 category: 前端
 tag: 
   - Vue3
@@ -51,6 +52,24 @@ npm init vue@latest
 
 我们把将目光聚集在 App.vue 这个文件上，作为 Vue 的全局入口文件，我们可以先把其他扰乱视线的东西删除，把它作为一个干净的单文件组件来写第一个 demo 案例。
 
-![第一个 Vue3 demo](/assets/images/study/frontend/framework/vue3/vue3-first-demo.png "第一个 Vue3 demo")
+``` vue
+<script setup>
+import { ref } from 'vue'
 
-根据项目中 package.json 的 scripts 的命令启动项目，就可以在网页得到一个点击就会增加的按钮了。
+const count = ref(0)
+
+function increment() {
+  count.value++
+}
+</script>
+
+<template>
+  <button @click="increment">
+    {{ count }}
+  </button>
+</template>
+```
+
+这样我们就得到了一个最简单的自增按钮的界面，至于其中的setup、ref等“新面孔”在下面的学习里再缓缓道来。
+
+## 三种书写风格
