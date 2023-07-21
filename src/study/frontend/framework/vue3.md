@@ -124,3 +124,125 @@ const name = 'songbaicheng'
 
 ## 指令
 ### v-text
+```vue
+<script setup>
+let context = 'my name is songbaicheng'
+</script>
+
+<template>
+    <div v-text="context" />
+</template>
+```
+
+### v-html
+```vue
+<script setup>
+let context = '<h1 style="font-weight: bold">my name is songbaicheng</h1>'
+</script>
+
+<template>
+    <div v-html="context" />
+</template>
+```
+
+### v-if
+v-else-if 和 v-else 的上一个兄弟元素必须有 v-if 或 v-else-if，而且 v-else 无需传入表达式。如果是 false Vue 会把你的标签注释掉达到隐藏的效果。
+```vue
+<script setup lang="ts">
+let typeFlag: string = 'A'
+</script>
+
+<template>
+    <div v-if="typeFlag === 'A'">
+        A
+    </div>
+    <div v-else-if="typeFlag === 'B'">
+        B
+    </div>
+    <div v-else-if="typeFlag === 'C'">
+        C
+    </div>
+    <div v-else>
+        Not A/B/C
+    </div>
+</template>
+```
+
+### v-show
+相比于 v-if，如果是 false Vue 会把标签增加```display: none;```样式，效率更高。
+```vue
+<script setup lang="ts">
+let trueFlag: boolean = true
+let falseFlag: boolean = false
+</script>
+
+<template>
+    <span v-show="trueFlag">
+        事了拂衣去
+    </span>
+    <span v-show="falseFlag">
+        深藏功与名
+    </span>
+</template>
+```
+
+### v-on
+一般平时我都是使用 @ 符号代替 v-on 来简写。v-on也提供很多方法，比如：
+- once： 只点击一次
+- stop： 阻止事件冒泡
+```vue
+<script setup lang="ts">
+let sout = () => {
+    console.log('我是父级！')
+}
+let click = () => {
+    alert('你好！')
+}
+</script>
+
+<template>
+    <div @:click="sout">
+        <button @:click.stop="click">欢迎光临</button>
+    </div>
+</template>
+```
+
+### v-bind
+```vue
+<script setup lang="ts">
+let style = { color: 'red' }
+</script>
+
+<template>
+<div :style="style">
+    bind绑定样式
+</div>
+</template>
+```
+
+### v-model
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+
+let name = ref('songbaicheng')
+</script>
+
+<template>
+<input v-model="name" type="text" />
+<span>{{ name }}</span>
+</template>
+```
+
+### v-for
+```vue
+<script setup lang="ts">
+let arr: string[] = ['one', 'two', 'three', 'four']
+</script>
+
+<template>
+<div :key="index" v-for="(e, index) in arr">
+    {{ index }}->{{ e }}
+</div>
+</template>
+```
