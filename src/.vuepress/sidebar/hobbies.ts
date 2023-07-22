@@ -10,4 +10,13 @@ export const hobbiesSidebar = arraySidebar([
             '/hobbies/calligraphic/semi-cursive-script.md'
         ]
     },
+    {
+        text: '外语',
+        icon: 'language',
+        collapsible: true,
+        children: [
+            '/hobbies/foreign-language/README.md',
+            '/hobbies/foreign-language/english.md'
+        ]
+    },
 ])
