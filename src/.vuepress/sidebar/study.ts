@@ -87,6 +87,7 @@ export const studySidebar = arraySidebar([
                 children: [
                     '/study/computer-basis/ads/data-structure/README.md',
                     '/study/computer-basis/ads/data-structure/linear-list.md',
+                    '/study/computer-basis/ads/data-structure/stack.md',
                 ]
             },
             {
