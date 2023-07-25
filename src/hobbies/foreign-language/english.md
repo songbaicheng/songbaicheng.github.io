@@ -114,14 +114,95 @@ article: false
 
 > 当然我们并不需要全部都掌握的炉火纯青，我们只要了解左上方的13种和重点掌握红色的八种最常用的时态即可。
 
-### 一般状态
+### 一般
 一般讲究的是这件事情不特殊，没有强调，我们掌握时态要掌握其形式和用法。
 
 #### 一般过去时
 一般过去时的形式就是谓语动词变成过去时，表示完全发生在过去的事情。
 
 ```
-1. 
+1. The outbreak came to global notice in late April 2009.
+疫情于 2009 年 4 月下旬在全球范围内爆发。
+
+2. That was bad to my overall fitness goals.
+这对我的整体健身目标很不利。
+
+3. A century ago,the immigrants from across the Athantic included settlers and sojouners.
+一个世纪前，来自大西洋彼岸的移民包括定居者和商人。
+```
+
+#### 一般现在时
+一般现在时表示发生在现在的事情，现在发生的事情有两种，一种是静态的状态，一种是动态的规律和习惯。形式有两种，一种是动词原形一种是第三人称单数，是否要使用第三人称单数需要配合主语来确定，一般动词的第三人称单数表示主语的个数是一个，这里要区分和名词的单复数的形式，第三人称单数是动词后面加s或者es表示一个，而名词复数则加s或者es表示多个。使用第三人称单数的有四种情况：他她它、可数名词单数、不可数名词和不定代词。
+
+```
+1. However,a true cashless society is probably not around the corner.
+然而，真正的无现金社会可能还遥遥无期。
+
+2. I have an Excel template for a week of breakfast,lunch and dinner.
+我有一个一周早餐、午餐和晚餐的 Excel 模板。
+
+3. After bills,Tony has $60 a week to spend.
+除去账单，托尼每周有 60 美元的支出。
+
+4. Each book opens up new avenues of knowledeg.
+每本书都开辟了新的知识渠道。
+```
+
+#### 一般将来时
+一般将来时表示现在的将来。形式有两种，一种是 will + do，多用于临时决定的打算；另一种是 am/is/are going to do，表示有计划要去做某事。
+
+```
+1. It will hold another meeting soon.
+它将很快举行另一次会议。
+
+2. People will simply become lazy and depressed.
+人们很容易就会变得懒惰和消沉。
+
+3. Will the European Union make it.
+欧洲联盟能否做到这一点。
+
+4. The future will be wasteland of a different sort.
+未来将是另一种荒原。
+```
+
+#### （一般）过去将来时
+对比于一般将来时，表示的是过去的将来。形式也变成了 would do 或者 was/were going to do。因为要告知是过去的状态，所以一般会搭配一般过去时使用。
+
+```
+1. Facebook promiesd the European commission…… It would not link phone numbers to Facebook identities.
+Facebook 向欧盟委员会承诺......，不会将电话号码与 Facebook 的身份联系起来。
+```
+
+### 进行状态
+进行状态表示正在进行或者是持续进行的状态。进行时态有统一的形式，都是用 be + doing 来表示，只不过这里的 be 会根据过去、现在和将来换成不同的词态。
+
+#### 过去进行时
+表示过去正在进行的事情。形式是 was/were doing。
+
+```
+1. The position was just taking up too much time,she said.
+她说，这个职位占用了太多时间。
+
+2. But 10 yeas ago he was earning $130,000 a year.
+但 10 年前，他的年收入是 13 万美元。
+```
+#### 现在进行时
+表示现在正在进行的事情。形式是 am/is/are doing。
+
+```
+1. But this era of high joblessness is probably beginning.
+但是，这个高失业率时代可能已经开始。
+
+2. Now shortages are appearing at the mid-skill levels.
+现在，中等技能水平的人员也出现短缺。
+```
+
+#### 将来进行时
+表示未来在进行的事情。形式是 will be doing。
+
+```
+1. Native U.S. workers won't be returning to the farm.
+美国本地工人不会返回农场。
 ```
 
 [^one]: 主语：句子中主要说明的对象是主语。
