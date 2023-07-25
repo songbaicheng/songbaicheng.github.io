@@ -41,6 +41,138 @@ root(栈)
 
 ::: normal-demo Java 实现顺序栈
 ```java
+public class ArrayStack<E> extends Stack<E> {
 
+    /**
+     * 栈顶指针
+     */
+    private int top;
+    /**
+     * 栈内数组
+     */
+    private final E[] data;
+
+    /**
+     * 初始化栈
+     * @param capacity
+     */
+    public ArrayStack(int capacity) {
+        this.data = (E[]) new Object[capacity];
+        this.top = -1;
+    }
+
+    @Override
+    public E push(E item) {
+
+        // 判断栈内是否还有空间
+        if (this.top == data.length - 1) {
+            return null;
+        }
+        data[++top] = item;
+        return super.push(item);
+    }
+
+    /**
+     * 出栈
+     * @return 栈顶元素
+     */
+    @Override
+    public synchronized E pop() {
+        return data[top--];
+    }
+
+    /**
+     * 获取栈顶元素
+     * @return 栈顶元素
+     */
+    @Override
+    public synchronized E peek() {
+        return data[top];
+    }
+
+    /**
+     * 栈判空
+     * @return 是否为空栈
+     */
+    @Override
+    public boolean empty() {
+        return this.top == -1;
+    }
+}
+```
+:::
+
+### 共享栈
+利用栈底位置不变的特性，可以让两个顺序栈共享一个一维数组空间，将两个栈的栈底分别设在共享空间的两端，两个栈顶向共享空间的中间延伸，共享栈是为了更有效的利用存储空间，两个栈互相调节，存取数据的时间复杂度都为O(1)。
+
+两个栈的栈顶指针一个为-1一个为MaxSize时各自为空，而两个指针相邻，即top0 - top1 = 1的时候为栈满。
+
+## 栈的链式存储
+采用链式存储的栈称为链栈，优点是便于多个栈共享存储空间提高效率，并且不存在栈满的情况。通常采用单链表实现并规定所有的操作都在表头进行。
+
+::: normal-demo Java 实现带头结点的链栈
+```java
+public class LinkedStack<E> extends Stack<E> {
+
+    /**
+     * 存储链表
+     */
+    private LNode<E> head = null;
+
+    /**
+     * 初始化头结点
+     */
+    public LinkedStack() {
+        head = new LNode<>(null);
+    }
+
+    /**
+     * 入栈
+     * @param item 入栈元素
+     * @return 入栈元素
+     */
+    @Override
+    public E push(E item) {
+        LNode<E> node = new LNode<>(item);
+
+        if (head.next != null) {
+            node.next = head.next;
+        }
+
+        head.next = node;
+        return item;
+    }
+
+    /**
+     * 出栈
+     * @return 出栈元素
+     */
+    @Override
+    public synchronized E pop() {
+
+        E temp = head.next.data;
+        head.next = head.next.next;
+
+        return temp;
+    }
+
+    /**
+     * 查找栈顶元素
+     * @return 栈顶元素
+     */
+    @Override
+    public synchronized E peek() {
+        return head.next.data;
+    }
+
+    /**
+     * 判断是否栈空
+     * @return 是否栈空
+     */
+    @Override
+    public boolean empty() {
+        return head.next == null;
+    }
+}
 ```
 :::
