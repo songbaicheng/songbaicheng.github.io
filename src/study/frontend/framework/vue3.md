@@ -261,6 +261,77 @@ Dom diff 是虚拟 Dom 的对比算法，我们大概说一下其比较逻辑，
 
 另一个 ref 的好处是，与普通变量不同，你可以将 ref 传递给函数，同时保留对最新值和响应式连接的访问。当将复杂的逻辑重构为可重用的代码时，这将非常有用。
 
-Ref 可以持有任何类型的值，包括深层嵌套的对象、数组或者 JavaScript 内置的数据结构，这就意味着即使改变嵌套对象或数组时，变化也会被检测到。
+值得注意的是，和 Vue2 相比的双向绑定不同的是，ref 响应式的对象会多出一层 .value 来调用其属性，并不可以直接获取属性，而 reactive 响应式并不需要 .value 去获取属性和元素。
 
-### ref 和 reactive
+### ref
+常见的有三种 ref：ref、shallowRef、triggerRef。ref 作为深层响应式，包括深层嵌套的对象、数组或者 JavaScript 内置的数据结构，改变嵌套对象或数组时，变化也会被检测到；与之相对的就是 shallowRef 浅层响应式，它只能检测到 .value 下的变化，如果在深层的改变则不会检测。要注意 ref 和 shallowRef 不能同时使用，因为它俩的直接区别就是 ref 的底层会调用 triggerRef 强制更新收集依赖，这样会导致一些 shallowRef 本不该响应变成响应的。
+
+::: normal-demo ref 三种实现
+```vue
+<script setup lang="ts">
+import { ref, shallowRef, triggerRef } from 'vue'
+
+// 非响应式对象
+let people = { name: 'songbaicheng' }
+let change = () => {
+    people.name = 'baicheng'
+    console.log(people.name)
+}
+
+// 深层响应式对象，可以循环影响到最底层
+let animal = ref({ name: 'bird' })
+let update = () => {
+    animal.value.name = 'cat'
+    console.log(animal.value.name)
+}
+
+// 浅层响应式对象，只能影响到 .value
+let animal1 = shallowRef({ name: 'dog' })
+let update1 = () => {
+    animal1.value = {
+        name: 'fish'
+    }
+    console.log(animal1.value.name)
+}
+</script>
+
+<template>
+非响应式：{{ people.name }} <button @click="change">点我更换</button>
+<br>
+深层响应式：{{ animal.name }} <button @click="update">点我更换</button>
+<br>
+浅层响应式：{{ animal1.name }} <button @click="update1">点我更换</button>
+</template>
+```
+:::
+
+### reactive
+与 ref 不同的是，ref 可以接受所有类型的参数，而 reactive 被泛型约束只能接收引用类型的参数，如 Object、Array、Map、Set等，并且 reavtive 的底层是用代理去拦截对响应式对象所有属性的访问和修改，以便进行依赖追踪和触发更新，所以不能直接对对象进行赋值，否则会破坏响应式对象。
+
+::: normal-demo reactive 三种实现
+```vue
+<script setup lang="ts">
+import { reactive } from 'vue'
+
+let form = reactive({
+    name: 'songbaicheng',
+    age: 23
+})
+
+let submit = () => {
+    console.log(form)
+}
+
+</script>
+
+<template>
+<form>
+    <input type="text" v-model="form.name">
+    <br>
+    <input type="text" v-model="form.age">
+    <br>
+    <button @click.prevent="submit">提交</button>
+</form>
+</template>
+```
+:::
