@@ -308,7 +308,7 @@ let update1 = () => {
 ### reactive
 与 ref 不同的是，ref 可以接受所有类型的参数，而 reactive 被泛型约束只能接收引用类型的参数，如 Object、Array、Map、Set等，并且 reavtive 的底层是用代理去拦截对响应式对象所有属性的访问和修改，以便进行依赖追踪和触发更新，所以不能直接对对象进行赋值，否则会破坏响应式对象。
 
-::: normal-demo reactive 三种实现
+::: normal-demo reactive 用法
 ```vue
 <script setup lang="ts">
 import { reactive } from 'vue'
@@ -333,5 +333,127 @@ let submit = () => {
     <button @click.prevent="submit">提交</button>
 </form>
 </template>
+```
+:::
+
+### toRef
+::: normal-demo toRef 用法
+```vue
+<script setup lang="ts">
+import { ref, toRef, toRefs } from 'vue'
+
+let people = ref({
+    name: 'songbaicheng',
+    age: 23,
+    tel: 123456
+})
+
+let peopleTel = toRef(people) // 只对响应式对象做修改
+
+let change = () => {
+    peopleTel.value.tel = 8888
+    console.log(peopleTel)
+}
+</script>
+
+<template>
+{{ people }}
+
+<button @click="change">改变</button>
+</template>
+```
+:::
+
+## 计算属性
+有函数式写法和选项式写法两种。如果只是仅仅获取结果可以使用函数式的写法，computed() 方法期望接收一个 getter 函数，返回值为一个计算属性 ref，计算属性 ref 也会在模板中自动解包，因此在模板表达式中引用时无需添加 .value；如果你需要用到“可写”的属性，你可以通过同时提供 getter 和 setter 的选项式写法来创建。
+::: normal-demo 计算属性的用法
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+let firstName = ref('')
+let lastName = ref('')
+
+// 全名计算属性
+let name = computed(() => {
+    return firstName.value + '-' + lastName.value
+})
+</script>
+
+<template>
+    <div>
+        <div>
+            <span class="font-style">姓：</span>
+            <input v-model="firstName" type="text">
+        </div>
+        <div>
+            <span class="font-style">名：</span>
+            <input v-model="lastName" type="text">
+        </div>
+        <span class="font-style">全名：</span>
+        <span class="front-style bold-font-style">{{ name }}</span>
+    </div>
+</template>
+
+<style>
+.font-style {
+    font-style: italic;
+}
+
+.bold-font-style {
+    font-weight: bold;
+}
+</style>
+```
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+let firstName = ref('')
+let lastName = ref('')
+
+// 全名计算属性
+let name = computed<string>({
+
+    get() {
+        return firstName.value + '-' + lastName.value
+    },
+    set(name: string) {
+        [firstName.value, lastName.value] = name.split('-')
+    }
+})
+
+let changeName = () => {
+    name.value = 'song-baicheng'
+}
+</script>
+
+<template>
+    <div>
+        <div>
+            <span class="font-style">姓：</span>
+            <input v-model="firstName" type="text">
+        </div>
+        <div>
+            <span class="font-style">名：</span>
+            <input v-model="lastName" type="text">
+        </div>
+        <span class="font-style">全名：</span>
+        <span class="front-style bold-font-style">{{ name }}</span>
+    </div>
+    <div>
+        <button @click="changeName">更换姓名</button>
+    </div>
+</template>
+
+<style>
+.font-style {
+    font-style: italic;
+}
+
+.bold-font-style {
+    font-weight: bold;
+}
+</style>
 ```
 :::
