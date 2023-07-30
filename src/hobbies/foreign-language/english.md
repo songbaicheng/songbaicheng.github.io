@@ -1,5 +1,6 @@
 ---
 article: false
+headerDepth: 3
 ---
 
 # English
@@ -102,8 +103,7 @@ article: false
 ## 三态加一否
 这里说的三态加一否指的是句子中谓语动词的变化，即时态、情态、语态和否定四种变化。
 
-### 时态部分
-时态时态，即表达谓语的时间和状态，一共有16种时态：
+时态时态，即表达谓语的时间和状态，在句子中无论表达时态的谓语动词有几个单词，全都算作一个整体，即一个谓语动词。一共有16种时态：
 
 | 状态\时间 | 过去 | 现在 | 将来 | 过去将来 |
 | :---: | :---: | :---: | :---: | :---: |
@@ -114,7 +114,7 @@ article: false
 
 > 当然我们并不需要全部都掌握的炉火纯青，我们只要了解左上方的13种和重点掌握红色的八种最常用的时态即可。
 
-### 一般
+### 一般状态
 一般讲究的是这件事情不特殊，没有强调，我们掌握时态要掌握其形式和用法。
 
 #### 一般过去时
@@ -132,7 +132,9 @@ article: false
 ```
 
 #### 一般现在时
-一般现在时表示发生在现在的事情，现在发生的事情有两种，一种是静态的状态，一种是动态的规律和习惯。形式有两种，一种是动词原形一种是第三人称单数，是否要使用第三人称单数需要配合主语来确定，一般动词的第三人称单数表示主语的个数是一个，这里要区分和名词的单复数的形式，第三人称单数是动词后面加s或者es表示一个，而名词复数则加s或者es表示多个。使用第三人称单数的有四种情况：他她它、可数名词单数、不可数名词和不定代词。
+一般现在时表示发生在现在的事情，现在发生的事情有两种，一种是静态的状态，一种是动态的规律和习惯。形式有两种，一种是动词原形一种是第三人称单数，是否要使用第三人称单数需要配合主语来确定，一般动词的第三人称单数表示主语的个数是一个。
+
+> 这里要区分和名词的单复数的形式，第三人称单数是动词后面加s或者es表示一个，而名词复数则加s或者es表示多个。使用第三人称单数的有四种情况：他她它、可数名词单数、不可数名词和不定代词。
 
 ```
 1. However,a true cashless society is probably not around the corner.
@@ -149,7 +151,7 @@ article: false
 ```
 
 #### 一般将来时
-一般将来时表示现在的将来。形式有两种，一种是 will + do，多用于临时决定的打算；另一种是 am/is/are going to do，表示有计划要去做某事。
+一般将来时表示现在的将来。形式有两种，一种是```will + do```，多用于临时决定的打算；另一种是```am/is/are going to do```，表示有计划要去做某事。
 
 ```
 1. It will hold another meeting soon.
@@ -166,7 +168,7 @@ article: false
 ```
 
 #### （一般）过去将来时
-对比于一般将来时，表示的是过去的将来。形式也变成了 would do 或者 was/were going to do。因为要告知是过去的状态，所以一般会搭配一般过去时使用。
+对比于一般将来时，表示的是过去的将来。形式也变成了```would do```或者```was/were going to do```。因为要告知是过去的状态，所以一般会搭配一般过去时使用。
 
 ```
 1. Facebook promiesd the European commission…… It would not link phone numbers to Facebook identities.
@@ -174,7 +176,7 @@ Facebook 向欧盟委员会承诺......，不会将电话号码与 Facebook 的�
 ```
 
 ### 进行状态
-进行状态表示正在进行或者是持续进行的状态。进行时态有统一的形式，都是用 be + doing 来表示，只不过这里的 be 会根据过去、现在和将来换成不同的词态。
+进行状态表示正在进行或者是持续进行的状态。进行时态有统一的形式，都是用```be + doing```来表示，只不过这里的 be 会根据过去、现在和将来换成不同的词态。
 
 #### 过去进行时
 表示过去正在进行的事情。形式是 was/were doing。
@@ -187,7 +189,7 @@ Facebook 向欧盟委员会承诺......，不会将电话号码与 Facebook 的�
 但 10 年前，他的年收入是 13 万美元。
 ```
 #### 现在进行时
-表示现在正在进行的事情。形式是 am/is/are doing。
+表示现在正在进行的事情。形式是```am/is/are doing```。
 
 ```
 1. But this era of high joblessness is probably beginning.
@@ -198,7 +200,7 @@ Facebook 向欧盟委员会承诺......，不会将电话号码与 Facebook 的�
 ```
 
 #### 将来进行时
-表示未来在进行的事情。形式是 will be doing。
+表示未来在进行的事情。形式是```will be doing```。
 
 ```
 1. Native U.S. workers won't be returning to the farm.
@@ -206,14 +208,102 @@ Facebook 向欧盟委员会承诺......，不会将电话号码与 Facebook 的�
 ```
 
 ### 完成状态
-这里的完成并不代表都做完了，也可以表示可以部分完成，英语的完成时态主要是表示一件事的完成结果，即从某个时间点之前的完成结果。统一的形式就是 hava + done。
-
-```
-
-```
+这里的完成并不代表都做完了，也可以表示可以部分完成，英语的完成时态主要是表示一件事的完成结果，即从某个时间点之前的完成结果，我们可以理解为阶段性哦总结的意思。统一的形式就是```hava + done```。
 
 #### 过去完成时
-表达过去的之前完成的一件事的结果叫过去完成时。一般结构为 had + done 组成。
+表达过去的之前完成的一件事的结果叫过去完成时，表达截止到过去的某个时间的结果，形式一般为```had + done```。往往过去完成时和一般过去时前后一起连用，是为了表示两件发生在之前的事情的先后状态。
+```
+1. By 2020 they had finished 30% of the research.
+到2020年，他们已经完成了30%的研究。
+
+2. When he came，she had already left.
+当他到的时候，她就已经离开了。
+
+3. By February the next year Ms.Simmons had left the board.
+到第二年2月，西蒙斯女士离开了董事会。
+
+4. Companies had won patents for isolated DNA for decades.
+几十年来，一些公司已经获得了分离DNA的专利。
+
+5. Many said that unemployment had improved them in some ways.
+许多人表示，在某些情况下失业率有所提高方式。
+
+6. Throughout the evening,one man had benn particularly talkactive.
+整个晚上，有一个人特别健谈。
+```
+
+#### 现在完成时
+不管事情是否完成，从现在表达之前的结果都是现在完成时，形式一般为```hava/has done```。
+
+```
+1. People hava speculated for centuries about a future without work.
+人们一直在猜测没有工作的未来。
+
+2. Since 2010,drought and insects hava killed over 100 millions trees in California.
+自2010年以来，干旱和昆虫已经导致加利福尼亚州1亿多棵树死亡。
+
+3. This "brain drain" has long bothered policymakers in poor countries.
+这种“人才外流”长期困扰着贫穷国家的决策者。
+
+4. He has also criticized the celebrity chef jamie Oliver's highprofile attempt to imporve school lunches.
+他还批评了名厨杰米•奥利弗高调地试图提高学校午餐的价格。
+
+5. Indeed,predictions of such a society have been around for two decades.
+事实上，对这样一个社会的预测已经存在了20年。
+```
+
+##### 现在完成时和一般过去时的区别
+- 宏观上讲，现在完成时表示从过去到现在的时间段，而一般过去时只表示过去。
+- 从微观上讲，现在完成时可以分为已经完成和部分完成，如果是已经完成那么可以和一般过去时进行替换，只不过是表达的角度不同，如果是强调过去的时间则可以用一般过去时，如果是强调过去事情对现在的影响可以使用现在完成时;如果是部分完成则不能替换。
+
+```
+1. 现在完全完成，可以换成过去时
+He has left, so I cannot find him now. 
+He left two hours age.
+上面两句都表示他已经离开了。
+
+2. 现在部分完成，不能替换为过去时
+We have learned English for 15 years.
+we learned English for 15 years.
+第一句表示到目前为止已经学了15年英语了，第二句表示过去学过但是目前已经不学了。
+```
+
+#### 将来完成时
+表示截止到将来的之前，形式一般为```will have done```。
+
+```
+1. We will have wasted them.
+未来我们会浪费它们的。
+```
+
+### 完成进行状态
+即完成 + 进行，表示在某一个时间之前，强调一件事进行的过程。对应的形式一般为```had/have/has been doing```。
+
+#### 过去完成进行时
+和过去完成时进行对比，过去完成时强调结果，而过去完成进行时强调过程，对应的形式一般为```had been doing```。
+```
+1.强调结果和强调过程
+We had not won the match.
+We had been working hard for serveral months.
+第一句强调结果失败了，第二句强调努力的过程。
+
+2. The world art market had already been losing momentum for a while after rising bewilderingly since 2003.
+自2003年以来，世界艺术市场在令人困惑的增长之后，已经失去了一段时间的势头。
+```
+
+#### 现在完成进行时
+表示现在仍在持续的一种结果。对应的形式一般为```have/has been doing```。
+```
+1. Yes,new technology has been eating jobs forever,and always will.
+是的，新技术一直在吞噬工作岗位，而且将永远如此。
+
+2. The attention has been rising steadily in recent weeks.
+最近几周，关注度稳步上升。
+```
+
+#### 将来完成进行时
+很少出现，略。对应的形式一般为```will have been doing```。
+
 
 [^one]: 主语：句子中主要说明的对象是主语。
 [^two]: 谓语：表述句子主语的内容叫谓语，因为汉语中谓的意思就是说话。
