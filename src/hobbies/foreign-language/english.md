@@ -5,7 +5,7 @@ headerDepth: 3
 
 # English
 ## 简单句
-我们从最简单的结构开始，一个句子只要有物质和运动就可以把一件事情最根本的要素描述出来，即 n. + v. 也就是一个名词和一个动词构成主[^one]谓[^two]，而且是一对一对应，一个主语对应一个谓语。在简单句的变化都是谓语的变化，至于如何变化我们得先知道谓语的分类
+我们从最简单的结构开始，一个句子只要有物质和运动就可以把一件事情最根本的要素描述出来，即 n. + v. 也就是一个名词和一个动词构成主[^one]谓[^two]，而且是一一对应，一个主语对应一个谓语。在简单句的变化都是谓语的变化，至于如何变化我们得先知道谓语的分类
 
 - 谓语动词（v.）的分类
     - 有实意
@@ -305,6 +305,60 @@ We had been working hard for serveral months.
 
 ##### 将来完成进行时
 很少出现，略。对应的形式一般为```will have been doing```。
+
+### 情态
+表达情绪和态度叫做情态，情态动词的形式只有两种：过去和现在。比如说 can 和 could、will 和 would，有些动词的形态还是一样的，像 must 的过去时和现在时都是一样的。
+
+#### 表达说话的语气
+```
+1. To some extent the housing sector must shoulder the blame.
+在某种程度上，住房部门必须承担责任。
+
+2. They can also learn geometry by assembling a bicycle.
+他们还可以通过组装自行车来学习几何。
+
+3. In the past,workers with average skills could earn an average lifestyle.
+在过去，技能一般的工人可以获得一般的生活方式。
+
+4. Will you marry me?
+你愿意嫁给我吗？
+
+5. Some will be less effective than others.
+有些会比其他的效果差。
+
+6. In effect,the approach would create a "walled garden" in cyberspace.
+实际上，这种方法将在网络空间创造一个“围墙花园”。
+
+7. May I help you?
+我可以帮你吗？
+
+8. Should they become charitable corporation?
+他们应该成为慈善公司吗？
+
+9. I should hava deep work scheduled for roughly the next month.
+大约在下个月，我应该有一个深入的工作计划。
+```
+
+#### 表达推测的含义
+```
+1. Other suits may have an even greater impact.
+其他诉讼可能会产生更大的影响。
+
+2. E-money might be more convenient.
+电子货币可能更方便。
+
+3. Such a move could affect firms such as McDonald's.
+此举可能会影响麦当劳等公司。
+
+4. Jealousy and anger may have evolved to alert us to important inequalites.
+嫉妒和愤怒可能是为了提醒我们注意重要的不合格。
+
+5. They may be coming.
+他们可能会来。
+
+6. Google has to maintain vast data centres around the world.
+谷歌必须在世界各地维护庞大的数据中心。
+```
 
 
 [^one]: 主语：句子中主要说明的对象是主语。
