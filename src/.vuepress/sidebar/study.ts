@@ -89,6 +89,7 @@ export const studySidebar = arraySidebar([
                     '/study/computer-basis/ads/data-structure/linear-list.md',
                     '/study/computer-basis/ads/data-structure/stack.md',
                     '/study/computer-basis/ads/data-structure/queue.md',
+                    '/study/computer-basis/ads/data-structure/stack-queue.md'
                 ]
             },
             {

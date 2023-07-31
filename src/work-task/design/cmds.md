@@ -51,4 +51,11 @@ transfer(right)->sub
 ```
 
 ## 具体实现
-### 1.配置
+### 搭建框架
+::: normal-demo 多环境打包
+```xml
+
+```
+```yaml
+```
+:::
