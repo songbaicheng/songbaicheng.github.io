@@ -360,6 +360,66 @@ We had been working hard for serveral months.
 谷歌必须在世界各地维护庞大的数据中心。
 ```
 
+### 语态
+我们只需要知道不是被动语态就是主动语态，所以我们主要学习被动语态即可。
+#### 被动
+被动语态的构成就是 ```be + done```，be 表示被动的时间，done 表示被动的动作。
+
+```
+1. But her appeal was considered a failure.
+但是他的过去的呼吁被认为是失败的。
+
+2. The outbrask of swine flu was declared a global epidemic on june 11,2009.
+猪流感爆发于2009年6月11日被宣布为全球流行病。
+
+3. Curiosity is often considered a good instinct.
+好奇心通常被认为是一种良好的本能。
+
+4. They are being included in the decision-making process.
+他们正在被纳入决策过程。
+
+5. The tactics have been used to sell questionable beauty creams or unhealthy foods.
+这些策略被用来销售有问题的美容霜或不健康的食品。
+
+6. Obesity can be divided into moderately obese,severely obese and very severely obese.
+肥胖可分为中度肥胖、重度肥胖和极重度肥胖。
+
+7. Their sueecss may be determined by a suit.
+他们的行为可能由诉讼决定。
+```
+
+### 否定
+谓语动词的否定分两种，一种是实义动词，形式为 ```do/does/did + not + 动词原形```；一种是助动词和情态动词，形式为 ```助动词或谓语动词 + not```。
+
+```
+实义动词变否定：
+1. A few decades ago,many people didn't drink water outside of a meal.
+几十年前，许多人在用餐之外不喝水。
+
+2. We don't need more categories.
+我们不需要更多的类别。
+
+3. A gap year does not hinder the success of academic pursuits.
+空档年并不妨碍学术追求的成功。
+
+助动词和情态动词变否定：
+1. Thinner isn't always better.
+越薄不一定越好。
+
+2. Money may not quite buy happiness.
+金钱未必能买到幸福。
+
+3. It has not been much fun.
+这并不是很有趣。
+```
+
+### 强调
+形式一般为 ```do/does/did + 动词原形```。
+
+```
+1. The zone do deliver some improvemnets to air quality.
+该区域确实改善了空气质量。
+```
 
 [^one]: 主语：句子中主要说明的对象是主语。
 [^two]: 谓语：表述句子主语的内容叫谓语，因为汉语中谓的意思就是说话。
