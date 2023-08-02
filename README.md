@@ -1,4 +1,4 @@
-# 宋柏成的个人博客
+# songbaicheng的个人博客
 
 一个具有强大功能的 vuepress 主题，地址如下：
 > https://theme-hope.vuejs.press/zh/

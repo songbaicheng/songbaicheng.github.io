@@ -5,7 +5,7 @@ import theme from "./theme";
 
 export default defineUserConfig({
   base: "/",
-  title: "宋柏成的博客",
+  title: "Baicheng's Blog",
   lang: "zh-CN",
 
   head: [
