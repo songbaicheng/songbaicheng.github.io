@@ -506,3 +506,23 @@ watchEffect(() => {
 </template>
 ```
 :::
+
+## 生命周期 
+每个 Vue 组件实例在创建时都需要经历一系列的初始化步骤，比如设置好数据侦听，编译模板，挂载实例到 DOM，以及在数据改变时更新 DOM。在此过程中，它也会运行被称为生命周期钩子的函数，让开发者有机会在特定阶段运行自己的代码。
+
+| 生命周期钩子 | 执行时间 |
+| :---: | --- |
+| onMounted | 在组件挂载完成后执行 |
+| onUpdated | 在组件因为响应式状态变更而更新其 DOM 树之后调用 |
+| onUnmounted | 在组件实例被卸载之后调用 |
+| onBeforeMount | 在组件被挂载之前被调用 |
+| onBeforeUpdate | 在组件即将因为响应式状态变更而更新其 DOM 树之前调用 |
+| onBeforeUnmount | 在组件实例被卸载之前调用 |
+| onErrorCaptured | 在捕获了后代组件传递的错误时调用 |
+| onRenderTracked | 当组件渲染过程中追踪到响应式依赖时调用 |
+| onRenderTriggered | 当响应式依赖的变更触发了组件渲染时调用 |
+| onRenderTriggered | 当组件被插入到 DOM 中时调用。 |
+| onActivated | 若组件实例是缓存树的一部分，当组件被插入到 DOM 中时调用 |
+| onDeactivated | 若组件实例是缓存树的一部分，当组件从 DOM 中被移除时调用 |
+| onServerPrefetch | 若组件实例是缓存树的一部分，当组件从 DOM 中被移除时调用 |
+
