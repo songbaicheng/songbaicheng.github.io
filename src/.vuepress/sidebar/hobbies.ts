@@ -16,7 +16,8 @@ export const hobbiesSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/hobbies/foreign-language/README.md',
-            '/hobbies/foreign-language/english.md'
+            '/hobbies/foreign-language/english-grammer.md',
+            '/hobbies/foreign-language/english-writing.md'
         ]
     },
 ])
