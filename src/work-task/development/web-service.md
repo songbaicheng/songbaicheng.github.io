@@ -85,7 +85,7 @@ public class WebServiceSeverMain {
 #### 使用 JDK 自带的 wsimport 命令
 
 ```
-wsimport -d /todir bin http://localhost:8080/calculator?wsdl
+wsimport -s /todir bin http://localhost:8080/calculator?wsdl
 ```
 ![wsimport用法](/assets/images/work-task/development/web-service/wsimport.png "wsimport用法")
 
