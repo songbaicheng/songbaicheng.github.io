@@ -33,9 +33,9 @@ convenience.
 ### 称呼
 1. 写给机构
 ```
-Dear Sir or Madam
-Dear Sir/Madam
-To Whom It May Concern
+Dear Sir or Madam,
+Dear Sir/Madam,
+To Whom It May Concern,
 ```
 2. 写给个人
 ```
@@ -46,9 +46,9 @@ Dear Prof.Smith 大学老师
 ```
 3. 写给集体
 ```
-Dear Friends
-Dear Classmates
-Dear All
+Dear Friends,
+Dear Classmates,
+Dear All,
 ```
 
 ### 正文
