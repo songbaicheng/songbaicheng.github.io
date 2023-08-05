@@ -14,7 +14,7 @@ TypeScript 与 JavaScript 有着不同寻常的关系。TypeScript 提供了 Jav
 ```card
 title: TypeScript 官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/frontend/language/tyepscript/typescript.svg
+logo: /assets/images/study/frontend/basic/tyepscript/typescript.svg
 link: https://www.typescriptlang.org/zh/
 color: rgba(173, 216, 590, 0.15)
 ```
@@ -25,7 +25,7 @@ color: rgba(173, 216, 590, 0.15)
 npm i typescript -g
 ```
 
-![安装 TypeScript](/assets/images/study/frontend/language/tyepscript/install-ts.png "安装 TypeScript")
+![安装 TypeScript](/assets/images/study/frontend/basic/tyepscript/install-ts.png "安装 TypeScript")
 
 ### 编译 TS 文件
 练习开始之前，我们要知道浏览器是不认识ts文件的，这里我们有两种方式查看：
@@ -46,7 +46,7 @@ TS 为了防止全局变量的污染，默认包含 import 或 export 的文件�
 ## 基本类型
 在说基本类型之前想说一下类型推论这个概念，虽然ts在js的基础上创建了很多类型，但并不需要每次声明都携带类型，ts可以自动根据你的初始变量推断出你声明的类型，在之后如果赋值错误类型会提示类型错误，如果未指定初始化变量则ts默认推断为any类型。当然类型也是有等级的，高级的类型包含低级的类型：
 
-![类型包含关系](/assets/images/study/frontend/language/tyepscript/ts-type.jpg "类型包含关系")
+![类型包含关系](/assets/images/study/frontend/basic/tyepscript/ts-type.jpg "类型包含关系")
 
 ### 数字类型
 双精度 64 位浮点值。它可以用来表示整数和分数。

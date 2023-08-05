@@ -60,8 +60,9 @@ export const studySidebar = arraySidebar([
         collapsible: true,
         children: [
             '/study/frontend/README.md',
-            '/study/frontend/language/es6.md',
-            '/study/frontend/language/typescript.md',
+            '/study/frontend/basic/es6.md',
+            '/study/frontend/basic/typescript.md',
+            '/study/frontend/basic/layout.md',
             '/study/frontend/framework/vue3.md',
             '/study/frontend/framework/pinia.md',
         ]
