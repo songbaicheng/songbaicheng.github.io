@@ -42,3 +42,4 @@ done
 ```shell
 0 0 * * * /shells/cleanup_logs.sh # 将在每天的午夜（00:00）运行脚本
 ```
+可以使用 ```crontab -l``` 查看目前已经存在的定时任务。
