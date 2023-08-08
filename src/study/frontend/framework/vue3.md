@@ -526,3 +526,65 @@ watchEffect(() => {
 | onDeactivated | 若组件实例是缓存树的一部分，当组件从 DOM 中被移除时调用 |
 | onServerPrefetch | 若组件实例是缓存树的一部分，当组件从 DOM 中被移除时调用 |
 
+## 父子模块传值
+父子文件交互主要有下几个函数：
+- defineProps()
+- defineEmits()
+- defineExpose()
+- defineOptions()
+- defineSlots()
+
+::: normal-demo 父子组件交互
+```vue
+<script setup lang="ts">
+import Child from './Child.vue'
+import { ref } from 'vue'
+
+let name = 'sbc'
+
+const getName = (name: string) => {
+    console.log(name)
+}
+
+const childElement = ref<InstanceType<typeof child>>()
+console.log(childElement.value.name)
+</script>
+
+<template>
+    parent
+    <br>
+    <Child ref="child" @on-click="getName" :title="name" />
+</template>
+```
+```vue
+<template>
+    child
+    {{ title }}
+    {{ arr }}
+</template>
+
+<script setup lang="ts">
+// 接收父组件传值
+withDefaults(defineProps<{
+    title: string,
+    arr: number[]
+}>(), { // 默认值
+    arr: () => ['songbaicheng']
+})
+
+// 向父组件传值
+const emit = defineEmits<{
+    (e:"on-click", name:string):void
+}>()
+
+const send = () => {
+    emit('on-click', 'songbaicheng')
+}
+
+// 向父组件暴露值
+defineExpose({
+    value: 'songbaicheng'
+})
+</script>
+```
+:::
