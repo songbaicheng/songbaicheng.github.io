@@ -421,9 +421,96 @@ We had been working hard for serveral months.
 该区域确实改善了空气质量。
 ```
 
+## 主语的变化
+主语一般有五种，分别是名词/代词、非谓语动词、并列多个还有从句。
+
+### 名词/代词
+```
+1. It is the first worldwide epidemic.
+它是首例世界范围的流行病。
+
+2. They portray an idealized version of themselves.
+他们描绘了一个理想化的自己。
+
+3. The internet affords anonymity to its users.
+互联网为用户提供匿名服务。
+```
+
+### 非谓语动词[^seven]
+非谓语动词有 ```doing``` 、```done``` 和 ```to do``` 三种形式。
+
+#### doing
+```
+1. Monitoring is the first step on the road to reduction.
+监测是实现减排的第一步。
+
+2. Amplifying age and sex differences became a dominant children's marketing strategy.
+扩大年龄和性别差异成为儿童营销的主要策略。
+
+3. Impulsive spending isn't an option.
+冲动消费不是一种选择。
+
+4. Simply starting a conversation with them will form a link.
+简单地与他们开始对话就会形成一种联系。
+
+5. And placing too much emphasis on their opinions can ruin a fantastic home purchase.
+过分强调他们的意见可能会毁掉一次美妙的购房。
+
+6. The most likely reason for departing a board was age.
+离开董事会最可能的原因是年龄。
+
+7. This includes creating a new responsibility deal with business.
+这包括与企业达成一项新的责任协议。
+```
+
+#### to do
+随着语言的发展，doing 做主语和 to do 做主语已经没有太大的差别，两者可以相互交换使用，意义相同。
+```
+1. To beat plastic is easy. = It's easy to beat plastic.
+打塑料很容易。
+
+2. It's easy for parents to forget about their own screen use.
+父母很容易忘记自己的屏幕使用。
+
+3. It takes a while to judge complex aspects of personality.
+判断人格的复杂方面需要一段时间。
+
+4. Americans continue to prize many of the same traditional milestones of a successful life.
+美国人继续珍视成功生活中许多相同的传统里程碑。
+
+5. Today many people find it difficult to trust their own opinion and seek balance by gaining objectivity from external sources.
+如今，许多人发现很难相信自己的观点，也很难通过从外部来源获得客观性来寻求平衡。
+
+6. The only way of getting clothes clean was to boil them.
+把衣服洗干净的唯一方法就是把它们煮开。
+
+7. The idea is to create a federation of private online identity systems.
+这个想法是建立一个私人在线身份系统的联盟。
+```
+
+#### 并列多个
+```
+1. However, Google and other big tech providers monitor their efficiency closely.
+然而，谷歌和其他大型科技提供商密切关注他们的效率。
+
+2. Buying gifts or giving to charity is often more pleasurable than purchasing things for oneself.
+购买礼物或捐给慈善机构往往比为自己购买东西更令人愉快。
+
+3. But the policy is unclear and contradictory.
+但该政策并不明确且自相矛盾。
+
+4. Aesthetic effect came from the landscape，new materials and forthright detailing.
+美学效果来自于景观、新材料和直率的细节。
+
+5. That doesn't mean lying down and becoming fooled, or letting foreign corpoarions run uncontrolled.
+这并不意味着躺下来上当受骗，也不意味着让外国公司失控。
+```
+
+
 [^one]: 主语：句子中主要说明的对象是主语。
 [^two]: 谓语：表述句子主语的内容叫谓语，因为汉语中谓的意思就是说话。
 [^three]: 宾语：之所以叫宾语是因为它是句子中协作主语的部分，所以理解为宾客，叫做宾语。
 [^four]: 主谓双宾：协作主语的宾语有时不仅仅是一个，而是两个，比如说：”我给你一本书。“这里的你和书就是两个宾语。
 [^five]: 主谓宾补：在句子结构已经是主谓宾的情况下，发现句子含义并不完整，需要增加对宾语意义的补充，这里的补也就是宾语补足语的意思。
 [^six]: 表语：用来修饰主语的，说明主语的身份、性质、品性、特征和状态的，表语位于系动词之后，与系动词联系十分紧密，有系动词就有表语，有表语就有系动词。
+[^seven]: 非谓语动词：句子中已经有主语和谓语，动词不能再充当谓语的时候就是非谓语动词。
