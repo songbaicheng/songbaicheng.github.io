@@ -42,4 +42,62 @@ done
 ```shell
 0 0 * * * /shells/cleanup_logs.sh # 将在每天的午夜（00:00）运行脚本
 ```
-可以使用 ```crontab -l``` 查看目前已经存在的定时任务。
+保存后退出，可以使用 ```crontab -l``` 查看是否添加成功。
+
+## 比较声明环境文件是否生效
+对于声明环境变量的文件，可以用 _**export**_ 关键字声明然后 _**source**_ 使文件生效即可，我们判断环境变量是否已经生效可以先按行遍历拿到 export 开头的行，从中取到变量名和值，然后根据变量名获取环境变量中已经生效的值和文件中的变量值进行比较即可。
+```bash
+#!/bin/bash
+
+# 初始化错误计数器
+error_count=0
+
+# 函数来处理错误计数
+count_error() {
+    ((error_count++))
+}
+
+# 使用find命令查找以-profile结尾的环境变量文件，并处理它们
+find . -name "*-profile" -type f | while read -r file; do
+
+    # 检查文件是否存在并可读
+    if [[ -r "$file" ]]; then
+
+        echo "Reading variables from: $file"
+        # 逐行读取文件内容
+        while read -r line; do
+
+            # 查找包含"export"关键字的行
+            if [[ "$line" == export* ]]; then
+
+                # 提取变量名和值
+                variable=$(echo "$line" | cut -d' ' -f2 | cut -d'=' -f1)
+                value=$(echo "$line" | cut -d'=' -f2-)
+
+                # 去除文件中的单引号
+                value=${value//\'/}
+                
+                # 获取对应的环境变量值
+                env_value="${!variable}"
+                
+                # 比较文件中的值和环境变量中的值
+                if [[ "$value" != "$env_value" ]]; then
+                    echo "$file中$variable的值不相同，文件中的变量值为$value，环境变量中的变量值为$env_value"
+                    echo "Variable $variable does not match. File value: $value, Environment value: $env_value"
+                    count_error
+                fi
+            fi
+        done < "$file"
+    else
+        echo "不能读取的文件：$file"
+    fi
+done
+
+# 判断错误计数器是否为0
+if [[ "$error_count" -eq 0 ]]; then
+    echo "环境变量完全相同！"
+else
+    echo "环境变量有$error_count个不同"
+fi
+
+```
