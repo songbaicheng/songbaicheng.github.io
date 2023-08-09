@@ -23,13 +23,17 @@ color: rgba(173, 216, 590, 0.15)
 
 这里我就按照 preferences 界面从上到下罗列了，首先字体大小什么的这就是按照自己的显示器或者窗口习惯自己决定，但是字体一定是推荐 JetBrains Mono，这是 JetBrains 公司设计的更适合开发人员使用的字体，在阅读体验和符号区分度上下了很大功夫，这套字体在从 v2019.3 开始这套字体就随 JetBrains IDE 一起提供了，如果用起来的一定要用起来。
 
-第一个推荐的配置是自动导入包的配置，虽然平时也有快捷键清理多余的包，但是哪有自动清理来的方便快捷，打开这个设置需要勾选下面两个勾选框。
+1. 第一个推荐的配置是自动导入包的配置，虽然平时也有快捷键清理多余的包，但是哪有自动清理来的方便快捷，打开这个设置需要勾选下面两个勾选框。
 
 ![auto import](/assets/images/resource/tools/development-tools/auto-import.png "auto import" =650x500)
 
-其次就是方法间增加分割线，因为发现很多人方法间不换行导致可读性很差，这个时候分割线就显得尤为重要了。
+2. 其次就是方法间增加分割线，因为发现很多人方法间不换行导致可读性很差，这个时候分割线就显得尤为重要了。
 
 ![method split line](/assets/images/resource/tools/development-tools/method-split-line.png "method split line" =650x500)
+
+3. 有时候因为换显示器或者一些奇怪分辨率的情况下总是感觉整个字体不大不小看着闹挺，到底是用 12、14 还是 16 直接强迫症犯了，这个时候打开下面这个配置，直接用滑轮搭配 command/ctrl 直接换到你喜欢的大小。
+
+![鼠标滑轮控制字体大小](/assets/images/resource/tools/development-tools/font-size-mouse.png "鼠标滑轮控制字体大小" =650x500)
 
 ### 插件推荐
 #### One Dark theme 主题

@@ -18,6 +18,7 @@ export const studySidebar = arraySidebar([
                 text: 'Java基础',
                 collapsible: true,
                 children: [
+                    '/study/backend/java/basic/servlet.md',
                     '/study/backend/java/basic/dynamic-proxy.md',
                     '/study/backend/java/basic/concurrency.md',
                 ],
