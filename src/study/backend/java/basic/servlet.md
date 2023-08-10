@@ -30,6 +30,77 @@ Servlet 执行以下主要任务：
 - 发送显式的数据（即文档）到客户端（浏览器）。该文档的格式可以是多种多样的，包括文本文件（HTML 或 XML）、二进制文件（GIF 图像）、Excel 等。
 - 发送隐式的 HTTP 响应到客户端（浏览器）。这包括告诉浏览器或其他客户端被返回的文档类型（例如 HTML），设置 cookies 和缓存参数，以及其他类似的任务。
 
+## 快速开始
+::: normal-demo Servlet demo
+```java
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * @description Servlet demo
+ */
+@WebServlet("/servlet")
+public class MyServlet extends HttpServlet {
+
+    /**
+     * 服务器关闭或者容器停止则调用此方法
+     */
+    @Override
+    public void destroy() {
+        System.out.println("我是 destroy 方法");
+    }
+
+    /**
+     * 请求到达servlet容器会判断被请求的servlet是否存在，如果不存在则创建容器
+     */
+    @Override
+    public void init() throws ServletException {
+        System.out.println("MyServlet 被创建了！");
+    }
+
+    /**
+     * 有请求到达servlet容器就会被调用
+     */
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset-utf-8");
+        resp.setHeader("Content-Type", "text/html;charset=utf-8");
+
+        System.out.println("我是 service 方法");
+        resp.getWriter().write("我是 service 方法");
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset-utf-8");
+        resp.setHeader("Content-Type", "text/html;charset=utf-8");
+
+        System.out.println("我是 doGet 方法");
+        resp.getWriter().write("我是 doGet 方法");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset-utf-8");
+        resp.setHeader("Content-Type", "text/html;charset=utf-8");
+
+        System.out.println("我是 doPost 方法");
+        resp.getWriter().write("我是 doPost 方法");
+    }
+}
+```
+:::
+
 ## Servlet 生命周期
 Servlet 生命周期可被定义为从创建直到毁灭的整个过程。以下是 Servlet 遵循的过程：
 1. Servlet 初始化后调用 init () 方法。
