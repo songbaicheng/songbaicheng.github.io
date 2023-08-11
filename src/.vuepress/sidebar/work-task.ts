@@ -10,7 +10,7 @@ export const workTaskSidebar = arraySidebar([
             '/work-task/development/scheduled.md',
             '/work-task/development/log-desensitization.md',
             '/work-task/development/reflection.md',
-            '/work-task/development/mockito.md',
+            '/work-task/development/unit-test.md',
             '/work-task/development/web-service.md',
             '/work-task/development/shell.md',
         ]
