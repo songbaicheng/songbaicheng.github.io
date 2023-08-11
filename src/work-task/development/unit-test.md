@@ -74,12 +74,18 @@ Mock 框架目前也有很多版本，有如下几种：
 - Mockito：可读性强，验证语法简单，可以与JUnit无缝结合，是最广泛的Mock框架。
 - PowerMock：Mockito增强版，弥补了对静态方法的不支持。
 
-|
+||Easy Mcok|JMock|Mockito|PowerMock|
+|---|:---:|:---:|:---:|:---:|
+|final 方法|不支持|不支持|支持|支持|
+|私有方法|不支持|不支持|不支持|不支持|
+|静态方法|不支持|不支持|支持|支持|
+|SpringBoot依赖|复杂|复杂|默认依赖|基于 Mocktio 拓展|
+|API风格|略复杂|略复杂|简单|简单|
 
 ## Java 单元测试最佳实践
 
 
-## 快速开始
+## Mockito 快速开始
 ### 导入依赖
 ::: code-tabs
 
@@ -240,15 +246,15 @@ class UserServiceTest {
 
 :::
 
-## 常用方法
-### mock(Class<*T*> classToMock) 
+### 常用方法
+#### mock(Class<*T*> classToMock) 
 创建一个模拟对象，用于代替真实对象的行为。
 
 ```java
 UserService userServiceMock = Mockito.mock(UserService.class);
 ```
 
-### when(mock.method()).thenReturn(value)
+#### when(mock.method()).thenReturn(value)
 定义模拟对象方法的行为，指定当调用方法时应该返回的值。
 
 ```java
@@ -257,7 +263,7 @@ User user = UserVo.builder().username("zhangsan").id("1").build();
 Mockito.when(userServiceMock.getUserById(1)).thenReturn(user);
 ```
 
-### verify(mock).method()
+#### verify(mock).method()
  验证模拟对象的方法是否被调用。
 
  ```java
@@ -266,7 +272,7 @@ Mockito.verify(userServiceMock).getUserById(1);
 
 ```
 
- ### verify(mock, times(n)).method()
+ #### verify(mock, times(n)).method()
 验证模拟对象的方法被调用了特定的次数（n）。
 
 ```java
@@ -274,7 +280,7 @@ Mockito.verify(userServiceMock).getUserById(1);
 Mockito.verify(userServiceMock, Mockito.times(2)).getUserById(1);
 ```
 
-### verify(mock, atLeast(n)).method()
+#### verify(mock, atLeast(n)).method()
 验证模拟对象的方法被调用了至少n次。
 
 ```java
@@ -282,7 +288,7 @@ Mockito.verify(userServiceMock, Mockito.times(2)).getUserById(1);
 Mockito.verify(userServiceMock, Mockito.atLeast(3)).getUserById(1);
 ```
 
-### verify(mock, never()).method()
+#### verify(mock, never()).method()
 验证模拟对象的方法从未被调用。
 
 ```java
@@ -290,7 +296,7 @@ Mockito.verify(userServiceMock, Mockito.atLeast(3)).getUserById(1);
 Mockito.verify(userServiceMock, Mockito.never()).addUser(Mockito.any(User.class));
 ```
 
-### verifyNoMoreInteractions(mock)
+#### verifyNoMoreInteractions(mock)
 验证模拟对象上的所有方法已经被验证，并且没有其他未验证的方法调用。
 
 ```java
@@ -299,7 +305,7 @@ Mockito.verifyNoMoreInteractions(userServiceMock);
 
 ```
 
-### doThrow(exception).when(mock).method()
+#### doThrow(exception).when(mock).method()
 指定当调用模拟对象的方法时应该抛出的异常。
 
 ```java
@@ -308,7 +314,7 @@ Mockito.doThrow(new UserNotFoundException()).when(userServiceMock).deleteUser(Mo
 
 ```
 
-### doAnswer(answer).when(mock).method()
+#### doAnswer(answer).when(mock).method()
 指定模拟对象方法的调用应该如何进行自定义处理，例如执行回调函数或返回动态计算的结果。
 
 ```java
