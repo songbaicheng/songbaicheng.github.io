@@ -506,6 +506,99 @@ We had been working hard for serveral months.
 这并不意味着躺下来上当受骗，也不意味着让外国公司失控。
 ```
 
+## 简单句的限定词
+### 限定词[^eight^]
+```
+1. America's Federal Trade Commission launched a round of talks about how to save newspapers.
+美国联邦贸易委员会就如何拯救报纸展开了一轮会谈。
+
+2. The heightened alert followed an emergency meeting with fluexperts in Geneva.
+在日内瓦与流感专家举行紧急会议后，加强了警报。
+
+3. More than three million doses were to be made available in early October 2009.
+2009年10月初将提供300多万剂疫苗。
+
+4. By the third generation, one third of Hispanic women are married to non-Hispanics, and 41 percent of Asian-American women are married to non-Asians.
+到第三代，三分之一的西班牙裔女性嫁给了非西班牙族，41%的亚裔美国女性嫁给了亚裔。
+```
+
+### 形容词和副词
+```
+1. The angry boy shouted angrily.
+愤怒的男孩愤怒地喊道。
+形容词修饰名词，副词修饰形容词，为了方便记忆，形容名词的是形容词，非名词的就是副词来修饰。
+
+2. High sympathy can substitute for low guilt. 
+高度同情可以代替低内疚。
+
+3. Renewable energy is already a principal energy source.
+可再生能源已经是一种主要能源。
+
+4. The reason for this is simple.
+原因很简单。
+形容词也不一定紧跟名词。
+
+5. Spending of any sort beacme deeply unfashionable.
+任何形式的支出都是过时的。
+
+6. This temporarliy lowers carbon-carrying capacity.
+这暂时降低了碳的承载能力。
+
+7. This man quickly nodded in agreement.
+这个人很快点头表示同意。
+
+8. Suddenly, Britain looks to have fallen out with its favorite historical form.
+突然间，英国似乎与它最喜欢的历史形式闹翻了。
+副词修饰句子。
+
+9. Unforunately, people create inner barriers with a help of exaggerating fears.
+不幸的是，人们通过夸大恐惧来制造内心的障碍。
+
+10. The trend toward less was not entirely foregin.
+减少的趋势并不完全是预料之中的。
+
+11. Those with degrees from elite universities catch up fairly quickly.
+那些拥有精英大学学位的人很快就赶上了。
+```
+
+#### 原级比较
+```as + .adj/.adv 原型(比较的内容) + as + 比较的对象``` 表示“和……相比一样的……”
+```
+1. The supermarket is designed to lure customers into spending as much time as possible within its doors.
+这家超市的设计目的是吸引顾客尽可能多地呆在家门口。
+
+2. But as recently as in 1968, jury selection procedures conflicted with these democratic ideals.
+但就在1968年，陪审团的遴选程序与这些民主理想发生了冲突。
+```
+
+#### 比较级
+```.adj/.adv的比较级 + (than比较的对象)``` 表示和……相比更……，通用于两者之间比较。
+```
+1. normal-weight people are in fact at higher risk of some diseases.
+事实上，体重正常的人患某些疾病的风险更高。
+
+2. Today, we are much more rigid about immigrants.
+今天，我们对移民的态度更加刻板。
+
+3. This advice is more relevant now than ever before.
+这个建议现在比以往任何时候都更有意义。
+
+4. Machines can perform much better at than human beings.
+机器可以比人类做得更好。
+```
+
+#### 最高级
+```.adj/.adv的最高级（+ 比较的对象，通常用介词短语表示范围）``` 表示……范围内最，通常用于三折或以上的比较。
+```
+1. The biggest problem at the moment is not a lack of demand but a lack of good work to sell.
+目前最大的问题不是缺乏需求，而是缺乏好的作品来销售。
+
+2. The most immediate changes will be observed in skill level, strength and inches lost.
+最直接的变化将在技能水平、力量和损失的英寸上观察到。
+```
+
+### 介词短语
+
 
 [^one]: 主语：句子中主要说明的对象是主语。
 [^two]: 谓语：表述句子主语的内容叫谓语，因为汉语中谓的意思就是说话。
@@ -514,3 +607,4 @@ We had been working hard for serveral months.
 [^five]: 主谓宾补：在句子结构已经是主谓宾的情况下，发现句子含义并不完整，需要增加对宾语意义的补充，这里的补也就是宾语补足语的意思。
 [^six]: 表语：用来修饰主语的，说明主语的身份、性质、品性、特征和状态的，表语位于系动词之后，与系动词联系十分紧密，有系动词就有表语，有表语就有系动词。
 [^seven]: 非谓语动词：句子中已经有主语和谓语，动词不能再充当谓语的时候就是非谓语动词。
+[^eight^]: 限定词：是在名词词组中对名词中心词起特指、类指以及表示确定数量和非确定数量等限定作用的词类。
