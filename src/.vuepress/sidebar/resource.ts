@@ -21,4 +21,12 @@ export const resourceSidebar = arraySidebar([
             '/resource/tools/daily-tools.md',
         ]
     },
+    {
+        text: '奇技淫巧',
+        icon: 'share',
+        collapsible: true,
+        children: [
+            '/resource/techniques/image-hosting-service.md',
+        ]
+    },
 ])

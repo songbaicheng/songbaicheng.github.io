@@ -32,7 +32,7 @@ but 作为新时代的青年，就该有拥抱新技术的激情，面对该过�
 ```card
 title: Spring Cloud Alibaba GitHub托管网址
 desc: 点击跳转GitHub查看详细内容
-logo: /assets/common-icon/mona-loading-default-static.svg
+logo: /assets/common-icon/github-logo.svg
 link: https://github.com/alibaba/micro-services
 color: rgba(173, 216, 590, 0.15)
 ```
