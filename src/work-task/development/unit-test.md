@@ -82,11 +82,9 @@ Mock 框架目前也有很多版本，有如下几种：
 |SpringBoot依赖|复杂|复杂|默认依赖|基于 Mocktio 拓展|
 |API风格|略复杂|略复杂|简单|简单|
 
-## Java 单元测试最佳实践
-
-
-## Mockito 快速开始
-### 导入依赖
+## Mock 单元测试实践
+### Mockito
+#### 导入依赖
 ::: code-tabs
 
 @tab Maven#Maven
@@ -107,7 +105,7 @@ testImplementation 'org.mockito:mockito-core:<version>'
 
 :::
 
-### 测试代码
+#### 测试代码
 Mockito 与多种测试框架（如JUnit、TestNG）和依赖注入框架（如Spring）完美集成，所以我们就用最常用的 Spring Boot 代码进行测试。
 
 首先我们先准备好要测试的方法类，内容也是非常的简单，无非是包含了关于用户的 crud 功能。
@@ -246,15 +244,15 @@ class UserServiceTest {
 
 :::
 
-### 常用方法
-#### mock(Class<*T*> classToMock) 
+#### 常用方法
+##### mock(Class<*T*> classToMock) 
 创建一个模拟对象，用于代替真实对象的行为。
 
 ```java
 UserService userServiceMock = Mockito.mock(UserService.class);
 ```
 
-#### when(mock.method()).thenReturn(value)
+##### when(mock.method()).thenReturn(value)
 定义模拟对象方法的行为，指定当调用方法时应该返回的值。
 
 ```java
@@ -263,7 +261,7 @@ User user = UserVo.builder().username("zhangsan").id("1").build();
 Mockito.when(userServiceMock.getUserById(1)).thenReturn(user);
 ```
 
-#### verify(mock).method()
+##### verify(mock).method()
  验证模拟对象的方法是否被调用。
 
  ```java
@@ -272,7 +270,7 @@ Mockito.verify(userServiceMock).getUserById(1);
 
 ```
 
- #### verify(mock, times(n)).method()
+ ##### verify(mock, times(n)).method()
 验证模拟对象的方法被调用了特定的次数（n）。
 
 ```java
@@ -280,7 +278,7 @@ Mockito.verify(userServiceMock).getUserById(1);
 Mockito.verify(userServiceMock, Mockito.times(2)).getUserById(1);
 ```
 
-#### verify(mock, atLeast(n)).method()
+##### verify(mock, atLeast(n)).method()
 验证模拟对象的方法被调用了至少n次。
 
 ```java
@@ -288,7 +286,7 @@ Mockito.verify(userServiceMock, Mockito.times(2)).getUserById(1);
 Mockito.verify(userServiceMock, Mockito.atLeast(3)).getUserById(1);
 ```
 
-#### verify(mock, never()).method()
+##### verify(mock, never()).method()
 验证模拟对象的方法从未被调用。
 
 ```java
@@ -296,7 +294,7 @@ Mockito.verify(userServiceMock, Mockito.atLeast(3)).getUserById(1);
 Mockito.verify(userServiceMock, Mockito.never()).addUser(Mockito.any(User.class));
 ```
 
-#### verifyNoMoreInteractions(mock)
+##### verifyNoMoreInteractions(mock)
 验证模拟对象上的所有方法已经被验证，并且没有其他未验证的方法调用。
 
 ```java
@@ -305,7 +303,7 @@ Mockito.verifyNoMoreInteractions(userServiceMock);
 
 ```
 
-#### doThrow(exception).when(mock).method()
+##### doThrow(exception).when(mock).method()
 指定当调用模拟对象的方法时应该抛出的异常。
 
 ```java
@@ -314,7 +312,7 @@ Mockito.doThrow(new UserNotFoundException()).when(userServiceMock).deleteUser(Mo
 
 ```
 
-#### doAnswer(answer).when(mock).method()
+##### doAnswer(answer).when(mock).method()
 指定模拟对象方法的调用应该如何进行自定义处理，例如执行回调函数或返回动态计算的结果。
 
 ```java
@@ -326,8 +324,112 @@ Mockito.doAnswer(invocation -> {
     return userToUpdate;
 }).when(userServiceMock).updateUser(Mockito.any(User.class));
 
-
 ```
+
+### PowerMock
+#### 导入依赖
+::: code-tabs
+@tab Maven#Maven
+
+```xml
+<dependency>
+    <groupId>org.powermock</groupId>
+    <artifactId>powermock-api-mockito2</artifactId>
+    <version>2.0.9</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.powermock</groupId>
+    <artifactId>powermock-module-junit4</artifactId>
+    <version>2.0.9</version>
+    <scope>test</scope>
+</dependency>
+```
+@tab Gradle#Gradle
+```gradle
+    testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
+    testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
+```
+:::
+
+#### 测试代码
+::: normal-demo 测试类代码
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+/**
+ * @ClassName TestClass
+ * @Description 测试 PowerMock 类
+ */
+public class TestClass {
+
+    public String getUUID() {
+        return UUID.randomUUID().toString();
+    }
+
+    public List<Integer> soutArray() {
+
+        return new ArrayList<Integer>() {
+            {
+                add(2);
+            }
+        };
+    }
+}
+```
+```java
+package com.sbc.unittest;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.util.List;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * @ClassName TestClassTest
+ * @Description powermock 测试类
+ * @Author songbaicheng
+ * @Date 2023/8/14 12:09
+ */
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({TestClass.class, UUID.class})
+class TestClassTest {
+
+    @Test
+    public void testGetUUID() throws Exception {
+
+        PowerMockito.mockStatic(UUID.class);
+        PowerMockito.doReturn(new UUID(0L, 0L)).when(UUID.randomUUID());
+
+        TestClass testClass = new TestClass();
+        String uuid = testClass.getUUID();
+
+//        PowerMockito.verifyStatic(UUID.class);
+
+        assertEquals("00000000-0000-0000-0000-000000000000", uuid);
+    }
+
+    @Test
+    public void testSoutArray() {
+        TestClass testClass = PowerMockito.spy(new TestClass());
+
+        List mockIntegers = PowerMockito.mock(List.class);
+        PowerMockito.doReturn(mockIntegers).when(testClass).soutArray();
+
+        testClass.soutArray();
+    }
+}
+```
+:::
 
 ## 总结
 Mockito 还提供了其他一些高级功能和方法，例如参数匹配、顺序验证、超时验证等，如果想了解更多可以查阅下面的 Mockito的官方文档。
