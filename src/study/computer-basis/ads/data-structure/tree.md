@@ -98,7 +98,15 @@ root(树形结构)
 由于顺序存储的空间利用率较低，因此二叉树一般都是采用链式存储，在二叉树中结点通常包含数据域和指针域，二叉链表就必须包含数据域 data、左指针域 lchild 和右指针域 rchild。
 
 ```java
-public class TreeNode<E> {
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * @description 二叉树的链式存储
+ */
+@Getter
+@Setter
+public class BiTree<E> {
 
     /**
      * 数据域
@@ -107,19 +115,118 @@ public class TreeNode<E> {
     /**
      * 左孩子指针
      */
-    TreeNode<E> lChild;
+    BiTree<E> leftChild;
     /**
      * 右孩子指针
      */
-    TreeNode<E> rChild;
+    BiTree<E> rightChild;
+
+    /**
+     * 初始化方法
+     * @param data 数据域
+     */
+    public BiTree(E data) {
+        this.data = data;
+    }
+
 }
 ```
 
 ### 二叉树的遍历
 二叉树中的遍历是指按某条搜索路径访问树中的每个结点，使得每个结点均被访问一次，而且仅被访问一次，而且仅被访问一次。由于二叉树是一种非线性结构，每个结点都可以能有两个子树，因而需要寻找一种规律以便使二叉树的结点能排列在一个线性队列上，方便遍历。我们根据二叉树的定义，遍历一颗二叉树要决定对根和左右结点的访问顺序，常见的遍历次序是先序、中序和后序三种，其中的序是指根结点在何时被访问。
 
-#### 先序遍历
+![二叉树的三种遍历顺序](/assets/images/study/computer-basis/ads/data-structure/tree/bitree-order.jpg "二叉树的三种遍历顺序")
 
-#### 中序遍历
+::: normal-demo Java 实现二叉树三种遍历
+```java
+package com.sbc.structure.tree;
 
-#### 后序遍历
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+/**
+ * @author songbaicheng
+ * @description 二叉树遍历类测试
+ * @date 2023/8/15 20:14
+ */
+class BiTreeTest {
+
+    BiTree<Integer> root = new BiTree<>(1);
+
+    @BeforeEach
+    void setUp() {
+
+        // 初始化二叉树
+        final BiTree<Integer> l7 = new BiTree<>(7);
+        final BiTree<Integer> r3 = new BiTree<>(3);
+        final BiTree<Integer> l4 = new BiTree<>(4);
+        final BiTree<Integer> l9 = new BiTree<>(9);
+        final BiTree<Integer> r6 = new BiTree<>(6);
+        final BiTree<Integer> l8 = new BiTree<>(8);
+
+        l4.setRightChild(l8);
+        l7.setLeftChild(l4);
+        l7.setRightChild(l9);
+        r3.setLeftChild(r6);
+        root.setLeftChild(l7);
+        root.setRightChild(r3);
+    }
+
+    /**
+     * 前序遍历：
+     * 1,7,4,8,9,3,6,
+     * 中序遍历：
+     * 4,8,7,9,1,6,3,
+     * 后序遍历
+     * 8,4,9,7,6,3,1,
+     */
+    @Test
+    void test() {
+        System.out.println("前序遍历：");
+        preOrder(root);
+        System.out.println("\n中序遍历：");
+        inOrder(root);
+        System.out.println("\n后序遍历");
+        postOrder(root);
+        System.out.println();
+    }
+
+    /**
+     * 前序遍历
+     * @param tree 遍历二叉树
+     */
+    private void preOrder(BiTree<Integer> tree) {
+        if (tree != null) {
+            System.out.print(tree.data + ",");
+            preOrder(tree.leftChild);
+            preOrder(tree.rightChild);
+        }
+    }
+
+    /**
+     * 中序遍历
+     * @param tree 遍历二叉树
+     */
+    private void inOrder(BiTree<Integer> tree) {
+        if (tree != null) {
+            inOrder(tree.leftChild);
+            System.out.print(tree.data + ",");
+            inOrder(tree.rightChild);
+        }
+    }
+
+    /**
+     * 后序遍历
+     * @param tree 遍历二叉树
+     */
+    private void postOrder(BiTree<Integer> tree) {
+        if (tree != null) {
+            postOrder(tree.leftChild);
+            postOrder(tree.rightChild);
+            System.out.print(tree.data + ",");
+        }
+    }
+
+}
+```
+:::
