@@ -506,8 +506,35 @@ We had been working hard for serveral months.
 这并不意味着躺下来上当受骗，也不意味着让外国公司失控。
 ```
 
+### 同位语[^eight^]
+```
+1. We, the users, convert our lives to data for the benefit of the digital giants.
+我们，用户，为了数字巨头的利益，将我们的生活转化为数据。
+
+2. This is now a question for Gloria Mackenzie ,an 84-year-old widow.
+这是格洛丽亚·麦肯齐（GloriaMackenzie）的一个问题，她是一位84岁的寡妇。
+```
+
+### 插入语[^nine^]
+```
+1. Elegance, he believed, did not derive from abundance.
+他认为，优雅并非来自富足。
+
+2. The answer, says Dr.kroo, lies with birds.
+克罗奥博士说，答案在于鸟类。
+
+3. Some environmentalists, however, were disappointed.
+然而，一些环保主义者感到失望。
+
+4. Facebook, therefore, is a self-enhancer's paradise.
+因此，脸书是自我提升者的天堂。
+
+5. Guilt, in other words, can help hold a cooperative species together.
+换句话说，内疚可以帮助维系一个合作物种。
+```
+
 ## 简单句的限定词
-### 限定词[^eight^]
+### 限定词[^ten^]
 ```
 1. America's Federal Trade Commission launched a round of talks about how to save newspapers.
 美国联邦贸易委员会就如何拯救报纸展开了一轮会谈。
@@ -598,6 +625,13 @@ We had been working hard for serveral months.
 ```
 
 ### 介词短语
+介词必须接词，后面可以跟 **名词、代词、doing** 三种来构成介宾短语。
+
+表示时间的介词：at/on/in 分别表示在时间点/时间上/时间内，before/after 分别表示在……时间之前/之后，from/since 表示自从……时间，by/unit 截止到……时间，for 表示持续的时间，during 表示在……之间。
+
+表示地点或范围的介词：in/on/at 分别表示在物体里/物体表面上/时间点或地点上，on、above、over/under、below、beneath 表示在上面和下面，near/by、beside、next to 表示在附近/在旁边，between、among 表示在两者之间，around 表示在……周围，into/out of 表示进入……里面/从……出去，onto/off 表示到……上面、脱离，across、through/past 表示穿过/经过，beyond 表示超出范围。
+
+其他用法的介词：of 表示……的……属性，about 表示关于什么，with/without 表示伴随着……/没有……，for 表示为了、因为、对于，by 表示通过……的方式、相差了……，as 表示作为……、像……一样，like 也表示像……一样，despite、inspite of 表示尽管……
 
 
 [^one]: 主语：句子中主要说明的对象是主语。
@@ -607,4 +641,6 @@ We had been working hard for serveral months.
 [^five]: 主谓宾补：在句子结构已经是主谓宾的情况下，发现句子含义并不完整，需要增加对宾语意义的补充，这里的补也就是宾语补足语的意思。
 [^six]: 表语：用来修饰主语的，说明主语的身份、性质、品性、特征和状态的，表语位于系动词之后，与系动词联系十分紧密，有系动词就有表语，有表语就有系动词。
 [^seven]: 非谓语动词：句子中已经有主语和谓语，动词不能再充当谓语的时候就是非谓语动词。
-[^eight^]: 限定词：是在名词词组中对名词中心词起特指、类指以及表示确定数量和非确定数量等限定作用的词类。
+[^eight^]: 同位语：表示解释说明名词，放在所解释的名词后，词、词组、句子都可以做同位语。
+[^nine^]: 插入语：后来插入句子中间的成分，表示补充说明的内容，通常插入语两端有成对的破折号、逗号或者括号。
+[^ten^]: 限定词：是在名词词组中对名词中心词起特指、类指以及表示确定数量和非确定数量等限定作用的词类。
