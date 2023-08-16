@@ -123,7 +123,7 @@ const name = 'songbaicheng'
 ```
 
 ## 指令
-### v-text
+#### v-text
 ```vue
 <script setup>
 let context = 'my name is songbaicheng'
@@ -134,7 +134,7 @@ let context = 'my name is songbaicheng'
 </template>
 ```
 
-### v-html
+#### v-html
 ```vue
 <script setup>
 let context = '<h1 style="font-weight: bold">my name is songbaicheng</h1>'
@@ -145,7 +145,7 @@ let context = '<h1 style="font-weight: bold">my name is songbaicheng</h1>'
 </template>
 ```
 
-### v-if
+#### v-if
 v-else-if 和 v-else 的上一个兄弟元素必须有 v-if 或 v-else-if，而且 v-else 无需传入表达式。如果是 false Vue 会把你的标签注释掉达到隐藏的效果。
 ```vue
 <script setup lang="ts">
@@ -168,7 +168,7 @@ let typeFlag: string = 'A'
 </template>
 ```
 
-### v-show
+#### v-show
 相比于 v-if，如果是 false Vue 会把标签增加```display: none;```样式，效率更高。
 ```vue
 <script setup lang="ts">
@@ -186,7 +186,7 @@ let falseFlag: boolean = false
 </template>
 ```
 
-### v-on
+#### v-on
 一般平时我都是使用 @ 符号代替 v-on 来简写。v-on也提供很多方法，比如：
 - once： 只点击一次
 - stop： 阻止事件冒泡
@@ -207,7 +207,7 @@ let click = () => {
 </template>
 ```
 
-### v-bind
+#### v-bind
 ```vue
 <script setup lang="ts">
 let style = { color: 'red' }
@@ -220,7 +220,7 @@ let style = { color: 'red' }
 </template>
 ```
 
-### v-model
+#### v-model
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -234,7 +234,7 @@ let name = ref('songbaicheng')
 </template>
 ```
 
-### v-for
+#### v-for
 ```vue
 <script setup lang="ts">
 let arr: string[] = ['one', 'two', 'three', 'four']
@@ -527,12 +527,7 @@ watchEffect(() => {
 | onServerPrefetch | 若组件实例是缓存树的一部分，当组件从 DOM 中被移除时调用 |
 
 ## 父子模块传值
-父子文件交互主要有下几个函数：
-- defineProps()
-- defineEmits()
-- defineExpose()
-- defineOptions()
-- defineSlots()
+父子文件交互主要有下几个函数：defineProps()、defineEmits()、defineExpose()、defineOptions()和defineSlots()
 
 ::: normal-demo 父子组件交互
 ```vue
@@ -586,5 +581,75 @@ defineExpose({
     value: 'songbaicheng'
 })
 </script>
+```
+:::
+
+## 动态组件
+::: normal-demo Vue3 动态组件
+```vue
+<template>
+  <el-config-provider namespace="ep">
+    <span>动态组件</span>
+    <div style="display: flex">
+      <div @click="switchCom(item, index)" :class="[active == index ? 'active' : '']" class="tabs"
+        v-for="(item, index) in components">
+        <div>{{ item.name }}</div>
+      </div>
+    </div>
+    <component :is="comId"></component>
+  </el-config-provider>
+</template>
+
+<script setup lang="ts">
+import { ref, shallowRef, markRaw } from 'vue'
+// 测试动态组件
+import A from '~/components/A.vue'
+import B from '~/components/B.vue'
+import C from '~/components/C.vue'
+
+
+const components = ref([
+  {
+    name: 'A组件',
+    com: markRaw(A)
+  },
+  {
+    name: 'B组件',
+    com: markRaw(B)
+  },
+  {
+    name: 'C组件',
+    com: markRaw(C)
+  }
+])
+
+const comId = shallowRef(A) // 只代理最外层元素
+const active = ref(0)
+
+// 切换展示组件
+const switchCom = (item, index) => {
+  comId.value = item.com
+  active.value = index
+}
+</script>
+
+<style scoped>
+span {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.tabs {
+  border: 1px solid;
+  padding: 5px 10px;
+  margin: 5px;
+  /* 悬浮小手 */
+  cursor: pointer;
+}
+
+.active {
+  background-color: burlywood;
+}
+</style>
 ```
 :::
