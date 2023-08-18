@@ -75,7 +75,7 @@ function increment() {
 ## 三种书写风格
 Vue3 支持三种书写风格，一种是延续 Vue2 的 Option API，这种可以让有 Vue2 基础的人无缝衔接 Vue3 的开发；第二种是使用 Vue3 提供的 setup 函数来实现，setup 函数中的代码会在每次组件实例被创建的时候执行，并且能直接在模版中直接使用；第三种方式则是 Vue3 提供的 setup 函数的语法糖，在 setup() 函数中手动暴露大量的状态和方法非常繁琐,我们可以通过使用单文件组件搭配 ```<script setup>``` 来大幅度地简化代码，这也是比较推荐和以后常用的方式。
 
-### Option API
+#### Option API
 ```vue
 <template>
     {{ name }}
@@ -92,7 +92,7 @@ export default {
 </script>
 ```
 
-### setup()
+#### setup()
 ```vue
 <template>
     {{ name }}
@@ -111,7 +111,7 @@ export default {
 </script>
 ```
 
-###  ```<script setup>```
+####  ```<script setup>```
   ```vue
 <template>
     {{ name }}
@@ -263,7 +263,7 @@ Dom diff 是虚拟 Dom 的对比算法，我们大概说一下其比较逻辑，
 
 值得注意的是，和 Vue2 相比的双向绑定不同的是，ref 响应式的对象会多出一层 .value 来调用其属性，并不可以直接获取属性，而 reactive 响应式并不需要 .value 去获取属性和元素。
 
-### ref
+#### ref
 常见的有三种 ref：ref、shallowRef、triggerRef。ref 作为深层响应式，包括深层嵌套的对象、数组或者 JavaScript 内置的数据结构，改变嵌套对象或数组时，变化也会被检测到；与之相对的就是 shallowRef 浅层响应式，它只能检测到 .value 下的变化，如果在深层的改变则不会检测。要注意 ref 和 shallowRef 不能同时使用，因为它俩的直接区别就是 ref 的底层会调用 triggerRef 强制更新收集依赖，这样会导致一些 shallowRef 本不该响应变成响应的。
 
 ::: normal-demo ref 三种实现
@@ -305,7 +305,7 @@ let update1 = () => {
 ```
 :::
 
-### reactive
+#### reactive
 与 ref 不同的是，ref 可以接受所有类型的参数，而 reactive 被泛型约束只能接收引用类型的参数，如 Object、Array、Map、Set等，并且 reavtive 的底层是用代理去拦截对响应式对象所有属性的访问和修改，以便进行依赖追踪和触发更新，所以不能直接对对象进行赋值，否则会破坏响应式对象。
 
 ::: normal-demo reactive 用法
@@ -336,7 +336,7 @@ let submit = () => {
 ```
 :::
 
-### toRef
+#### toRef
 ::: normal-demo toRef 用法
 ```vue
 <script setup lang="ts">
@@ -653,3 +653,22 @@ span {
 </style>
 ```
 :::
+
+## 过度和动画
+Transition
+
+## 依赖注入
+provide/inject
+
+## 组件通信
+全局Bus
+
+## 自定义指令
+Directives
+
+## 全局变量和方法
+globalProperties
+
+## 第三方UI
+pc：Element UI、AntDesign、ViewDesign
+移动端：vant
