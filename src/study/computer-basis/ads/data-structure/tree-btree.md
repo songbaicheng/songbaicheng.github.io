@@ -27,6 +27,6 @@ tag:
 
 若没有一个编码是另一个编码的前缀，则称为这样的编码为**前缀编码**。由哈夫曼树得到哈夫曼编码是很自然的过程，其权值正好对应它出现的次数，构造出对应的哈夫曼树，我们将字符的编码解释为从根至该字符路径上边界的标记的序列，0 表示转向左孩子，1 表示转向右孩子。
 
-![由哈夫曼树构成哈夫曼编码](assets/images/study/computer-basis/ads/data-structure/tree-btree/hf-code.jpg "由哈夫曼树构成哈夫曼编码")
+![由哈夫曼树构成哈夫曼编码](/assets/images/study/computer-basis/ads/data-structure/tree-btree/hf-code.jpg "由哈夫曼树构成哈夫曼编码")
 
 ## 并查集
