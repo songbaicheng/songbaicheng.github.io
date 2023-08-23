@@ -633,6 +633,42 @@ We had been working hard for serveral months.
 
 其他用法的介词：of 表示……的……属性，about 表示关于什么，with/without 表示伴随着……/没有……，for 表示为了、因为、对于，by 表示通过……的方式、相差了……，as 表示作为……、像……一样，like 也表示像……一样，despite、inspite of 表示尽管……
 
+## 长难句
+### 并列句
+并列句的格式为多个简单句 + 并列连词，其中并列连词有以下几种类型。
+
+顺接：and、both …… and、not only …… but also、not just …… but also。
+转折：but、yet、Either …… or。
+因果：for、so。
+
+```
+1. That boy was Bill Gates, and he hasen't stopped reading yet.
+那个男孩就是比尔·盖茨，他还没有停止读书。
+
+2. A few wealthy people will own all the capital, and the masses will struggle in an impoverished wasteland.
+少数富人将拥有首都，群众将在贫瘠的荒原上挣扎。
+
+3. Money may not quite buy happiness, but people in wealthier counteries are generally happier than those in poor ones.
+金钱可能买不到幸福，但富裕地区的人通常比贫穷地区的人更幸福。
+
+4. Adult women do not remember being so obsessed with the colour, yet it is pervasive in our young girls's lives.
+成年女性不记得对这种颜色如此痴迷，但它在我们年轻女孩的生活中无处不在。
+
+5. In effect, the U.S can import food or it can import the workers.
+实际上，美国可以进口食品，也可以进口工人。
+
+6. Either Entergy never really inteded to live by those commitements, or it simply didn't foresee what would happend next.
+要么Entergy从来没有真正想过要按照这些命令生活。，或者它根本没有预见到接下来会发生什么。
+
+7. Strangers are inherently unfamiliar to us, so we are more likely to feel anxious.
+陌生人对我们来说天生就不熟悉，所以我们更容易感到焦虑。
+
+8. These computers emit a great deal of heat,so the centres need to be well air-conditioned.
+这些电脑会散发大量热量，因此这些中心需要进行良好的空气调节。
+```
+### 复合句
+
+### 特殊句式
 
 [^one]: 主语：句子中主要说明的对象是主语。
 [^two]: 谓语：表述句子主语的内容叫谓语，因为汉语中谓的意思就是说话。
