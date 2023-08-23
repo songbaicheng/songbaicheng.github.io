@@ -96,6 +96,7 @@ export const studySidebar = arraySidebar([
                     '/study/computer-basis/ads/data-structure/string.md',
                     '/study/computer-basis/ads/data-structure/tree.md',
                     '/study/computer-basis/ads/data-structure/tree-btree.md',
+                    '/study/computer-basis/ads/data-structure/picture.md',
                 ]
             },
             {
