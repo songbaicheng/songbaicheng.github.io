@@ -30,3 +30,4 @@ tag:
 ![由哈夫曼树构成哈夫曼编码](/assets/images/study/computer-basis/ads/data-structure/tree-btree/hf-code.jpg "由哈夫曼树构成哈夫曼编码")
 
 ## 并查集
+> 参考算法模块中的[并查集](/study/computer-basis/ads/algorithms/disjoint-set-union.md)。

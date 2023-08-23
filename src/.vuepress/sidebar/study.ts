@@ -105,6 +105,7 @@ export const studySidebar = arraySidebar([
                 children: [
                     '/study/computer-basis/ads/algorithms/README.md',
                     '/study/computer-basis/ads/algorithms/leetcode.md',
+                    '/study/computer-basis/ads/algorithms/disjoint-set-union.md'
                 ]
             },
         ]
