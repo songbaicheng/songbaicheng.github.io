@@ -64,3 +64,17 @@ low 归 low，活还是得照干，下面是工作上项目打包的一些需求
   </manifest>
 </target>
 ```
+
+### 脚本中逻辑判断
+ant 中并不存在 if 标签来进行逻辑判断，如果想实现是否执行的步骤需要将逻辑抽离到一个 target 后使用 antcall 标签来调用，根据 target 标签中的 if 属性来决定是否执行。
+
+```xml
+<target name="step1">
+  ....
+  <ant call target="step2">
+</target>
+
+<target name="step2" if=${flag}>
+  ....
+</target>
+```
