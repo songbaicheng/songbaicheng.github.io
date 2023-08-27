@@ -667,7 +667,60 @@ We had been working hard for serveral months.
 这些电脑会散发大量热量，因此这些中心需要进行良好的空气调节。
 ```
 ### 复合句
+#### 表语从句
+系动词后。
+```
+1. The other issue is that many children specially older ones may base their real estate knowledge on HGTV shows.
+另一个问题是，许多孩子，特别是年龄较大的孩子，可能会把他们的房地产知识建立在HGTV节目上。
 
+2. Eye contact is where all the magic happens.
+眼神交流是所有魔法发生的地方。
+
+3. Another nationwide concern is whether public funds from other agencies are going into construction in fire prone districts.
+另一个全国性的担忧是，其他机构的公共资金是否会用于火灾多发地区的建设。
+
+4. Yet the fact remains that the merger movement must be watched.
+然而，事实仍然是，必须关注合并运动。
+```
+
+#### 名词性从句
+##### 宾语从句
+```
+1. Why do so many Ameriacans distrust what they read in their newspapers?
+为什么这么多美国人不信任他们在报纸上读到的东西？
+
+2. I don't know if other clients are going to abandon me, too.
+我不知道其他客户是否也会抛弃我。
+```
+
+##### 主语从句
+```
+1. What Washington does - or doesn't do - to promote alternative energy may mean less and less at a time of a global shift in thought.
+在全球思想转变之际，华盛顿在推广替代能源方面所做的或没有做的可能意味着越来越少。
+
+2. It remains to be seen how weather conditions affect the air flows.
+天气状况如何影响气流还有待观察。
+```
+
+##### 同位语从句
+```
+1. The probability that the company will subsequently have to restate earnings increased by nearly 20%.
+该公司随后不得不重新公布收益的可能性增加了近20%。
+
+2. It is going riskling close to the implication that standards need to be lowered for poor children.
+这几乎意味着需要降低贫困儿童的标准。
+```
+
+#### 定语从句
+限定性定语从句和非限定定语从句，区别在于是否有逗号隔开，有逗号的是非限定性定语从句，反之是非限定性定语从句。
+```
+1. The key message that have been put togeether for world Environment Day do include a call for governments to encact legislation to curb single-use plastics.
+世界环境日的关键信息包括呼吁各国政府制定立法，遏制一次性塑料。
+
+2. The job security that the US economy once offered to high school graduates has largely evaporated.
+美国经济曾经为高中毕业生提供的工作保障已经基本消失。
+
+```
 ### 特殊句式
 
 [^one]: 主语：句子中主要说明的对象是主语。
