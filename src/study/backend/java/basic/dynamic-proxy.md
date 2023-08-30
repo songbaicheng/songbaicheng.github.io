@@ -1,5 +1,5 @@
 ---
-category: Java基础
+category: Java 基础
 tag: 
   - proxy
   - Java

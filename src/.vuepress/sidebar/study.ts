@@ -21,6 +21,7 @@ export const studySidebar = arraySidebar([
                     '/study/backend/java/basic/servlet.md',
                     '/study/backend/java/basic/dynamic-proxy.md',
                     '/study/backend/java/basic/concurrency.md',
+                    '/study/backend/java/basic/java8.md'
                 ],
             },
             {

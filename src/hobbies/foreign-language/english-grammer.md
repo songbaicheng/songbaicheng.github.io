@@ -712,7 +712,7 @@ We had been working hard for serveral months.
 ```
 
 #### 定语从句
-限定性定语从句和非限定定语从句，区别在于是否有逗号隔开，有逗号的是非限定性定语从句，反之是非限定性定语从句。
+限定性定语从句和非限定定语从句，区别在于是否有逗号隔开，有逗号的是非限定性定语从句，反之是非限定性定语从句，限定性定语从句修饰的比较密切，不能删除，非限制性定语从句可以省略。
 ```
 1. The key message that have been put togeether for world Environment Day do include a call for governments to encact legislation to curb single-use plastics.
 世界环境日的关键信息包括呼吁各国政府制定立法，遏制一次性塑料。
