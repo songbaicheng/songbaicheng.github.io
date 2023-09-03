@@ -719,9 +719,58 @@ We had been working hard for serveral months.
 
 2. The job security that the US economy once offered to high school graduates has largely evaporated.
 美国经济曾经为高中毕业生提供的工作保障已经基本消失。
+```
+
+#### 状语从句
+针对主句补充描述性的事情，一般为从属连词加一个完整的陈述句，根据其作用可分为时间、地点、原因、条件、目的、结果、让步、方式和比较从句。
 
 ```
+1. When education becomes one-size-fits-all, it risks overlooking a nation's diversity of gifts.
+当教育变得一刀切时，就有可能忽视一个国家天赋的多样性。
+
+2. Beacuse electronic payments are immediate, they eliminate the float for the consumer.
+因为电子支付是即时的，它们消除了消费者的浮动。
+
+3. In the United States, new cases, as warmer weather arrived, seemed to fade.
+在美国，随着天气变暖，新病例似乎有所减少。
+```
+
 ### 特殊句式
+#### 虚拟
+表达不真实就是虚拟，可以通过改变谓语动词时态来实现虚拟，通常用在 if 条件句和主语从句。
+
+```
+1. If he had played last season, however，he would have been one of 42.
+然而，如果他上个赛季参加比赛，他将是42人中的一员。
+
+2. This year, it was proposed that the system be changed:
+今年，有人提议改变这一制度:
+```
+
+#### 倒装
+倒装有很多形式，最常见的主谓倒装。
+
+```
+1. Of even greater concern is the fact that obesity turns out to be very difficult to define.
+更令人担忧的是，事实证明肥胖很难定义。
+
+2. Also unclear is why Microsoft has gone it alone.
+同样不清楚的是，微软为何单干。
+全部倒装
+
+3. There is a book on the table.
+桌子上有一本书。
+
+4. Only then will they be useful servants and not Frankenstein's out-of-control monster.
+只有这样，他们才会成为有用的仆人，而不是弗兰肯斯坦的失控怪物。
+
+5. But had Entergy kept its word, that debate would be beside the point.
+但如果Entergy信守诺言，那场辩论就无关紧要了。
+```
+
+
+#### 强调
+
 
 [^one]: 主语：句子中主要说明的对象是主语。
 [^two]: 谓语：表述句子主语的内容叫谓语，因为汉语中谓的意思就是说话。

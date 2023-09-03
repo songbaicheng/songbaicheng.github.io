@@ -43,43 +43,37 @@ if (optional.isPresent()) {
 
 ### 获取一个 Optional 的值
 
-#### 使用 Optional 的 get() 方法获取值：如果该 Optional 对象为空，则抛出 NullPointerException 异常。
+#### get()：如果该 Optional 不为空则返回该对象，否则抛出 NullPointerException 异常。
 ```java
 Optional<String> optional = Optional.of("hello");
 String value = optional.get(); // 输出hello
 ```
 
-#### 使用 Optional 的 orElse() 方法获取值：如果该 Optional 对象为空，则返回指定的默认值。
+#### orElse()：如果该 Optional 不为空则返回该对象，否则返回指定的默认值。
 ```java
 Optional<String> optional = Optional.ofNullable(null);
 String value = optional.orElse("fallback value"); // 输出fallback value
 ```
 
-#### 使用 Optional 的 orElseGet() 方法获取值：如果该 Optional 对象为空，则调用指定的 Supplier 获取默认值。
+#### orElseGet()：如果该 Optional 不为空则返回该对象，否则调用指定的 Supplier 获取默认值。
 ```java
-#### Optional<String> optional = Optional.ofNullable(null);
+Optional<String> optional = Optional.ofNullable(null);
 String value = optional.orElseGet(() -> "fallback value"); // 输出fallback value
 ```
 
-#### 使用 Optional 的 map() 方法获取值：如果该 Optional 对象为空，则不进行任何操作，返回空的Optional对象。
+#### map()：如果有值，则对其执行调用映射函数得到返回值。如果返回值不为 null，则创建包含映射返回值的 Optional 作为 map 方法返回值，否则返回空 Optional。
 ```java
 Optional<String> optional = Optional.of("hello");
 Optional<String> value = optional.map(str -> str.toUpperCase()); // 输出HELLO
 ```
 
-#### 使用 Optional 的 filter() 方法获取值：如果该 Optional 对象为空，则不进行任何操作，返回空的Optional对象。
+#### filter()：如果值存在，并且这个值匹配给定的条件，返回一个 Optional 用以描述这个值，否则返回一个空的 Optional。
 ```java
 Optional<String> optional = Optional.of("hello");
 Optional<String> value = optional.filter(str -> str.startsWith("he")); // 输出hello
 ```
 
-#### 使用 Optional 的 findFirst() 方法获取值：如果该 Optional 对象为空，则返回空的 Optional 对象。
-```java
-Optional<String> optional = Optional.of("hello world");
-Optional<String> value = optionalfindFirst(); // 输出hello
-```
-
-#### 使用 Optional 的 orElseThrow() 方法获取值：如果该 Optional 对象为空，则抛出指定的异常。
+#### orElseThrow()：如果该 Optional 不为空则返回对象，否则抛出指定的异常。
 ```java
 Optional<String> optional = Optional.ofNullable(null);
 String value = optional.orElseThrow(() -> new RuntimeException("fallback value")); // 抛出RuntimeException
