@@ -770,6 +770,15 @@ We had been working hard for serveral months.
 
 
 #### 强调
+基本结构就是 ```it is …… that ……```。
+```
+1. It was not the 1940s that a majority of states made women eligible for jury duty.
+直到20世纪40年代，大多数州才让女性有资格担任陪审员。
+
+2. It was only after "toddler" become a common shoppers' term that it evolved into a broadly accepted developmental stage.
+直到“蹒跚学步”成为一个常见的购物者术语后，它才演变成一个被广泛接受的发展阶段。
+
+```
 
 
 [^one]: 主语：句子中主要说明的对象是主语。
