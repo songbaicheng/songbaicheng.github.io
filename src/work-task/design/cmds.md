@@ -151,10 +151,9 @@ public class applicationRunner implements ApplicationRunner {
   }
 }
 ```
-
-## 价格处理与转发
 :::
 
+### 价格处理与转发
 ::: normal-demo 价格处理与转发
 ```java
 // event
@@ -178,7 +177,5 @@ public class PriceListener implements ApplicationListener<PriceEvent> {
     // 处理价格并发送
   }
 }
-```
-```java
 ```
 :::
