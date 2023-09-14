@@ -2,6 +2,14 @@ import { arraySidebar } from "vuepress-theme-hope";
 
 export const workTaskSidebar = arraySidebar([
     {
+        text: '开发规范',
+        icon: 'group',
+        collapsible: true,
+        children: [
+            '/work-task/standard/README.md',
+        ]
+    },
+    {
         text: '开发任务',
         icon: 'code',
         collapsible: true,
