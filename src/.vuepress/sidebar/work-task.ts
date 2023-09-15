@@ -6,7 +6,8 @@ export const workTaskSidebar = arraySidebar([
         icon: 'group',
         collapsible: true,
         children: [
-            '/work-task/standard/README.md',
+            '/work-task/standard/java.md',
+            '/work-task/standard/git.md',
         ]
     },
     {
