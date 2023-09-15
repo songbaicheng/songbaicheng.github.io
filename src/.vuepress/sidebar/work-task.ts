@@ -38,7 +38,7 @@ export const workTaskSidebar = arraySidebar([
         icon: 'ask',
         collapsible: true,
         children: [
-            '/work-task/problems/README.md',
+            '/work-task/problems/spring.md',
         ]
     }
 ])
