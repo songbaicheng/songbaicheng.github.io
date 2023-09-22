@@ -30,7 +30,6 @@ export const workTaskSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/work-task/design/cmds.md',
-            '/work-task/design/migrate-svn2git.md',
             '/work-task/design/environment-variable-configuration.md'
         ]
     },
