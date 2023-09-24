@@ -20,4 +20,21 @@ export const hobbiesSidebar = arraySidebar([
             '/hobbies/foreign-language/english-writing.md'
         ]
     },
+    {
+        text: '体育运动',
+        icon: 'ability',
+        collapsible: true,
+        children: [
+            '/hobbies/sports/README.md',
+            '/hobbies/sports/table-tennis.md',
+        ]
+    },
+    {
+        text: '音乐',
+        icon: 'play',
+        collapsible: true,
+        children: [
+            '/hobbies/music/README.md',
+        ]
+    },
 ])
