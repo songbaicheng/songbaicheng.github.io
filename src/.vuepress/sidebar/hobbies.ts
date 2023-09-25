@@ -35,6 +35,7 @@ export const hobbiesSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/hobbies/music/README.md',
+            '/hobbies/music/sing.md',
         ]
     },
 ])
