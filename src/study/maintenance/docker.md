@@ -34,3 +34,22 @@ $ docker info
 Registry Mirrors:
     https://reg-mirror.qiniu.com
 ```
+
+## 快速开始
+感觉所有编程技术的第一课都是 Hello World ，Docker 也不例外，这里我们拿一个输出 Hello World 的 Ubuntu 镜像来作为我们运行的第一个例子。
+
+```docker
+runoob@runoob:~$ docker run ubuntu:15.10 /bin/echo "Hello World"
+Hello World
+```
+
+其实学过 shell 脚本的人不难看出，其实这里的输出其实就是相当于 ```echo 'Hello World'```，而其他命令的作用就是帮我们运行一个 Ubuntu 镜像，使它变成一个可执行的容器然后来运行我们的命令，```docker run [container name]``` 这个命令就是运行指定容器的命令，而这个命令也可以指定很多参数，比如；
+
+-t: 在新容器内指定一个伪终端或终端。
+-i: 允许你对容器内的标准输入 (STDIN) 进行交互。
+
+一般我们使用这两个命令就是在第一次启动容器的时候直接进入到容器内部进行编辑，当然如果你第一次只是想运行出一个镜像并不想和产生的容器产生交互，就可以使用后台模式启动，即 ```-d``` 参数，使用 ```-d``` 参数运行后的容器会返回一串 container id，当然我们也可以用 ```docker ps``` 来查看正在运行的容器。
+
+如果我们想要停止一些容器，就可以先用 ```docker ps``` 来查看启动容器的 id，然后用 ```docker stop [container id]``` 来停止容器，停止后的容器再使用 ```docker ps``` 已经查看不到了，当然并不是被删除了，你可以使用 ```docker ps -a``` 查看全部创建的容器。
+
+## 基本使用
