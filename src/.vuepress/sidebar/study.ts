@@ -119,6 +119,7 @@ export const studySidebar = arraySidebar([
         collapsible: true,
         children: [
             '/study/maintenance/README.md',
+            '/study/maintenance/linux-commands.md',
             '/study/maintenance/1panel.md',
             '/study/maintenance/docker.md',
         ]
