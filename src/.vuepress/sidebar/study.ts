@@ -122,6 +122,7 @@ export const studySidebar = arraySidebar([
             '/study/maintenance/linux-commands.md',
             '/study/maintenance/1panel.md',
             '/study/maintenance/docker.md',
+            '/study/maintenance/Nginx.md',
         ]
     },
 ])

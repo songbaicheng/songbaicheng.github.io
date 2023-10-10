@@ -30,7 +30,15 @@ export const workTaskSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/work-task/design/cmds.md',
-            '/work-task/design/environment-variable-configuration.md'
+            '/work-task/design/environment-variable-configuration.md',
+            {
+                text: '代客利率掉期',
+                collapsible: true,
+                children: [
+                    '/work-task/design/ots-irs/README.md',
+                    '/work-task/design/ots-irs/project-requirments.md',
+                ]
+            },
         ]
     },
     {
