@@ -369,3 +369,159 @@ upstream webs {
     }
 ```
 :::
+
+### 权重
+权重就是增加每台机器想访问概率的比重，在轮训的基础上配置每个代理服务的 wight 值即可，比如说下面的例子，权重之比是 4:1，那么命中 88 端口的概率就是 80%。
+
+::: normal-demo 简单的权重负载均衡
+```shell
+upstream webs {
+	server localhost:88 weight=4;
+	server localhost:89 weight=1;
+    }
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+    proxy_pass   http://webs;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
+
+server {
+    listen       88; # 端口
+    server_name  localhost; # 可解析的域名、主机名
+
+    location / {
+    proxy_pass   http://www.baidu.com; # 代理服务器
+    }
+
+    error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
+    location = /50x.html {
+        root   html;
+    }
+}
+server {
+    listen       89; # 端口
+    server_name  localhost; # 可解析的域名、主机名
+
+    location / {
+        proxy_pass   http://www.taobao.com; # 代理服务器
+    }
+
+    error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
+    location = /50x.html {
+        root   html;
+    }
+}
+```
+:::
+
+当然在除了 weight 这个配置之外，每一个 server 后还可以追加一些状态，像备用服务的 backup 和 下线状态 down，虽然这些状态并不常用，因为如果出现了正常服务器失效的时候，备用服务器应该也有可能是失败的，并且修改状态后还需要 reload，也是十分不方便的。
+
+### ip_hash（不常用）
+根据客户端的 ip 转发相同的服务器。
+
+### least_hash（不常用）
+最少连接数访问。
+
+### url_hash（不常用）
+根据 url 定向访问。
+
+### fair（不常用）
+根据后端服务器响应时间请求转发。
+
+## 动静分离
+一般动静分离都用在中小型网站，因为如果是像淘宝这种静态文件非常多的项目如果放在 Nginx 会占据大量带宽。动静分离的目的就是减轻后台服务器的压力，把一些静态的图片、样式都放在 Nginx 上，同时可以减轻网络的开销。
+
+::: normal-demo 简单的动静分离配置
+```shell
+upstream webs {
+	server localhost:88 weight=4;
+	server localhost:89 weight=1;
+    }
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+    proxy_pass   http://webs;
+    }
+
+    location ～*/(js|img|css) {
+    proxy_pass   http://webs;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
+```
+:::
+
+## URL Rewrite
+这功能是为了掩饰访问后台服务器真正的 url，先看下面的例子。
+
+::: normal-demo 简单的 rewrite 配置
+```shell
+upstream webs {
+	server localhost:88 weight=4;
+	server localhost:89 weight=1;
+    }
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+    proxy_pass   http://webs;
+    rewrite ^/([0-9]+).html$ /index.jsp?pageNum=$1 break;
+    }
+}
+
+```
+:::
+
+上面配置的含义就是我们将 /index.jsp?pageNum=2 这种实际的 URL 后缀代替成了 /2.html 来访问，其中 rewrite 后面的的三个部分分别是正则、代替的内容和flag标记，其中 flag 标记部分有很多种：
+- last：匹配多次正则，一直到最新的匹配结果。
+- break：匹配后立即终止返回结果。
+- redirect：返回302临时重定向，浏览器会显示跳转后的URL地址。
+- permanent：返回301永久重定向，浏览器会显示跳转后的URL地址。
+
+## 防盗链
+Nginx 实现防盗链需要配置 valid_referers，来校验请求头中是否携带 Referer 和其对应的网址是否正确。
+
+::: normal-demo 简单的防盗链配置
+```shell
+upstream webs {
+	server localhost:88 weight=4;
+	server localhost:89 weight=1;
+    }
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+    proxy_pass   http://webs;
+    rewrite ^/([0-9]+).html$ /index.jsp?pageNum=$1 break;
+    valid_referers localhost;
+    if ($invalid_referer) {
+        return 403;
+    }
+    }
+}
+
+```
+:::
+
+## 高可用配置(HA)
+我们可以使用 keepalived 实现 ip 漂移来实现一个模拟 ip 访问两个 Nginx 对象服务器。
