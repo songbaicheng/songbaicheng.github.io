@@ -327,46 +327,46 @@ upstream webs {
 	server localhost:89;
     }
 
-    server {
-        listen       80;
-        server_name  localhost;
+server {
+    listen       80;
+    server_name  localhost;
 
-        location / {
-	    proxy_pass   http://webs;
-        }
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
+    location / {
+    proxy_pass   http://webs;
     }
-    
-    server {
-        listen       88; # 端口
-        server_name  localhost; # 可解析的域名、主机名
 
-        location / {
-	    proxy_pass   http://www.baidu.com; # 代理服务器
-        }
-
-        error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
-        location = /50x.html {
-            root   html;
-        }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
     }
-    server {
-        listen       89; # 端口
-        server_name  localhost; # 可解析的域名、主机名
+}
 
-        location / {
-            proxy_pass   http://www.taobao.com; # 代理服务器
-        }
+server {
+    listen       88; # 端口
+    server_name  localhost; # 可解析的域名、主机名
 
-        error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
-        location = /50x.html {
-            root   html;
-        }
+    location / {
+    proxy_pass   http://www.baidu.com; # 代理服务器
     }
+
+    error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
+    location = /50x.html {
+        root   html;
+    }
+}
+server {
+    listen       89; # 端口
+    server_name  localhost; # 可解析的域名、主机名
+
+    location / {
+        proxy_pass   http://www.taobao.com; # 代理服务器
+    }
+
+    error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
+    location = /50x.html {
+        root   html;
+    }
+}
 ```
 :::
 
@@ -524,4 +524,70 @@ server {
 :::
 
 ## 高可用配置(HA)
-我们可以使用 keepalived 实现 ip 漂移来实现一个模拟 ip 访问两个 Nginx 对象服务器。
+区别于一些集群，Nginx 的高可用是基于硬件的一种模拟集群，需要借助 keepalived 实现 ip 漂移来实现一个模拟 ip 访问两个 Nginx 对象服务器。
+
+## 扩容
+扩容的方式有很多，有基于硬件资源增加的单机垂直扩容、集群化的水平扩容、细粒度拆分的分布式扩容，当然也可以从服务上进行数据异构化或者服务异步化。
+
+#### ip_hash
+即根据访问请求的来源确定一个哈希值，这个请求以后只能请求到一台固定的地址。实现 ip_hash 是在 upstream 中增加一行声明即可实现。
+
+::: normal-demo 简单的轮训负载均衡
+```shell
+upstream webs {
+    ip_hash;
+	server localhost:88;
+	server localhost:89;
+    }
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+    proxy_pass   http://webs;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
+
+server {
+    listen       88; # 端口
+    server_name  localhost; # 可解析的域名、主机名
+
+    location / {
+    proxy_pass   http://www.baidu.com; # 代理服务器
+    }
+
+    error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
+    location = /50x.html {
+        root   html;
+    }
+}
+server {
+    listen       89; # 端口
+    server_name  localhost; # 可解析的域名、主机名
+
+    location / {
+        proxy_pass   http://www.taobao.com; # 代理服务器
+    }
+
+    error_page   500 502 503 504  /50x.html; # 服务器错误跳转界面
+    location = /50x.html {
+        root   html;
+    }
+}
+```
+:::
+
+#### $request_uri
+根据请求携带的路径进行定向请求。
+
+#### $cookie_jessionid
+根据请求携带的 sessionid 进行定向请求。
+
+#### sticky
+一个模块化的保持会话方式。
