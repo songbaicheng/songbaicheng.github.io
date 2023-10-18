@@ -22,6 +22,14 @@ export const resourceSidebar = arraySidebar([
         ]
     },
     {
+        text: '开源项目',
+        icon: 'preview',
+        collapsible: true,
+        children: [
+            '/resource/open-source-project/workflow.md',
+        ]
+    },
+    {
         text: '奇技淫巧',
         icon: 'share',
         collapsible: true,
