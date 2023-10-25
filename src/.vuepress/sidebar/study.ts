@@ -108,6 +108,7 @@ export const studySidebar = arraySidebar([
                     '/study/computer-basis/ads/algorithms/README.md',
                     '/study/computer-basis/ads/algorithms/leetcode.md',
                     '/study/computer-basis/ads/algorithms/find.md',
+                    '/study/computer-basis/ads/algorithms/sort.md',
                     '/study/computer-basis/ads/algorithms/disjoint-set-union.md'
                 ]
             },
