@@ -37,6 +37,15 @@ nohup xxx > /dev/null &
 nohup xxx >out.log 2>&1 &
 ```
 
+## 查看磁盘空间
+```shell
+# 查看根目录下文件夹大小
+df
+
+# 查看当前目录下占用磁盘空间大小前 15 的文件夹
+du -ahx * | sort -rh | head -n 15
+```
+
 ## 创建和查看定时任务
 ```shell
 # 查看定时任务

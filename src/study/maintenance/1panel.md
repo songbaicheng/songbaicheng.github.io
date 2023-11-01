@@ -12,14 +12,14 @@ tag:
 ```card
 title: 1Panel 官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/maintenance/1panel/1Panel.png
+logo: /assets/images/study/maintenance/1panel/1Panel.png
 link: https://1panel.cn/
 color: rgba(173, 216, 590, 0.15)
 ```
 ```card
 title: 宝塔官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/maintenance/1panel/bt.svg
+logo: /assets/images/study/maintenance/1panel/bt.svg
 link: https://www.bt.cn/new/index.html
 color: rgba(173, 216, 590, 0.15)
 ```
@@ -44,10 +44,10 @@ curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_
 ### 启动展示
 安装的话会有一些初始化操作的步骤，一步一步完成即可，安装成功后，界面会出现访问服务的网址，如果你手速够快或者一些特殊情况看不到了，可以执行  ```1pctl user-info``` 进行查看，然后使用 ip + port 的方式就可以直接跳转登录界面了。
 
-![暂无权限访问](/assets/images/maintenance/1panel/safe-entrance.png "暂无权限访问")
+![暂无权限访问](/assets/images/study/maintenance/1panel/safe-entrance.png "暂无权限访问")
 
 如果出现上面界面，是因为新版本增加了一个安全入口登录的限制，这个就需要用 ```1pctl user-info``` 这个命令查看 entrance 这个属性跟在端口后才能进行访问。
 
-![登录成功](/assets/images/maintenance/1panel/index.png "登录成功")
+![登录成功](/assets/images/study/maintenance/1panel/index.png "登录成功")
 
 ### 

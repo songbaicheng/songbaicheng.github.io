@@ -12,28 +12,28 @@ Nginx七大核心应用场景：反向代理、虚拟主机、域名解析、负
 ```card
 title: Nginx 开源官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/maintenance/nginx/nginx.svg
+logo: /assets/images/study/maintenance/nginx/nginx.svg
 link: https://nginx.org/en/
 color: rgba(173, 216, 590, 0.15)
 ```
 ```card
 title: Nginx 官方商业版本(F5)
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/maintenance/nginx/f5.svg
+logo: /assets/images/study/maintenance/nginx/f5.svg
 link: https://nginx.com/
 color: rgba(173, 216, 590, 0.15)
 ```
 ```card
 title: OpenResty 开源官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/maintenance/nginx/openresty.png
+logo: /assets/images/study/maintenance/nginx/openresty.png
 link: https://openresty.com.cn/cn/
 color: rgba(173, 216, 590, 0.15)
 ```
 ```card
 title: Tengine 开源官网
 desc: 点击跳转官网查看详细内容
-logo: /assets/images/maintenance/nginx/tengine.png
+logo: /assets/images/study/maintenance/nginx/tengine.png
 link: http://tengine.taobao.org
 color: rgba(173, 216, 590, 0.15)
 ```
@@ -42,7 +42,7 @@ color: rgba(173, 216, 590, 0.15)
 ## 快速开始
 1. 这里拿 Nginx 官方开源版作为示例，首先你得需要一台 Linux 机器并下载 Nginx 二进制包。
 
-![准备安装包](/assets/images/maintenance/nginx/nginx-install.png "准备安装包")
+![准备安装包](/assets/images/study/maintenance/nginx/nginx-install.png "准备安装包")
 
 2. 使用 `./configure --prefix=/usr/local/nginx` 执行 ```configure``` 可执行文件，如果需要 ```gcc``` 依赖请先下载，如果执行期间有其他缺少的依赖补充后重新执行脚本即可。
 3. 配置完成后依次执行 ```make``` 和 ```make install``` 开始安装，注意可能需要 root 权限。
@@ -116,7 +116,7 @@ systemctl disable nginx.service
 ## 工作模式
 Nginx在启动的时候会采用多进程的方式，产生 master 和 worker 两种进程进行工作，master 负责统一协调 worker 进程的工作调度，而真正工作的都是一个个的 worker 进程。
 
-![多进程的工作模式](/assets/images/maintenance/nginx/nginx-worker.jpg "多进程的工作模式")
+![多进程的工作模式](/assets/images/study/maintenance/nginx/nginx-worker.jpg "多进程的工作模式")
 
 ## 配置文件详解
 ::: normal-demo nginx.conf
