@@ -69,8 +69,8 @@ tar zxvf xxx.tar
 # 解压 tar 到指定文件夹
 tar zxvf xxx.tar -C /xxx/yyy/
 
-# 解压 zip 到当前目录
-unzip xxx.zip
+# 解压 zip 到指定目录
+unzip -d xxx xxx.zip
 ```
 
 ## vim 命令
