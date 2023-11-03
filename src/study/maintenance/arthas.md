@@ -60,27 +60,19 @@ color: rgba(173, 216, 590, 0.15)
 ### 退出
 如果只是退出当前的连接，可以用 quit 或者 exit 命令。Attach 到目标进程上的 arthas 还会继续运行，端口会保持开放，下次连接时可以直接连接上。如果想完全退出 arthas，可以执行stop命令。
 
-## 常用命令
-### dashboard
-显示当前系统的实时仪表板，可以通过 i 来指定刷新时间，默认是 5 毫秒刷新一次，可以通过 n 来指定刷新次数，按 ctrl+c 或者 q 退出。
+## 常用场景
+### 查找执行方法
+当我们遇到一个非常耗时的方法的时候，或者遇到代码问题需要定位的时候，我们可以使用 trace 命令来通过一步步缩小范围来找到耗时最长的方法，如果你并不熟悉代码或者不清楚具体在那个包下，只需要从最外层的包名开始查看，可以用 * 来代替不确定的路径，在多次看到红色最长时间的方法后就能明确具体方法了。
 
-![仪表板](/assets/images/study/maintenance/arthas/arthas-dashboard.png "仪表板")
+![查看方法耗时](/assets/images/study/maintenance/arthas/arthas-trace.png '查看方法耗时')
 
-### thread
-查看当前线程信息，查看线程的堆栈。我们可以通过 thread 命令默认按照 CPU 增量时间降序排列，只显示第一页线程的数据。
+### 查看源码解决问题
+如果我们已经知晓了问题代码的位置，可是源码我们又看不到，我们就可以用 jad 命令来反编译类名或者方法名来查看源码。
 
-![第一页线程信息](/assets/images/study/maintenance/arthas/arthas-thread.png "第一页线程信息")
+![反编译源码](/assets/images/study/maintenance/arthas/arthas-jad.png '反编译源码')
 
-在我们获取了线程 ID 之后我们就可以通过指定线程 ID 来查看目标线程的简单信息。
+### 查看某些方法出参入参
+如果我们想排查方法调用时一些方法的入参和出参，我们可以使用 watch 命令，如果是多层的结构，我们可以用 -x 【n】来指定查看解析数据的层数。
 
-![指定线程 ID 查看线程信息](/assets/images/study/maintenance/arthas/arthas-thread-id.png "指定线程 ID 查看线程信息")
+![监听方法参数](/assets/images/study/maintenance/arthas/arthas-watch.png '监听方法参数')
 
-### jad
-反编译指定已加载类的源码。如果我们想要查看一个类的具体代码，可以使用 jad 进行反编译来查看，当然我们也可以精确到方法。
-
-![jad 反编译代码](/assets/images/study/maintenance/arthas/arthas-jad.png "jad 反编译代码")
-
-### watch
-函数执行数据观测，类似于一个在线的 debug 工具。我们这里查看 demo.MathGame 类中的 primeFactors 方法的返回结果，这里的 returnObj 是一个 OGNL 表达式。
-
-![查看 primeFactors 方法的返回值](/assets/images/study/maintenance/arthas/arthas-watch.png "查看 primeFactors 方法的返回值")
