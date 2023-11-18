@@ -36,10 +36,17 @@ color: rgba(173, 216, 590, 0.15)
 ![鼠标滑轮控制字体大小](/assets/images/resource/tools/development-tools/font-size-mouse.png "鼠标滑轮控制字体大小" =650x500)
 
 ### 插件推荐
-#### One Dark theme 主题
-相信大部分的程序员还是喜欢黑色的主题吧，虽然很大一部分原因还是护眼，但是黑色真的很高级炫酷啊。
+#### 主题推荐
+相信大部分的程序员还是喜欢黑色的主题吧，虽然很大一部分原因还是护眼，但是黑色真的很高级炫酷啊。被人熟知的就是下面这个经典的 One Dark 主题了。
 
 ![One Dark theme](/assets/images/resource/tools/development-tools/one-dark-theme.png "One Dark theme" =650x500)
+
+不过最近我的新宠还是 Dracula，深色背景下有紫色的高级感。
+
+![Dracula Theme](/assets/images/resource/tools/development-tools/dracula-theme.png "Dracula Theme" =650x500)
+
+值得一提的是这些主题在主流 IDE 都是支持的，如果喜欢就都去试试吧。
+
 #### Rainbow Brackets 彩虹括号
 一开始觉得花里胡哨没什么用，但是当你括号不能对齐的时候就是真香了。
 
