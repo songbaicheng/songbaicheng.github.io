@@ -38,3 +38,28 @@ link: https://kyome.io/runcat/index.html?lang=en
 color: rgba(173, 216, 590, 0.15)
 ```
 :::
+
+## Sublime Text
+相信大家都会觉得系统自带的文本编辑器的功能有点单调，尤其是在复制一些带有格式的文字，更是显得力不从心，虽然之前自己一直在用 VS Code 来作为文本编辑的主力，但是奈何它实在是太重了，很多时候有种杀鸡焉用牛刀的感觉，尤其是很多情况打开它重新打开上次意外关闭的项目，所以还是觉得本地应该有个轻量级的文本编辑器方便平时简单使用，当然这个方向竞品还是很的，因为平时工作还是 Windows 系统居多，所以大部分都是 NotePad++ 或者 UE 比较多，但是一些特殊的原因还是最后选择了 Sublime Text，虽然是付费软件，但是可以无限期的试用，在功能和使用逻辑上比较对味，如果你也有同样的需求，可以同样试一试。
+
+```card
+title: Sublime Text 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/sublime_text.png
+link: http://www.sublimetext.com
+color: rgba(173, 216, 590, 0.15)
+```
+
+## Neat Download Manager
+号称最快的浏览器下载器，最高支持 32 线程同时下载，解决浏览器下载大文件慢的问题。安装后可以自动检测本地浏览器，一键添加浏览器插件，十分方便。不过在 Safari 需要打开开发者选项中的配置才可以使用。
+
+![Safari 注意事项](/assets/images/resource/tools/development-tools/safari-ndm.png "Safari 注意事项")
+![Safari 配置](/assets/images/resource/tools/development-tools/safari-dev.png "Safari 配置")
+
+```card
+title: Neat Download Manager 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/neatdownloadmanager.png
+link: https://www.neatdownloadmanager.com/index.php/en/
+color: rgba(173, 216, 590, 0.15)
+```
