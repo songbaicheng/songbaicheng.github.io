@@ -2,11 +2,12 @@ import { arraySidebar } from "vuepress-theme-hope";
 
 export const studySidebar = arraySidebar([
     {
-        text: '开发技能',
+        text: '开发知识',
         icon: 'more',
         collapsible: true,
         children: [
-            '/study/development/READNE.md'
+            '/study/development/READNE.md',
+            '/study/development/ddd.md'
         ]
     },
     {
