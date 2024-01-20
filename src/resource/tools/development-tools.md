@@ -127,3 +127,19 @@ logo: /assets/images/resource/tools/development-tools/tabby.svg
 link: https://tabby.sh/
 color: rgba(173, 216, 590, 0.15)
 ```
+
+## Warp
+
+相对于上面的 Tabby，这个工具号称21世纪的终端工具，与传统终端的操作逻辑有些许不同，不仅用文本框代替了命令行输入，并且新增了 block 块的功能，更加方便我们平时的查看和复用命令。对于我个人理解，如果你是使用终端的小白或者不想安装 oh my zsh 折腾样式的朋友，这是一个非常适合你的工具。
+
+值得一提的是不仅仅在操作逻辑上，Warp 主打的功能就是与 Ai 相结合，内置了 Ai 助手并且提供命令提示，不需要像之前引入智能提示和历史提示的插件，不过目前每日提问数量应该是有限制的，不过已经可以应付一般人的正常使用强度了。
+
+当然也是有局限的，目前此工具只支持 macOS，并且会获取用户数据，如果你对个人隐私十分重视那就不推荐使用了。
+
+```card
+title: Warp 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/Warp.svg
+link: https://www.warp.dev/
+color: rgba(173, 216, 590, 0.15)
+```
