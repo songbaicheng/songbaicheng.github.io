@@ -63,3 +63,18 @@ logo: /assets/images/resource/tools/development-tools/neatdownloadmanager.png
 link: https://www.neatdownloadmanager.com/index.php/en/
 color: rgba(173, 216, 590, 0.15)
 ```
+
+## VMware Fusion
+虚拟机软件软件相信大家肯定都不陌生，无论你是想同时体验不同的系统还是说需要临时使用其他的系统，恰巧你的电脑内存和存储又都很充裕，虚拟机一定是一个不错的选择。
+
+最近 VMware 退出了全新的 VMware Fusion 13，支持 macOS Monterey 和 Windows 11，并且支持 M1 芯片，同时支持 macOS 13 Ventura，并且支持个人申请永久激活码，尽管体验上稍逊一筹，但是至少已经解决燃眉之急了。
+
+```card
+title: VMware Fusion 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/daily-tools/vmware-logo-grey.svg
+link: https://www.vmware.com/products/fusion.html
+color: rgba(173, 216, 590, 0.15)
+```
+
+

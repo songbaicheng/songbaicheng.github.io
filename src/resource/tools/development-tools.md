@@ -83,6 +83,18 @@ logo: /assets/images/resource/tools/development-tools/beaver-head.png
 link: https://dbeaver.io/
 color: rgba(173, 216, 590, 0.15)
 ```
+
+## Chat2DB
+集成了AI和BI报表功能的新一代数据库管理系统，分析了 Navicat、DBever、DataGrip的优缺点，既可以支持网页版，又支持跨端，又通用的前端完美方案。集成了AIGC的能力，能够将自然语言转换为SQL，也可以将SQL转换为自然语言，可以给出研发人员SQL的优化建议，极大的提升人员的效率，是AI时代数据库研发人员的利器，未来即使不懂SQL的运营业务也可以使用快速查询业务数据、生成报表能力。
+
+```card
+title: Chat2DB 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/chat2db.png
+link: http://sqlgpt.cn/zh
+color: rgba(173, 216, 590, 0.15)
+```
+
 ## Apifox/Apipost
 
 集文档、调试、Mock、测试于一身的API 一体化协作平台，感觉大部分开发者大部分都在使用 Swagger 作为 API 文档协同工具，个人感觉核心的优点还是在每次修改参数后并不需要重新编辑接口就可以自动更新，并且还有测试功能，这已经可以满足开发人员大部分的需求了，可是当你需要更加喜爱丰富的功能的话，比如说出一个手册、Mock等复杂功能还是力不从心，所以 Apifox 和 Apipost 两款国产软件成功问世，主打一个 Postman + Swagger + Mock + Jmeter 的设计理念。个人两个用下来感觉功能差别不大，具体想体验哪一个就看个人喜好了。
@@ -141,5 +153,27 @@ title: Warp 官网
 desc: 点击跳转官网查看详细内容
 logo: /assets/images/resource/tools/development-tools/Warp.svg
 link: https://www.warp.dev/
+color: rgba(173, 216, 590, 0.15)
+```
+
+## OrbStack
+其实当你在使用 Docker Desktop 的时候你会发现体验非常之差，OrbStack 的出现就是 为了解决 macOS 上的 Docker Desktop 原本就是饱受诟病，慢、重、资源消耗巨的问题，在 Mac OS 上低成本的运行容器和 Linux。不过注意 OrbStack 不支持Windows 和Linux，只支持macOS
+
+```card
+title: Warp 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/orbStack.png
+link: https://orbstack.dev
+color: rgba(173, 216, 590, 0.15)
+```
+
+## WireShark
+网络分析的工具很多，相比于 Fiddler 、Charles 来说 WireShark 更专业，功能更强大，并且可以免费使用。
+
+```card
+title: Warp 官网
+desc: 点击跳转官网查看详细内容
+logo: /assets/images/resource/tools/development-tools/wireshark-logo.png
+link: https://www.wireshark.org
 color: rgba(173, 216, 590, 0.15)
 ```

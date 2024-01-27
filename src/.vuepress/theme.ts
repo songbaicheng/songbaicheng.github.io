@@ -14,7 +14,7 @@ export default hopeTheme({
   },
   hostname: "https://github.com/songbaicheng/songbaicheng.github.io", // 当前网站部署到的域名
   iconAssets: "iconfont", // 字体图标资源链接
-  logo: "/icon/logo.png", // 网站左上角logo
+  logo: "/icon/chat2db.png", // 网站左上角logo
   logoDark: "/icon/logo-dark.png", // 黑夜模式下网站左上角logo
   repo: "songbaicheng/songbaicheng.github.io", // github地址
   docsDir: "docs", // 项目主路径
