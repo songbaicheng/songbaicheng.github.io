@@ -21,6 +21,132 @@ tag:
 AOP 是一种编程范式，是一种思想，用于解决横切关注点的模块化问题。我们常用的 AspectJ 则是基于 Java 的 AOP 框架，提供了实现 AOP 概念的语法和工具。
 
 ## 工作中使用到 AOP 的例子
+### 自定义日志注解
+最经典的切面应用场景，为了更加灵活和方便的查看每个方法和请求的出参入参，我们可以使用自定义注解的方式指定需要打印的方法或者类。
+
+1. 首先定义打印信息。
+```java
+@Data
+public class ILogPrintDTO {
+
+    /**
+     * 开始时间
+     */
+    private String beginTime;
+
+    /**
+     * 请求入参
+     */
+    private Object[] inputParams;
+
+    /**
+     * 返回参数
+     */
+    private Object outputParams;
+}
+```
+
+2. 定义日志注解，作用域为方法或类，并在运行时生效。
+```java
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ILog {
+
+    /**
+     * 是否需要打印入参
+     *
+     * @return 入参打印是否打印
+     */
+    boolean input() default true;
+
+    /**
+     * 是否需要打印出参
+     *
+     * @return 出参打印是否打印
+     */
+    boolean output() default true;
+}
+```
+
+3. 定义切面
+```java
+@Aspect
+public class ILogPrintAspect {
+
+    @Pointcut("@within(com.sbc.log.annotation.ILog) || @annotation(com.sbc.log.annotation.ILog)")
+    public void pointcut() {
+    }
+
+    @Around("pointcut()")
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
+        long startTime = SystemClock.now();
+        MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
+        Logger log = LoggerFactory.getLogger(methodSignature.getDeclaringType());
+        String beginTime = DateUtil.now();
+        Object result = null;
+        try {
+            result = pjp.proceed();
+        } finally {
+            Method targetMethod = pjp.getTarget().getClass().getDeclaredMethod(methodSignature.getName(), methodSignature.getMethod().getParameterTypes());
+            ILog logAnnotation = Optional.ofNullable(targetMethod.getAnnotation(ILog.class)).orElse(pjp.getTarget().getClass().getAnnotation(ILog.class));
+            if (logAnnotation != null) {
+                ILogPrintDTO logPrint = new ILogPrintDTO();
+                logPrint.setBeginTime(beginTime);
+                if (logAnnotation.input()) {
+                    logPrint.setInputParams(buildInput(pjp));
+                }
+                if (logAnnotation.output()) {
+                    logPrint.setOutputParams(result);
+                }
+                String methodType = "", requestURI = "";
+                try {
+                    ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+                    assert servletRequestAttributes != null;
+                    methodType = servletRequestAttributes.getRequest().getMethod();
+                    requestURI = servletRequestAttributes.getRequest().getRequestURI();
+                } catch (Exception ignored) {
+                }
+                log.info("[{}] {}, executeTime: {}ms, info: {}", methodType, requestURI, SystemClock.now() - startTime, JSON.toJSONString(logPrint));
+            }
+        }
+        return result;
+    }
+
+    private Object[] buildInput(ProceedingJoinPoint pjp) {
+        Object[] args = pjp.getArgs();
+        Object[] printArgs = new Object[args.length];
+        for (int i = 0; i < args.length; i++) {
+            if ((args[i] instanceof HttpServletRequest) || args[i] instanceof HttpServletResponse) {
+                continue;
+            }
+            if (args[i] instanceof byte[]) {
+                printArgs[i] = "byte array";
+            } else if (args[i] instanceof MultipartFile) {
+                printArgs[i] = "file";
+            } else {
+                printArgs[i] = args[i];
+            }
+        }
+        return printArgs;
+    }
+}
+```
+
+4. 创建配置类
+```java
+@Configuration
+public class LogAutoConfiguration {
+
+    /**
+     * 日志打印 AOP 切面
+     */
+    @Bean
+    public ILogPrintAspect iLogPrintAspect() {
+        return new ILogPrintAspect();
+    }
+}
+```
+
 ### 返回对象脱敏
 最近公司开始要求对客户信息的保密性进行加强，需要我们将日志和前台界面的客户信息进行加密处理，由于我们项目的日志五花八门，而且使用的架构也不尽相同，所以日志脱敏的解决办法就是开发一个脱敏工具类，同时将脱敏需要的依赖打包成 jar 添加到每个项目中去，检索项目中所有打印日志的语句，统一加上工具类中的脱敏方法，听起来这就是个感人的工作。其次是前台界面客户信息脱敏，因为我们大部分项目都是纯后台，所以负责这个任务的工作就落到了我另一个同事头上，当他在和我讨论这个实现的时候和我说了一下他的思路：我们后台需要做的就是把传递给前台的 vo 中的敏感信息过滤，如果每个 vo 对象都要过滤那简直是天方夜谭，于是他想将所有 controller 中的方法作为切点增加个切面，拿到每个方法返回值判断 vo 并进行过滤。下面我拿 demo 来演示一下：
 
