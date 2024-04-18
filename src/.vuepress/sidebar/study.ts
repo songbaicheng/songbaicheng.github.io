@@ -126,6 +126,15 @@ export const studySidebar = arraySidebar([
             '/study/maintenance/docker.md',
             '/study/maintenance/nginx.md',
             '/study/maintenance/arthas.md',
+            {
+                text: 'Jenkins',
+                icon: 'flow',
+                collapsible: true,
+                children: [
+                    '/study/maintenance/jenkins/README.md',
+                    '/study/maintenance/jenkins/jenkins-start.md'
+                ]
+            },
         ]
     },
 ])
