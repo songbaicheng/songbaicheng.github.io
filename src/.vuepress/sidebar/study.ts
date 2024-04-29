@@ -58,6 +58,14 @@ export const studySidebar = arraySidebar([
         ]
     },
     {
+        text: '中间件',
+        icon: '/icon/sidebar-puzzle.svg',
+        collapsible: true,
+        children: [
+            '/study/middleware/README.md'
+        ]
+    },
+    {
         text: '前端技术',
         icon: 'chrome',
         collapsible: true,
