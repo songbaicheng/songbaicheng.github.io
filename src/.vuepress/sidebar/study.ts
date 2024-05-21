@@ -1,4 +1,4 @@
-import { arraySidebar } from "vuepress-theme-hope";
+import {arraySidebar} from "vuepress-theme-hope";
 
 export const studySidebar = arraySidebar([
     {
@@ -6,7 +6,6 @@ export const studySidebar = arraySidebar([
         icon: 'more',
         collapsible: true,
         children: [
-            '/study/development/READNE.md',
             '/study/development/ddd.md'
         ]
     },
@@ -15,6 +14,7 @@ export const studySidebar = arraySidebar([
         icon: 'java',
         collapsible: true,
         children: [
+            '/study/backend/code-trick.md',
             {
                 text: 'Java 基础',
                 collapsible: true,
