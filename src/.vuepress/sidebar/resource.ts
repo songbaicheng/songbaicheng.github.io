@@ -35,6 +35,7 @@ export const resourceSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/resource/techniques/image-hosting-service.md',
+            '/resource/techniques/internal-network-penetration.md',
         ]
     },
 ])
