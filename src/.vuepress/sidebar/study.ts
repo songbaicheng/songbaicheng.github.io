@@ -91,7 +91,8 @@ export const studySidebar = arraySidebar([
         collapsible: true,
         children: [
             '/study/design-pattern/README.md',
-            '/study/design-pattern/observer.md'
+            '/study/design-pattern/observer.md',
+            '/study/design-pattern/chain.md'
         ]
     },
     {
