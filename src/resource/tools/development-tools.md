@@ -61,6 +61,11 @@ idea 自带的代码提示可以帮你优化一些简单代码，让代码看上
 
 ![Alibaba Java Coding Guidelines](/assets/images/resource/tools/development-tools/alibaba-java-coding-guidelines.png "Alibaba Java Coding Guidelines" =650x500)
 
+#### CodeGeeX 智能编程助手
+清华大学与智谱 AI 联合开发的免费代码自动生成工具，周围的朋友都已经在用 GitHub Copilot 了，鉴于收费并且访问问题自己就果断使用 CodeGeex 这款插件了，平常使用中提示功能没有太大问题，一些自带的小功能比较适合国人的开发习惯，也是十分推荐。
+
+![CodeGeex](/assets/images/resource/tools/development-tools/codeGeeX.png "CodeGeeX" =650x500)
+
 ## Visual Studio Code
 
 地表最强 IDE ，具目前的数据来看，全世界受访的程序员中有 81% 的人都在使用，当然我现在就是在用它码字，它依托丰富的插件库可以支持你在开发中遇到的大多数的场景，现在它在我的手里也是“身兼数职”。
