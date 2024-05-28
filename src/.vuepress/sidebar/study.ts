@@ -73,6 +73,14 @@ export const studySidebar = arraySidebar([
         ]
     },
     {
+        text: '大数据',
+        icon: '/assets/images/study/big-data/big-data.svg',
+        collapsible: true,
+        children: [
+            '/study/big-data/hadoop.md'
+        ]
+    },
+    {
         text: '前端技术',
         icon: 'chrome',
         collapsible: true,
