@@ -165,7 +165,7 @@ color: rgba(173, 216, 590, 0.15)
 其实当你在使用 Docker Desktop 的时候你会发现体验非常之差，OrbStack 的出现就是 为了解决 macOS 上的 Docker Desktop 原本就是饱受诟病，慢、重、资源消耗巨的问题，在 Mac OS 上低成本的运行容器和 Linux。不过注意 OrbStack 不支持Windows 和Linux，只支持macOS
 
 ```card
-title: Warp 官网
+title: OrbStack 官网
 desc: 点击跳转官网查看详细内容
 logo: /assets/images/resource/tools/development-tools/orbStack.png
 link: https://orbstack.dev
@@ -176,7 +176,7 @@ color: rgba(173, 216, 590, 0.15)
 网络分析的工具很多，相比于 Fiddler 、Charles 来说 WireShark 更专业，功能更强大，并且可以免费使用。
 
 ```card
-title: Warp 官网
+title: WireShark 官网
 desc: 点击跳转官网查看详细内容
 logo: /assets/images/resource/tools/development-tools/wireshark-logo.png
 link: https://www.wireshark.org
