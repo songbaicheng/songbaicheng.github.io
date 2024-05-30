@@ -45,7 +45,7 @@ color: rgba(173, 216, 590, 0.15)
 title: Better365 官网
 desc: 点击跳转官网查看详细内容
 logo: /assets/images/resource/tools/daily-tools/better365.ico
-link: https://www.better365.com/h-col-101.html
+link: https://www.better365.com/
 color: rgba(173, 216, 590, 0.15)
 ```
 
