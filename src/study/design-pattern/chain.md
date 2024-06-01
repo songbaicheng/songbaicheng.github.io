@@ -46,6 +46,179 @@ tag:
 
 ## 应用场景
 ### 用责任链实现请求内容校验
-用户注册的场景下，我们在创建新用户之前需要经过对字段合法性、用户是否已注册、用户黑名单校验等步骤，如果只是将步骤分为不同的方法或者都写在同一个方法里难免会造成一个大类，维护起来十分困难，这里才用责任链的模式进行拆分。
+用户注册的场景下，我们在创建新用户之前需要经过对字段合法性、用户是否已注册、用户黑名单校验等步骤，如果只是将步骤分为不同的方法或者都写在同一个方法里难免会造成一个大类，维护起来十分困难，这里使用责任链的模式进行拆分。
 
+1. 抽象处理者
+这里我们抽象处理者需要有处理方法和分类标识，处理方法当然是我们责任链每个环节的的具体实现，而分类标识则用来分类处理者种类从而实现多种处理者并存。这里我们还继承 Spring 的 Ordered 来实现每种责任链中处理者的执行排序。
+```Java
+import org.springframework.core.Ordered;
 
+/**
+ * @description: 抽象业务责任链
+ **/
+public interface AbstractChainHandler<T> extends Ordered {
+
+    /**
+     * 执行责任链逻辑
+     *
+     * @param requestParam 责任链执行入参
+     */
+    void handler(T requestParam);
+
+    /**
+     * 责任链组件标识
+     */
+    String mark();
+}
+```
+
+2. 具体处理者
+这里我们分别实现校验注册字段的三个具体实现类，首先定于用户注册责任链的分类。
+```Java
+/**
+ * @description: 用户责任链处理者
+ **/
+public interface UserRegisterCreateChainFilter <T extends UserRegisterReqVo> extends AbstractChainHandler<UserRegisterReqVo> {
+
+    @Override
+    default String mark() {
+        return UserChainMarkEnum.USER_REGISTER_FILTER.name();
+    }
+}
+```
+有了注册责任链接口后，我们只需要继承这个接口实现具体的校验逻辑和顺序即可。
+```Java
+/**
+ * @description: 用户注册参数必填检验
+ **/
+@Component
+public class UserRegisterParamNotNullChainHandler implements UserRegisterCreateChainFilter<UserRegisterReqVo> {
+
+    @Override
+    public void handler(UserRegisterReqVo requestParam) {
+        if (Objects.isNull(requestParam.getUsername())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.USER_NAME_NOTNULL);
+        } else if (Objects.isNull(requestParam.getPassword())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.PASSWORD_NOTNULL);
+        } else if (Objects.isNull(requestParam.getTelephone())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.PHONE_NOTNULL);
+        } else if (Objects.isNull(requestParam.getIdType())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.ID_TYPE_NOTNULL);
+        } else if (Objects.isNull(requestParam.getIdCard())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.ID_CARD_NOTNULL);
+        } else if (Objects.isNull(requestParam.getMail())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.MAIL_NOTNULL);
+        } else if (Objects.isNull(requestParam.getRealName())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.REAL_NAME_NOTNULL);
+        }
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+}
+
+/**
+ * @description: 用户注册用户名唯一检验
+ **/
+@Component
+@RequiredArgsConstructor
+public class UserRegisterHasUsernameChainHandler implements UserRegisterCreateChainFilter<UserRegisterReqVo> {
+
+    private final UserLoginService userLoginService;
+
+    @Override
+    public void handler(UserRegisterReqVo requestParam) {
+        if (userLoginService.hasUsername(requestParam.getUsername())) {
+            throw new ClientException(UserRegisterErrorCodeEnum.USERNAME_REGISTERED);
+        }
+    }
+
+    @Override
+    public int getOrder() {
+        return 1;
+    }
+}
+
+/**
+ * @description: 用户注册检查证件号是否多次注销
+ **/
+@Component
+@RequiredArgsConstructor
+public class UserRegisterCheckDeletionChainHandler implements UserRegisterCreateChainFilter<UserRegisterReqVo> {
+
+    private final UserInfoService userInfoService;
+
+    @Override
+    public void handler(UserRegisterReqVo requestParam) {
+        Integer userDeletionNum = userInfoService.queryUserDeletionNum(requestParam.getIdType(), requestParam.getIdCard());
+        if (userDeletionNum >= 5) {
+            throw new ClientException("证件号多次注销账号已被加入黑名单");
+        }
+    }
+
+    @Override
+    public int getOrder() {
+        return 2;
+    }
+}
+```
+3. 创建责任链
+我们使用 Spring 的容器夹在组件的方式创建责任链，我们使用 Spring 提供的 CommandLineRunner 接口实现项目启动时获取所有继承我们抽象处理者的类并且按照 mark 分类和 Ordered 顺序来进行排序。
+```Java
+/**
+ * @param <T> 请求参数的类型
+ * @description: 抽象责任链上下文
+ */
+public class AbstractChainContext<T> implements CommandLineRunner {
+
+    private final Map<String, List<AbstractChainHandler>> abstractChainHandlerContainer = new HashMap<>();
+
+    @Override
+    public void run(String... args) {
+        // 获取所有具体执行者组件
+        Map<String, AbstractChainHandler> chainFilterMap = ApplicationContextHolder.getBeansOfType(AbstractChainHandler.class);
+
+        // 根据责任链组件标识将组件分类
+        chainFilterMap.values().forEach(bean -> {
+            abstractChainHandlerContainer
+                    .computeIfAbsent(bean.mark(), k -> new ArrayList<>())
+                    .add(bean);
+        });
+
+        // 按照组件 order 优先级进行排序
+        abstractChainHandlerContainer.replaceAll((mark, handlers) ->
+                handlers.stream()
+                        .sorted(Comparator.comparing(Ordered::getOrder))
+                        .collect(Collectors.toList())
+        );
+    }
+
+    /**
+     * 责任链组件执行
+     *
+     * @param mark         责任链组件标识
+     * @param requestParam 请求参数
+     */
+    public void handler(String mark, T requestParam) {
+        List<AbstractChainHandler> abstractChainHandlers = abstractChainHandlerContainer.get(mark);
+        if (CollectionUtils.isEmpty(abstractChainHandlers)) {
+            throw new RuntimeException(String.format("[%s] 责任链标识未定义。", mark));
+        }
+        abstractChainHandlers.forEach(each -> each.handler(requestParam));
+    }
+}
+```
+
+4. 使用责任链
+```Java
+@Transactional(rollbackFor = Exception.class)
+@Override
+public UserRegisterRespVo register(UserRegisterReqVo requestParam) {
+    // 登录责任链
+    abstractChainContext.handler(UserChainMarkEnum.USER_REGISTER_FILTER.name(), requestParam);
+    // 其他逻辑省略
+   
+}
+```
