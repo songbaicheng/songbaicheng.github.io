@@ -7,6 +7,36 @@ tag:
 ---
 
 # Java 8 新特性
+## Interface
+Java 8 中的接口可以包含默认方法（default）和静态方法（static）,default 修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写，而 static 修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用 Interface 调用。
+```Java
+public interface InterfaceNew {
+    static void sm() {
+        System.out.println("interface提供的方式实现");
+    }
+    static void sm2() {
+        System.out.println("interface提供的方式实现");
+    }
+
+    default void def() {
+        System.out.println("interface default方法");
+    }
+    default void def2() {
+        System.out.println("interface default2方法");
+    }
+    //须要实现类重写
+    void f();
+}
+
+public interface InterfaceNew1 {
+    default void def() {
+        System.out.println("InterfaceNew1 default方法");
+    }
+}
+```
+如果有一个类既实现了 InterfaceNew 接口又实现了 InterfaceNew1接口，它们都有def()，并且 InterfaceNew 接口和 InterfaceNew1接口没有继承关系的话，这时就必须重写def()。不然的话，编译的时候就会报错。
+
+
 ## Optional
 Java 8中的 Optional 类可以在以下情况下使用：
 - 当你不确定一个值是否存在时，可以使用 Optional 来封装这个值，避免在运行时出现 NullPointerException 异常。
