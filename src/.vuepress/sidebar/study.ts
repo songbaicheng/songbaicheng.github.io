@@ -77,6 +77,7 @@ export const studySidebar = arraySidebar([
         icon: '/assets/images/study/big-data/big-data.svg',
         collapsible: true,
         children: [
+            '/study/big-data/README.md',
             '/study/big-data/hadoop.md'
         ]
     },
