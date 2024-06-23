@@ -14,7 +14,6 @@ export const studySidebar = arraySidebar([
         icon: 'java',
         collapsible: true,
         children: [
-            '/study/backend/code-trick.md',
             {
                 text: 'Java 基础',
                 collapsible: true,
@@ -30,7 +29,6 @@ export const studySidebar = arraySidebar([
                 collapsible: true,
                 children: [
                     '/study/backend/java/spring/spring-data-redis.md',
-                    '/study/backend/java/spring/jwt.md',
                     '/study/backend/java/spring/spring-security-jwt.md',
                     '/study/backend/java/spring/spring-security-oauth2.md',
                     '/study/backend/java/spring/spring-boot-logging.md',
@@ -44,13 +42,6 @@ export const studySidebar = arraySidebar([
                     '/study/backend/java/micro-services/nacos.md',
                     '/study/backend/java/micro-services/gateway.md',
                     '/study/backend/java/micro-services/spring-boot-admin.md',
-                ],
-            },
-            {
-                text: '后端框架',
-                collapsible: true,
-                children: [
-                    '/study/backend/tools/jwt.md',
                 ],
             },
         ]

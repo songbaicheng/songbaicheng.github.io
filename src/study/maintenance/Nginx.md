@@ -583,11 +583,6 @@ server {
 ```
 :::
 
-#### $request_uri
-根据请求携带的路径进行定向请求。
-
-#### $cookie_jessionid
-根据请求携带的 sessionid 进行定向请求。
-
-#### sticky
-一个模块化的保持会话方式。
+## 实战训练
+### Vue3 + Vite4 + Nginx
+这里拿我自己

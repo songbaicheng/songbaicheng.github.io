@@ -16,7 +16,8 @@ Redis (Remote Dictionary Server) 是一个开源的内存数据结构存储，�
 5. Lua脚本：支持Lua脚本，可以实现复杂的原子操作。
 6. 事务支持：支持事务，保证一系列操作的原子性。
 
-## 常用场景
+## 场景
+### 抽象场景
 1. 缓存（Caching）：
 - 对需要频繁访问的数据进行缓存，如用户信息、商品信息等。
 - 极大提高数据的读取速度，减轻数据库负载。
@@ -38,6 +39,9 @@ Redis (Remote Dictionary Server) 是一个开源的内存数据结构存储，�
 7. 地理信息存储和查询（Geospatial Information Storage and Query）：
 - 场景：存储和查询地理位置数据，如定位服务、地图应用等。
 - 好处：通过geo命令集快速实现地理位置的存储和半径查询。
+
+### 实际场景
+1. 阅读量/浏览量：配合 String 类型的 incr 原子增加操作，每次访问链接自动加一。
 
 ```card
 title: Redis 官网

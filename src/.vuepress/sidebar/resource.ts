@@ -26,6 +26,7 @@ export const resourceSidebar = arraySidebar([
         icon: 'preview',
         collapsible: true,
         children: [
+            '/study/backend/tools/jwt.md',
             '/resource/open-source-project/workflow.md',
         ]
     },
