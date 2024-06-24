@@ -1,0 +1,1 @@
+import{_ as t}from"./plugin-vue_export-helper-c27b6911.js";import{o,c as n,b as e,d as s}from"./app-d4542e9b.js";const a={},r=e("h1",{id:"并查集",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#并查集","aria-hidden":"true"},"#"),s(" 并查集")],-1),c=[r];function i(d,_){return o(),n("div",null,c)}const f=t(a,[["render",i],["__file","disjoint-set-union.html.vue"]]);export{f as default};
