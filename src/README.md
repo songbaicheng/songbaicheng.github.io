@@ -19,6 +19,14 @@ projects:
     desc: a mall project used vue
     link: https://github.com/songbaicheng/vue-mall
   - icon: vue
+    name: 12306-web
+    desc: learn 12306 project
+    link: https://gitee.com/songbaicheng/12306-web
+  - icon: java
+    name: 12306-boot
+    desc: learn 12306 project
+    link: https://gitee.com/songbaicheng/12306-boot
+  - icon: vue
     name: vue3-study-demo
     desc: Demo records during the learning process.
     link: https://github.com/songbaicheng/vue3-study-demo

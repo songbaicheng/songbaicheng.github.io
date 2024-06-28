@@ -1,6 +1,6 @@
-import {arraySidebar} from "vuepress-theme-hope";
+import {arraySidebar, SidebarArrayOptions} from "vuepress-theme-hope";
 
-export const studySidebar = arraySidebar([
+export const studySidebar:SidebarArrayOptions = arraySidebar([
     {
         text: '开发知识',
         icon: 'more',
