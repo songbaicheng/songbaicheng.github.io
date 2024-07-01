@@ -81,3 +81,9 @@ Hadoop 集群中的文件存储都是以块（block）的形式存储在 HDFS �
 - NameNode会记录下文件与数据块的映射关系，以便于后续的读取操作。
 
 ## MapReduce 重点知识
+### Map Task
+
+### Reduce Task
+
+### 切片解析
+
