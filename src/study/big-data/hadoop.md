@@ -87,3 +87,7 @@ Hadoop 集群中的文件存储都是以块（block）的形式存储在 HDFS �
 
 ### 切片解析
 
+### Shuffle机制
+
+### Partition分区
+

@@ -11,12 +11,12 @@ root((大数据知识点))
     Shell
     Maven
   大数据框架
-    Hadoop
-    Spark
-    Flink
-    Hive
-    HBase
-    Kafka
-    Zookeeper
-    Flume
+    1.Hadoop
+    2.Spark
+    3.Flink
+    5.Hive
+    8.HBase
+    7.Kafka
+    4.Zookeeper
+    6.Flume
 ```
