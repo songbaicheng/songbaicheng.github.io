@@ -82,12 +82,18 @@ Hadoop 集群中的文件存储都是以块（block）的形式存储在 HDFS �
 
 ## MapReduce 重点知识
 ### Map Task
-
+MapTask 执行过程
 ### Reduce Task
-
+ReduceTask 执行过程
 ### 切片解析
 
 ### Shuffle机制
 
 ### Partition分区
+
+### InputFormat
+
+### OutputFormat
+
+### reduce join
 
