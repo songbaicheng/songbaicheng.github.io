@@ -4,6 +4,9 @@ category: Java 基础
 tag:
   - Java 8 新特性
   - Optional
+  - Lambda 表达式
+  - 函数式接口
+  - Stream API
 ---
 
 # Java 8 新特性

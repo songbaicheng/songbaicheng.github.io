@@ -97,3 +97,6 @@ ReduceTask 执行过程
 
 ### reduce join
 
+## Yarn 重点
+### 工作机制
+### 资源调度器

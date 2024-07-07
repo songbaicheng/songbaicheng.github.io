@@ -18,3 +18,7 @@ _**想起来就做一题吧！**_
 ### 3033. 修改矩阵
 > https://leetcode.cn/problems/modify-the-matrix/solutions/2832513/bian-li-er-jie-shu-zu-by-songbaicheng-fcci
 
+## 链表
+### 合并两个有序链表
+> https://leetcode.cn/problems/merge-two-sorted-lists/solutions/2834528/jing-dian-shuang-zhi-zhen-by-songbaichen-0igt
+
