@@ -54,49 +54,25 @@ YARN（资源管理和作业调度）
   - 功能：负责应用程序的管理。
   - 职责：为每个应用程序（如MapReduce作业）启动一个ApplicationMaster，它负责申请资源并监控任务的执行。
 
-## HDFS 重点知识
-### 文件块大小
-Hadoop 集群中的文件存储都是以块（block）的形式存储在 HDFS 中的，在 2.7.3 之前，HDFS 文件块大小默认为 64MB，之后默认为 128MB，可以通过参数 `dfs.blocksize` 进行修改。
-
-### 文件块大小选取原则
-核心原则是**最小化寻址开销，减少网络传输。**
-1. 减少磁盘寻道时间：HDFS的设计是为了支持大数据操作，合适的 block 大小有助于减少硬盘寻道时间（平衡了硬盘寻道时间、IO时间），提高系统吞吐量。
-2. 减少NameNode内存消耗：NameNode 需要在内存 FSImage 文件中记录 DataNode 中数据块信息，若 block size 太小，那么需要维护的数据块信息会更多。而 HDFS 只有一个 NameNode 节点，内存是极其有限的。
-3. 影响map端失败时重启时间：若map端任务出现崩溃，那么在重新启动拉起任务时会重新加载数据，而数据块的大小直接影响了加載数据的时间，例如数据块（block）越大，数据加载时间就会越长，进而该map任务的恢复时间越长。
-4. 考虑网络传输问题：在数据读写过程中，需要进行网络传输。如果block块过大，会导致网络传输的时间边长，也会因网络不稳定等因素造成程序卡顿、超时、无响应等。如果block块过小，会频繁的进行文件传输，初始化的map端对象会变多，资源占用变高、jvm增高、网络占用变多。
-
-### 读写流程
-1. 客户端发起请求：
-- 客户端向NameNode发起写文件请求，请求中包含文件名、文件大小等信息。
-2. NameNode检查与响应：
-- NameNode检查文件是否已存在，以及其父目录是否存在。
-- 如果文件不存在且满足其他条件（如磁盘空间等），NameNode会接受请求并返回一个确认信息。
-3. 文件块分配：
-- NameNode会将文件划分为多个数据块（默认大小为128MB，但可配置）。
-- 对于每个数据块，NameNode会选择一个或多个DataNode进行存储，确保数据的冗余和容错性（默认每个数据块有3个副本）。
-4. 数据写入：
-- 客户端根据NameNode的指示，将数据块写入指定的DataNode。
-- 数据写入通常是流水线式的，即客户端将数据写入第一个DataNode，第一个DataNode将数据转发给第二个DataNode，依此类推，直到所有数据块都存储完成。
-5. 记录映射关系：
-- NameNode会记录下文件与数据块的映射关系，以便于后续的读取操作。
-
-## MapReduce 重点知识
-### Map Task
-MapTask 执行过程
-### Reduce Task
-ReduceTask 执行过程
-### 切片解析
-
-### Shuffle机制
-
-### Partition分区
-
-### InputFormat
-
-### OutputFormat
-
-### reduce join
-
-## Yarn 重点
-### 工作机制
-### 资源调度器
+## 重点知识
+### HDFS 读写流程
+1. 创建文件：
+1.1 HDFSclient向HDFS写数据先调用DistributedFileSystem.create()；
+1.2 RPC调用namenode的create()方法，会在HDFS目录树中指定路径，添加新文件；并将操作记录在edits.log中namenode的create()方法执行完后，返回一个FSDataOutPutStream，他是DFSOutPutStream的包装类；
+2. 建立数据流管道pipeline
+2.1 client调用DFSOutPutStream.write()写数据（先写文件的第一个块，暂时称为blk1）；
+2.2 DFSOutputStream通过RPC调用namenode的addBlock，向namenode申请一个空的数据块block；
+2.3 addBlock返回一个LocatedBlock对象，此对象包含当前blk要存储哪三个datanode信息，比如dn1，dn2，dn3；
+2.4 客户端根据位置信息建立数据流管道；
+3. 向数据流管道写入当前块的数据
+1、 写数据时，先将数据写入一个检验块chunk中，写满512字节后，对此chunk计算校验和chunksum值（4字节）；
+2、 然后将chunk和对应的校验写入packet中，一个packet是64kb；
+3、 随着源源不断的带校验chunk写入packet，当packet写满之后将其写入dataqueue队列中；
+4、 packet从队列中取出，沿着pipeline发送到dn1，再从dn1发送到dn2，dn2发送到dn3；
+5、 同时，这个packet也会保存一份到一个确认队列ackqueue中；
+6、 packet到达最后一个datanode即nd3之后会做检验，然后将检验沿结果逆着pipeline方向传回客户端，具体检验结果从dn3传到dn2，dn2做检验，dn2传到dn1，dn1做检验，结果再传回客户端；
+7、 客户端根据校验结果，如果“成功”，则将保存在ackqueue中的packet删除，如果失败则将packet取出重新放回到dataqueue末尾，等待沿pipeline再次传输；
+8、 如此将block中一个数据的一个个packet发送出去当block发送完毕，即dn1，dn2，dn3都接收了blk1的副本，那么三个datanode分别RPC调用namenode的blockReceivedAndDeleted()，namenode会更新内存中block与datanode的对应关系（比如dn1上多了个blk1）；
+4. 关闭三个datanode构建的pipeline，且文件还有下一个块的时候，再从4开始直到全部文件写完
+  4.1、 最终，调用DFSOutputStream的close()；
+4.2、 客户端调用namenode的complete()，告知namenode文件传输完成；
