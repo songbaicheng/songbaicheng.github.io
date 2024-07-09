@@ -6,7 +6,8 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
         icon: 'more',
         collapsible: true,
         children: [
-            '/study/development/ddd.md'
+            '/study/development/ddd.md',
+            '/study/development/encode.md',
         ]
     },
     {
