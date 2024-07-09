@@ -54,3 +54,14 @@ logo: /assets/common-icon/leetcode-dark-cn.svg
 link: https://leetcode.cn/problems/merge-two-sorted-lists/solutions/2834528/jing-dian-shuang-zhi-zhen-by-songbaichen-0igt
 color: rgba(173, 216, 590, 0.15)
 ```
+
+## 树
+### 94. 二叉树的中序遍历
+```card
+title: LeetCode 题库【94】
+desc: 点击跳转题解页查看详细内容
+logo: /assets/common-icon/leetcode-dark-cn.svg
+link: https://leetcode.cn/problems/binary-tree-inorder-traversal/solutions/2836175/shen-du-you-xian-bian-li-by-songbaicheng-3orf
+color: rgba(173, 216, 590, 0.15)
+```
+
