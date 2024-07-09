@@ -17,6 +17,17 @@ tag:
 我们通常所说的 Unicode，其实只做了第1件事情，并且是给全世界所有语言的所有文字或字母一个独一无二的数字编码，这样只要设计一种机制做第2件事情来表示 Unicode，就可以显示全球范围内任何文字了。Unicode具体对所有语言的每个字母、文字的数字编号可以从其官方网站 Unicode 编码表 查询。
 
 ## 常见的字符编码
+```mindmap
+root((字符编码类型))
+  ((Unicode))
+  ((ASCII))
+  ((Latin1))
+  ((GB2312))
+  ((GBK))
+  ((GB18030))
+  ((UTF8))
+```
+
 ### ASCII
 ASCII 编码，全称是 American Standard Code for Information Interchange，美国信息交换标准代码。
 
