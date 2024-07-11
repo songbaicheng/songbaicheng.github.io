@@ -64,4 +64,12 @@ logo: /assets/common-icon/leetcode-dark-cn.svg
 link: https://leetcode.cn/problems/binary-tree-inorder-traversal/solutions/2836175/shen-du-you-xian-bian-li-by-songbaicheng-3orf
 color: rgba(173, 216, 590, 0.15)
 ```
+### 100. 相同的树
+```card
+title: LeetCode 题库【100】
+desc: 点击跳转题解页查看详细内容
+logo: /assets/common-icon/leetcode-dark-cn.svg
+link: https://leetcode.cn/problems/same-tree/solutions/2838042/shen-du-you-xian-bian-li-by-songbaicheng-k88d
+color: rgba(173, 216, 590, 0.15)
+```
 
