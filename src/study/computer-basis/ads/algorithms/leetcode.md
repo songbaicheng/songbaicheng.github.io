@@ -8,7 +8,7 @@ tag:
 # LeetCode 每日一题
 _**想起来就做一题吧！**_
 
-## 数组
+## 遍历
 ### 3099. 哈沙德数
 ```card
 title: LeetCode 题库【3099】
@@ -36,6 +36,16 @@ link: https://leetcode.cn/problems/modify-the-matrix/solutions/2832513/bian-li-e
 color: rgba(173, 216, 590, 0.15)
 ```
 
+### 2974. 最小数字游戏
+```card
+title: LeetCode 题库【2974】
+desc: 点击跳转题解页查看详细内容
+logo: /assets/common-icon/leetcode-dark-cn.svg
+link: https://leetcode.cn/problems/minimum-number-game/solutions/2841156/bian-li-shu-zu-by-songbaicheng-6wmc
+color: rgba(173, 216, 590, 0.15)
+```
+
+## 前缀和
 ### 724. 寻找数组的中心下标
 ```card
 title: LeetCode 题库【724】
@@ -45,7 +55,7 @@ link: https://leetcode.cn/problems/find-pivot-index/solutions/2835129/qian-zhui-
 color: rgba(173, 216, 590, 0.15)
 ```
 
-## 链表
+## 双指针
 ### 21. 合并两个有序链表
 ```card
 title: LeetCode 题库【21】
@@ -55,7 +65,7 @@ link: https://leetcode.cn/problems/merge-two-sorted-lists/solutions/2834528/jing
 color: rgba(173, 216, 590, 0.15)
 ```
 
-## 树
+## DFS
 ### 94. 二叉树的中序遍历
 ```card
 title: LeetCode 题库【94】
@@ -64,6 +74,7 @@ logo: /assets/common-icon/leetcode-dark-cn.svg
 link: https://leetcode.cn/problems/binary-tree-inorder-traversal/solutions/2836175/shen-du-you-xian-bian-li-by-songbaicheng-3orf
 color: rgba(173, 216, 590, 0.15)
 ```
+
 ### 100. 相同的树
 ```card
 title: LeetCode 题库【100】
