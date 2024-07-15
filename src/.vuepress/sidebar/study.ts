@@ -57,7 +57,8 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
         collapsible: true,
         children: [
             '/study/persistence/README.md',
-            '/study/persistence/redis.md'
+            '/study/persistence/sql.md',
+            '/study/persistence/redis.md',
         ]
     },
     {
