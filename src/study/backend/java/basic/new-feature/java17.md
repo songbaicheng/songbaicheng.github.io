@@ -18,7 +18,7 @@ root((Java 17 新特性))
   switch 表达式
   Record
   密封类 sealed class
-  instanceof模式匹配
+  instanceof 模式匹配
 ```
 
 ## 文本块

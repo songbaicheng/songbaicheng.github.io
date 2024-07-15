@@ -65,7 +65,7 @@ link: https://leetcode.cn/problems/merge-two-sorted-lists/solutions/2834528/jing
 color: rgba(173, 216, 590, 0.15)
 ```
 
-## DFS
+## 递归
 ### 94. 二叉树的中序遍历
 ```card
 title: LeetCode 题库【94】
@@ -84,3 +84,11 @@ link: https://leetcode.cn/problems/same-tree/solutions/2838042/shen-du-you-xian-
 color: rgba(173, 216, 590, 0.15)
 ```
 
+### 110. 平衡二叉树
+```card
+title: LeetCode 题库【110】
+desc: 点击跳转题解页查看详细内容
+logo: /assets/common-icon/leetcode-dark-cn.svg
+link: https://leetcode.cn/problems/balanced-binary-tree/solutions/2842372/di-gui-by-songbaicheng-4n7i
+color: rgba(173, 216, 590, 0.15)
+```

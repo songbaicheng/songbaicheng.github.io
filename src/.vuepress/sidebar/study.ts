@@ -25,7 +25,8 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
                     '/study/backend/java/basic/concurrency.md',
                     '/study/backend/java/basic/new-feature/java8.md',
                     '/study/backend/java/basic/new-feature/java11.md',
-                    '/study/backend/java/basic/new-feature/java17.md'
+                    '/study/backend/java/basic/new-feature/java17.md',
+                    '/study/backend/java/basic/new-feature/java21.md'
                 ],
             },
             {
