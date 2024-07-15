@@ -5,7 +5,7 @@ tag:
   - LeetCode
 ---
 
-# LeetCode 每日一题
+# LeetCode
 _**想起来就做一题吧！**_
 
 ## 遍历
@@ -90,5 +90,14 @@ title: LeetCode 题库【110】
 desc: 点击跳转题解页查看详细内容
 logo: /assets/common-icon/leetcode-dark-cn.svg
 link: https://leetcode.cn/problems/balanced-binary-tree/solutions/2842372/di-gui-by-songbaicheng-4n7i
+color: rgba(173, 216, 590, 0.15)
+```
+
+### 112. 路径总和
+```card
+title: LeetCode 题库【112】
+desc: 点击跳转题解页查看详细内容
+logo: /assets/common-icon/leetcode-dark-cn.svg
+link: https://leetcode.cn/problems/path-sum/solutions/2845079/shen-du-you-xian-bian-li-by-songbaicheng-c95k
 color: rgba(173, 216, 590, 0.15)
 ```
