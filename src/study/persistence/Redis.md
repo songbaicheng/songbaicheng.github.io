@@ -110,6 +110,8 @@ Redis 采用的是 定期删除+惰性/懒汉式删除 结合的策略，这也�
 #### 1. 先写 MySQL，再写 Redis
 数据库更新后更新 Redis。在高并发的情况下，如图会出现同时修改数据库和 Redis，导致数据不一致的情况。
 
+![先写 MySQL，再写 Redis](/assets/images/study/persistence/sql/mr.png)
+
 ### 2. 先写 Redis，再写 MySQL
 
 ### 3. 先删除 Redis，再写 MySQL
