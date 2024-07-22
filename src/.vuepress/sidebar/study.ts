@@ -22,6 +22,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
                 collapsible: true,
                 children: [
                     '/study/backend/java/basic/servlet.md',
+                    '/study/backend/java/basic/exception.md',
                     '/study/backend/java/basic/dynamic-proxy.md',
                     '/study/backend/java/basic/concurrency.md',
                     '/study/backend/java/basic/new-feature/java8.md',
