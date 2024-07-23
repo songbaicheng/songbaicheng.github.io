@@ -83,65 +83,60 @@ private static void readFile(String filePath) {
 ### 自定义异常
 习惯上，定义一个异常类应包含两个构造函数，一个无参构造函数和一个带有详细描述信息的构造函数（Throwable 的 toString 方法会打印这些详细信息，调试时很有用）
 
+```Java
 public class MyException extends Exception {
-public MyException(){ }
-public MyException(String msg){
-super(msg);
+    public MyException(){ }
+    public MyException(String msg){
+        super(msg);
+    }
+    // ...
 }
-// ...
-}
-
+```
 
 ### try-catch-finally
 当方法中发生异常，异常处之后的代码不会再执行，如果之前获取了一些本地资源需要释放，则需要在方法正常结束时和 catch 语句中都调用释放本地资源的代码，显得代码比较繁琐，finally 语句可以解决这个问题。
 
+```Java
 private static void readFile(String filePath) throws MyException {
-File file = new File(filePath);
-String result;
-BufferedReader reader = null;
-try {
-reader = new BufferedReader(new FileReader(file));
-while((result = reader.readLine())!=null) {
-System.out.println(result);
+    File file = new File(filePath);
+    String result;
+    BufferedReader reader = null;
+    try {
+        reader = new BufferedReader(new FileReader(file));
+        while((result = reader.readLine())!=null) {
+        System.out.println(result);
+    }
+    } catch (IOException e) {
+        System.out.println("readFile method catch block.");
+        MyException ex = new MyException("read file failed.");
+        ex.initCause(e);
+        throw ex;
+    } finally {
+        System.out.println("readFile method finally block.");
+        if (null != reader) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
-} catch (IOException e) {
-System.out.println("readFile method catch block.");
-MyException ex = new MyException("read file failed.");
-ex.initCause(e);
-throw ex;
-} finally {
-System.out.println("readFile method finally block.");
-if (null != reader) {
-try {
-reader.close();
-} catch (IOException e) {
-e.printStackTrace();
-}
-}
-}
-}
-调用该方法时，读取文件时若发生异常，代码会进入 catch 代码块，之后进入 finally 代码块；若读取文件时未发生异常，则会跳过 catch 代码块直接进入 finally 代码块。所以无论代码中是否发生异常，fianlly 中的代码都会执行。
+```
 
-若 catch 代码块中包含 return 语句，finally 中的代码还会执行吗？将以上代码中的 catch 子句修改如下：
+调用该方法时，读取文件时若发生异常，代码会进入 catch 代码块，之后进入 finally 代码块；若读取文件时未发生异常，则会跳过 catch 代码块直接进入 finally 代码块，所以无论代码中是否发生异常，fianlly 中的代码都会执行。
 
-catch (IOException e) {
-System.out.println("readFile method catch block.");
-return;
-}
-调用 readFile 方法，观察当 catch 子句中调用 return 语句时，finally 子句是否执行
-
-readFile method catch block.
-readFile method finally block.
-可见，即使 catch 中包含了 return 语句，finally 子句依然会执行。若 finally 中也包含 return 语句，finally 中的 return 会覆盖前面的 return.
-
-try-with-resource
+### try-with-resource
 上面例子中，finally 中的 close 方法也可能抛出 IOException, 从而覆盖了原始异常。JAVA 7 提供了更优雅的方式来实现资源的自动释放，自动释放的资源需要是实现了 AutoCloseable 接口的类。
 
+```Java
 private  static void tryWithResourceTest(){
-try (Scanner scanner = new Scanner(new FileInputStream("c:/abc"),"UTF-8")){
-// code
-} catch (IOException e){
-// handle exception
+    try (Scanner scanner = new Scanner(new FileInputStream("c:/abc"),"UTF-8")){
+        // code
+    } catch (IOException e){
+        // handle exception
+    }
 }
-}
+```
+
 try 代码块退出时，会自动调用 scanner.close 方法，和把 scanner.close 方法放在 finally 代码块中不同的是，若 scanner.close 抛出异常，则会被抑制，抛出的仍然为原始异常。被抑制的异常会由 addSusppressed 方法添加到原来的异常，如果想要获取被抑制的异常列表，可以调用 getSuppressed 方法来获取。
