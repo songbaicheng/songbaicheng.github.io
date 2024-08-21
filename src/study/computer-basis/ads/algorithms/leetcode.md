@@ -101,3 +101,12 @@ logo: /assets/common-icon/leetcode-dark-cn.svg
 link: https://leetcode.cn/problems/path-sum/solutions/2845079/shen-du-you-xian-bian-li-by-songbaicheng-c95k
 color: rgba(173, 216, 590, 0.15)
 ```
+
+## 栈
+### 20. 有效的括号
+```card
+title: LeetCode 题库【20】
+desc: 点击跳转题解页查看详细内容
+logo: /assets/common-icon/leetcode-dark-cn.svg
+link: https://leetcode.cn/problems/valid-parentheses/solutions/2887726/jing-dian-zhan-wen-ti-by-songbaicheng-4yn8
+color:
