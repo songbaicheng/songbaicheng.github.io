@@ -9,6 +9,7 @@ export const resourceSidebar = arraySidebar([
             '/resource/books/java.md',
             '/resource/books/database.md',
             '/resource/books/ads.md',
+            '/resource/books/deep-learning.md',
             '/resource/books/other-skills.md'
         ]
     },
@@ -26,8 +27,9 @@ export const resourceSidebar = arraySidebar([
         icon: 'preview',
         collapsible: true,
         children: [
-            '/study/backend/tools/jwt.md',
-            '/resource/open-source-project/workflow.md',
+            '/resource/open-source-project/jwt.md',
+            '/resource/open-source-project/rule-engine.md',
+            '/resource/open-source-project/work-flow.md',
         ]
     },
     {
