@@ -1,1 +1,0 @@
-import{_ as c}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as o,a as e}from"./app-0a66fa09.js";const r={},a=e("h1",{id:"",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#","aria-hidden":"true"},"#")],-1),s=[a];function n(_,d){return t(),o("div",null,s)}const l=c(r,[["render",n],["__file","code-trick.html.vue"]]);export{l as default};
