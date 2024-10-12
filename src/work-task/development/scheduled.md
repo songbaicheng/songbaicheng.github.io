@@ -26,3 +26,293 @@ tag:
 
 ### 定期获取价格文件
 接收价格的前置项目，我们和彭博约定在每天的四点请求获取每日的币种价格，彭博收到请求后将处理后的数据存放到公共的 ftp 服务器上，这里定时任务的需求就很明确了，为了保证一定可以拿到彭博处理的数据，我们会在四点五十去ftp获取价格文件，获取到价格后通过 MQ 推送到其他后台程序，当然就算是延后50分钟也不能保证每次都可以成功获取到每日价格文件，所以我们在每日的流水表中增加价格处理状态的字段，如果是获取不到文件则标记为 E 状态，每晚八点如果是今日获取价格文件的状态为 E 的重新执行一次获取价格文件，如果是其他错误状态则需要第二天人工排查问题。
+
+### 日终任务
+公司 ERP 平台作为中介对接了第三方的支付机构作为支付渠道，需要每日最后与各个渠道确认每个客户的可用余额留档方便对账，考虑到用户体量而且要调用第三方接口查询数据，此次任务采用异步线程池实现方式，为了区分各个支付渠道解耦，并采用 Spring Event 实现观察者模式来实现，想了解可参考我的 [观察者模式](/study/design-pattern/observer.html) 文章。
+
+1. 首先定义执行事件的异步线程池。
+::: normal-demo 自定义线程池
+```Java
+package cn.sdpjw.account.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @Description: 自定义 Spring Event 线程池配置类
+ * @Author: songbaicheng
+ * @Create: 2024/10/9 14:24
+ **/
+@Configuration
+public class EventExecutorConfiguration {
+
+    /**
+     * 线程池配置
+     */
+    int corePoolSize = 15;
+    /**
+     * 线程池最大线程数
+     */
+    int maxPoolSize = 30;
+    /**
+     * 线程池缓冲队列容量
+     */
+    int queueCapacity = 100;
+    /**
+     * 线程池缓冲队列等待时间
+     */
+    long keepAliveTime = 90;
+
+    @Bean(name = "eventTaskExecutor")
+    public ExecutorService eventTaskExecutor() {
+        return new ThreadPoolExecutor(corePoolSize, maxPoolSize, keepAliveTime, TimeUnit.SECONDS, new ArrayBlockingQueue<>(queueCapacity),
+                // 拒绝策略，CallerRunsPolicy 表示由调用线程直接执行任务，以减缓提交的速度。
+                new ThreadPoolExecutor.CallerRunsPolicy());
+    }
+}
+
+```
+:::
+
+2. 定义触发事件。
+::: normal-demo 定义 Event
+```Java
+package cn.sdpjw.account.observer.event;
+
+import cn.sdpjw.account.entity.ElectronicAccount;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.springframework.context.ApplicationEvent;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
+
+/**
+ * @Description: 日终账户可用余额事件
+ * @Author: songbaicheng
+ * @Create: 2024/10/9 17:47
+ **/
+@Getter
+@Setter
+@ToString
+public class AvailableBalanceEvent extends ApplicationEvent implements Serializable {
+
+    private static final long serialVersionUID = -5193422140307226053L;
+
+    /**
+     * 电子账户列表
+     */
+    private List<ElectronicAccount> electronicAccountList;
+
+    /**
+     * 当天日期
+     */
+    private LocalDate currentDate;
+
+    public AvailableBalanceEvent(Object source, List<ElectronicAccount> electronicAccountList, LocalDate currentDate) {
+        super(source);
+        this.electronicAccountList = electronicAccountList;
+        this.currentDate = currentDate;
+    }
+}
+```
+:::
+
+3. 创建定时任务，这里使用 xxl-job 定时任务调度框架。
+::: normal-demo 监听者触发
+```Java
+package cn.sdpjw.account.job;
+
+import cn.hutool.core.collection.CollUtil;
+import cn.sdpjw.account.domain.enums.PaymentChannelEnum;
+import cn.sdpjw.account.entity.ElectronicAccount;
+import cn.sdpjw.account.entity.ElectronicAccountDailyStatement;
+import cn.sdpjw.account.integration.YiFuBaoIntegration;
+import cn.sdpjw.account.observer.event.AvailableBalanceEvent;
+import cn.sdpjw.account.service.ElectronicAccountDailyStatementService;
+import cn.sdpjw.account.service.ElectronicAccountService;
+import cn.sdpjw.account.util.FileUtil;
+import cn.sdpjw.account.util.IdUtil;
+import cn.sdpjw.common.base.basic.ThreadMdcUtil;
+import cn.sdpjw.common.base.response.CommonResponse;
+import cn.sdpjw.open.domain.suning.request.DownloadStatementUrlRequest;
+import cn.sdpjw.open.domain.suning.response.DownloadStatementUrlResponse;
+import cn.sdpjw.oss.enums.OssFileEnum;
+import cn.sdpjw.oss.service.OssService;
+import com.alibaba.excel.support.ExcelTypeEnum;
+import com.xxl.job.core.handler.annotation.XxlJob;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+
+import javax.annotation.Resource;
+import java.io.ByteArrayOutputStream;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import static cn.sdpjw.account.common.constants.Constant.YIFUBAO_ID_TAG;
+
+/**
+ * @Description: 日终定时任务类
+ * @Author: songbaicheng
+ * @Create: 2024/10/8 20:10
+ **/
+@Slf4j
+@Component
+public class EODJob {
+
+    // 定时任务批次执行数量
+    private static final int BATCHES_NUMBER = 1000;
+
+    @Resource
+    private OssService ossService;
+    @Resource
+    private ApplicationContext applicationContext;
+    @Resource
+    private YiFuBaoIntegration yiFuBaoIntegration;
+    @Resource
+    private ElectronicAccountService electronicAccountService;
+    @Resource
+    private ElectronicAccountDailyStatementService electronicAccountDailyStatementService;
+
+    /**
+     * 日终账户渠道可用余额入库
+     */
+    @XxlJob("availableBalance")
+    public void availableBalance() {
+        ThreadMdcUtil.setTraceId();
+        List<ElectronicAccount> electronicAccountList;
+        LocalDate currentDate = LocalDate.now();
+        log.info("开始日终账户渠道可用余额入库任务……");
+
+        // 智易通
+        long yiFuBaoSuccessAccount = electronicAccountService.getSuccessAccountByChannelCount(PaymentChannelEnum.YI_FU_BAO.getCode());
+        log.info("智易通预计成功账户数量：{}", yiFuBaoSuccessAccount);
+        for (int offset = 0; offset < yiFuBaoSuccessAccount; offset += BATCHES_NUMBER) {
+            electronicAccountList = electronicAccountService.getSuccessAccountByChannel(PaymentChannelEnum.YI_FU_BAO.getCode(), BATCHES_NUMBER, offset);
+            if (CollUtil.isNotEmpty(electronicAccountList)) {
+                log.info("智易通批次执行账户数量：{}", electronicAccountList.size());
+                applicationContext.publishEvent(new AvailableBalanceEvent(this, electronicAccountList, currentDate));
+            }
+        }
+
+        // 智汇通
+        long huiYuanSuccessAccount = electronicAccountService.getSuccessAccountByChannelCount(PaymentChannelEnum.HUI_YUAN.getCode());
+        log.info("智汇通预计成功账户数量：{}", huiYuanSuccessAccount);
+        for (int offset = 0; offset < huiYuanSuccessAccount; offset += BATCHES_NUMBER) {
+            electronicAccountList = electronicAccountService.getSuccessAccountByChannel(PaymentChannelEnum.HUI_YUAN.getCode(), BATCHES_NUMBER, offset);
+            if (CollUtil.isNotEmpty(electronicAccountList)) {
+                applicationContext.publishEvent(new AvailableBalanceEvent(this, electronicAccountList, currentDate));
+            }
+        }
+
+        // 智链通
+        long yiBaoSuccessAccount = electronicAccountService.getSuccessAccountByChannelCount(PaymentChannelEnum.YI_BAO.getCode());
+        log.info("智链通预计成功账户数量：{}", yiBaoSuccessAccount);
+        for (int offset = 0; offset < yiBaoSuccessAccount; offset += BATCHES_NUMBER) {
+            electronicAccountList = electronicAccountService.getSuccessAccountByChannel(PaymentChannelEnum.YI_BAO.getCode(), BATCHES_NUMBER, offset);
+            if (CollUtil.isNotEmpty(electronicAccountList)) {
+                applicationContext.publishEvent(new AvailableBalanceEvent(this, electronicAccountList, currentDate));
+            }
+        }
+    }
+}
+```
+:::
+
+4. 创建 Listener 实现具体处理逻辑，使用 ```@Async("eventTaskExecutor")``` 注解实现线程池异步执行任务。
+::: normal-demo 创建 Listener
+```Java
+package cn.sdpjw.account.observer.listener;
+
+import cn.sdpjw.account.domain.enums.PaymentChannelEnum;
+import cn.sdpjw.account.entity.ElectronicAccount;
+import cn.sdpjw.account.entity.ElectronicAccountDailyAvailableBalance;
+import cn.sdpjw.account.integration.YiFuBaoIntegration;
+import cn.sdpjw.account.observer.event.AvailableBalanceEvent;
+import cn.sdpjw.account.service.ElectronicAccountDailyAvailableBalanceService;
+import cn.sdpjw.account.util.IdUtil;
+import cn.sdpjw.open.domain.suning.request.QueryBalanceRequest;
+import cn.sdpjw.open.domain.suning.response.QueryBalanceResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationListener;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
+
+import static cn.sdpjw.account.common.constants.Constant.YIFUBAO_ID_TAG;
+
+/**
+ * @Description: 易付宝日终可用余额事件监听器
+ * @Author: songbaicheng
+ * @Create: 2024/10/9 17:49
+ **/
+@Slf4j
+@Component
+public class YiFuBaoAvailableBalanceListener implements ApplicationListener<AvailableBalanceEvent> {
+
+    @Resource
+    private YiFuBaoIntegration yiFuBaoIntegration;
+    @Resource
+    private ElectronicAccountDailyAvailableBalanceService electronicAccountDailyAvailableBalanceService;
+
+    @Async("eventTaskExecutor")
+    @Override
+    public void onApplicationEvent(AvailableBalanceEvent event) {
+        log.info("电子账户可用余额查询入库:{}", event.getElectronicAccountList());
+        if (PaymentChannelEnum.isYiFuBao(event.getElectronicAccountList().get(0).getPaymentChannel())) {
+            availableBalanceHandle(event.getElectronicAccountList(), event.getCurrentDate());
+        }
+    }
+
+    /**
+     * 可用余额查询入库
+     *
+     * @param electronicAccountList 电子账户列表
+     * @param currentDate           当前日期
+     */
+    private void availableBalanceHandle(List<ElectronicAccount> electronicAccountList, LocalDate currentDate) {
+
+        List<ElectronicAccountDailyAvailableBalance> electronicAccountDailyAvailableBalanceList = new java.util.ArrayList<>(Collections.emptyList());
+        LocalDateTime executionTime = LocalDateTime.now();
+        QueryBalanceResponse response;
+
+        for (ElectronicAccount electronicAccount : electronicAccountList) {
+            QueryBalanceRequest request = new QueryBalanceRequest();
+            request.setQuerySerialNo(IdUtil.createRequestNo(YIFUBAO_ID_TAG));
+            request.setSubMerchantNo(electronicAccount.getAccountNo());
+            try {
+                response = yiFuBaoIntegration.queryAccountBalance(request);
+            } catch (Exception e) {
+                continue;
+            }
+            electronicAccountDailyAvailableBalanceList.add(ElectronicAccountDailyAvailableBalance.builder()
+                    .traderCorpId(electronicAccount.getTraderCorpId())
+                    .paymentChannel(electronicAccount.getPaymentChannel())
+                    .availableBalanceAmt(new BigDecimal(response.getUseAmt()).divide(new BigDecimal("100")))
+                    .queryDate(currentDate)
+                    .executionTime(executionTime)
+                    .build());
+        }
+
+        electronicAccountDailyAvailableBalanceService.saveBatch(electronicAccountDailyAvailableBalanceList);
+    }
+}
+```
+:::
