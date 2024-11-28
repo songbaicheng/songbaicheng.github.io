@@ -148,7 +148,15 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
             '/study/maintenance/linux-commands.md',
             '/study/maintenance/1panel.md',
             '/study/maintenance/docker.md',
-            '/study/maintenance/nginx.md',
+            {
+                text: 'Nginx',
+                icon: 'web',
+                collapsible: true,
+                children: [
+                    '/study/maintenance/nginx/nginx.md',
+                    '/study/maintenance/nginx/website-certificate.md'
+                ]
+            },
             '/study/maintenance/arthas.md',
             {
                 text: 'Jenkins',

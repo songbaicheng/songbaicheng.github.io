@@ -4,7 +4,7 @@ tag:
   - Nginx
 ---
 
-# Nginx
+# Nginx 基础
 Nginx七大核心应用场景：反向代理、虚拟主机、域名解析、负载均衡、防盗链、url重定向、https。
 
 常见版本如下：
