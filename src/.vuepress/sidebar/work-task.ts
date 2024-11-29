@@ -47,6 +47,7 @@ export const workTaskSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/work-task/problems/spring.md',
+            '/work-task/problems/java.md',
         ]
     }
 ])
