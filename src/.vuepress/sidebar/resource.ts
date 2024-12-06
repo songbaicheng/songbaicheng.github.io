@@ -30,6 +30,7 @@ export const resourceSidebar = arraySidebar([
             '/resource/open-source-project/jwt.md',
             '/resource/open-source-project/rule-engine.md',
             '/resource/open-source-project/work-flow.md',
+            '/resource/open-source-project/mkcert.md',
         ]
     },
     {
