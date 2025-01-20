@@ -17,4 +17,12 @@ export const aiSidebar = arraySidebar([
             '/ai/hugging-face/README.md',
         ]
     },
+    {
+        text: 'Agent',
+        icon: '/assets/images/ai/hugging-face/huggingface.svg',
+        collapsible: true,
+        children: [
+            '/ai/agent/README.md',
+        ]
+    },
 ])
