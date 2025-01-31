@@ -103,7 +103,7 @@ Redis 采用的是 定期删除+惰性/懒汉式删除 结合的策略，这也�
 第三种方式是在缓存的基础上增加布隆过滤器降低无效数据的访问来防止缓存穿透，这种方案的缺点是布隆过滤器需要维护，并且布隆过滤器的误判率需要控制。
 
 ### 布隆过滤器
-
+略
 
 ### Redis 与数据库读写一致性
 这些设计的前提是访问数据库之前先访问 Redis，如果 Redis 不存在再访问数据库。
@@ -112,15 +112,16 @@ Redis 采用的是 定期删除+惰性/懒汉式删除 结合的策略，这也�
 
 ![先写 MySQL，再写 Redis](/assets/images/study/persistence/sql/mr.png)
 
-### 2. 先写 Redis，再写 MySQL
+#### 2. 先写 Redis，再写 MySQL
 
-### 3. 先删除 Redis，再写 MySQL
+#### 3. 先删除 Redis，再写 MySQL
 
-### 4. 先写 MySQL，再删除 Redis
+#### 4. 先写 MySQL，再删除 Redis
 上面的方式都会存在不太能接受的数据不一致的情况，而此方案只存在第一次不一致的情况，对于不是强一致性的业务（秒杀、库存服务），可以采用此方案。
 
-### 5. 先删除 Redis，再写 MySQL，再删除 Redis
+#### 5. 先删除 Redis，再写 MySQL，再删除 Redis
 
-### 6. 先写 MySQL，通过 Binlog，异步更新 Redis
+#### 6. 先写 MySQL，通过 Binlog，异步更新 Redis
 
+### 分布式锁
 
