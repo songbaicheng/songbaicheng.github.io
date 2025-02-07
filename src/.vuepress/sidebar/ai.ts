@@ -15,6 +15,7 @@ export const aiSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/ai/deep-learning/README.md',
+            '/ai/deep-learning/pytorch.md',
         ]
     },
     {
