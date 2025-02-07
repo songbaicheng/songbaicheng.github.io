@@ -3,7 +3,7 @@ import { arraySidebar } from "vuepress-theme-hope";
 export const aiSidebar = arraySidebar([
     {
         text: '提示工程',
-        icon: '/assets/images/ai/deep-learning/deep-learning.svg',
+        icon: '/assets/images/ai/prompt/prompt.svg',
         collapsible: true,
         children: [
             '/ai/prompt-engineering/README.md',
