@@ -11,12 +11,12 @@ export const aiSidebar = arraySidebar([
     },
     {
         text: '深度学习',
-        icon: '/assets/images/ai/deep-learning/deep-learning.svg',
+        icon: '/assets/images/ai/llm/llm.svg',
         collapsible: true,
         children: [
-            '/ai/deep-learning/README.md',
-            '/ai/deep-learning/pytorch.md',
-            '/ai/deep-learning/hugging-face.md',
+            '/ai/llm/deep-learning.md',
+            '/ai/llm/pytorch.md',
+            '/ai/llm/hugging-face.md',
         ]
     },
 ])

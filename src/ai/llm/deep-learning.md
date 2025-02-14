@@ -10,7 +10,7 @@ tag:
 
 感知机是什么，就像电流流过导线，向前方输送电子一样，感知机的信号会形成流向前方输送信息，不过只有流（1）和不流（0）两种取值。
 
-![基础感知机](/assets/images/ai/deep-learning/readme/基础感知机.png "基础感知机")
+![基础感知机](/assets/images/ai/llm/deep-learn/基础感知机.png "基础感知机")
 
 上面是一个接收两个输入信号的感知机的例子，其中 x1、x2 是输入信号，y 是输出信号，w1、w2
 是权重，其中的圆形标志我们称为是节点或者是神经元，在输入信号被送往神经元的时候，会被乘以固定的权重然后相加（w1x1 +
@@ -189,7 +189,7 @@ def XOR(x1, x2):
 ### 激活函数
 对于如何将感知机与神经网络联系起来，我们需要引入激活函数的概念，激活函数是将输入信号的总和转换为输出信号，下图可以很好的表达出激活函数的作用：
 
-![激活函数](/assets/images/ai/deep-learning/readme/activation-function.png "激活函数")
+![激活函数](/assets/images/ai/llm/deep-learning/activation-function.png "激活函数")
 
 图中节点从 a 通过激活函数 h() 转换成 y ，我们称 a 和 y 为节点，也可以称为“神经元”，激活函数有很多种，比如阶跃函数、sigmoid 函数等。
 

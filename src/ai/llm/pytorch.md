@@ -18,7 +18,7 @@ Python 环境。
 ```card
 title: Pytorch 官网
 desc: 点击跳转 Pytorch 查看详细内容
-logo: /assets/images/ai/deep-learning/pytorch/logo-icon.svg
+logo: /assets/images/ai/llm/pytorch/logo-icon.svg
 link: https://pytorch.org/
 color: rgba(173, 216, 590, 0.15)
 ```
