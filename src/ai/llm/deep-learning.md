@@ -155,7 +155,7 @@ $$
 
 我们将 x1 和 x2 作为横坐标与纵坐标作图，会得到一条直线将坐标轴分为两个空间，左侧为0，右侧为1，如下图所示：
 
-![or 感知机可视化](/assets/images/ai/deep-learning/readme/or.png "or 感知机可视化")
+![or 感知机可视化](/assets/images/ai/llm/deep-learning/or.png "or 感知机可视化")
 
 图中可以看到灰色区域是我们 or 感知机输出 0 的区域，其他两种与和与非门的图类似，那现在我们尝试先用图的方式来展示一下异或门：
 
@@ -168,7 +168,7 @@ $$
 ## 多层感知机
 虽然感知机只能表示线性空间，可是感知机的绝妙之处在于它可以叠加态，这里我们继续借助异或门来研究感知机的叠加态概念，异或门的制作方式有很多，其中之一就是结合我们之前的与或非门进行组合
 
-![通过组合实现 xor](/assets/images/ai/deep-learning/readme/xor.png "通过组合实现 xor")
+![通过组合实现 xor](/assets/images/ai/llm/deep-learning/xor.png "通过组合实现 xor")
 
 根据图中的组合方式，用代码也是可以同样的组合方式：
 
