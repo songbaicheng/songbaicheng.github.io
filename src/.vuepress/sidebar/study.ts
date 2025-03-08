@@ -91,6 +91,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
             '/study/frontend/basic/layout.md',
             '/study/frontend/framework/vue3.md',
             '/study/frontend/framework/pinia.md',
+            '/study/frontend/framework/uni-app.md',
         ]
     },
     {

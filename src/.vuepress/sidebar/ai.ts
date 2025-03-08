@@ -7,9 +7,9 @@ export const aiSidebar = arraySidebar([
         collapsible: true,
         children: [
             '/ai/llm/README.md',
+            '/ai/llm/hugging-face.md',
             '/ai/llm/deep-learning.md',
             '/ai/llm/pytorch.md',
-            '/ai/llm/hugging-face.md',
         ]
     },
     {
