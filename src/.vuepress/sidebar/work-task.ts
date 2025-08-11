@@ -22,6 +22,7 @@ export const workTaskSidebar = arraySidebar([
             '/work-task/development/unit-test.md',
             '/work-task/development/web-service.md',
             '/work-task/development/shell.md',
+            '/work-task/development/oss.md',
         ]
     },
     {
