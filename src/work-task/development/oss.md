@@ -13,6 +13,15 @@ tag:
    目前我们的导出都是通过后端使用 EasyExcel 生成文件上传到 OSS 并返回 OSS 地址的模式，想要解决大数据量的情况必须在生成文件和上传 OSS 的时候做出优化。
 
 ## 方案
+
+```card
+title: 对象存储 OSS 文档
+desc: 点击跳转查看详细内容
+logo: /icon/ali-logo.svg
+link: https://www.alibabacloud.com/help/zh/oss/developer-reference/overview-13/?spm=a2c63.p38356.help-menu-31815.d_19_2_0_1_0.71dc7dceTpA6TC&scm=20140722.H_32013._.OR_help-T_intl~zh-V_1
+color: rgba(173, 216, 590, 0.15)
+```
+
 ### 秒传
 通俗的说，你把要上传的东西上传，服务器会先做 MD5 校验，如果服务器上有一样的东西，它就直接给你个新地址，其实你下载的都是服务器上的同一个文件。
 想要不秒传，其实只要让MD5改变，就是对文件本身做一下修改（改名字不行），例如一个文本文件，你多加几个字，MD5就变了，就不会秒传了。
