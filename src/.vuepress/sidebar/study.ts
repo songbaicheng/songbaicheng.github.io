@@ -14,7 +14,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '后端开发',
-        icon: 'mdi:language-java',
+        icon: '/icon/brands/java.svg',
         collapsible: true,
         children: [
             {
@@ -82,7 +82,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '前端技术',
-        icon: 'mdi:google-chrome',
+        icon: '/icon/brands/chrome.svg',
         collapsible: true,
         children: [
             '/study/frontend/README.md',
@@ -142,7 +142,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: 'Linux 运维',
-        icon: 'mdi:linux',
+        icon: '/icon/brands/linux.svg',
         collapsible: true,
         children: [
             '/study/maintenance/README.md',

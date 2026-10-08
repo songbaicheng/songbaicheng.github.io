@@ -29,7 +29,8 @@ pnpm docs:build
 - 旧 `iconAssets: "iconfont"` 已移除。不要继续使用旧主题私有图标名称。
 - Markdown 增强配置迁移到主题 `markdown`，搜索使用官方 SlimSearch。
 - 原来的 `card` 代码块已迁移为官方 `<VPCard />`；标题、描述、Logo 和链接保留，旧背景色对应 `background`。
-- 保留旧 `mindmap` 内容原样；该非标准语法本次未增加新渲染器。
+- `mindmap` 是 Mermaid 图表语法；启用 `markdown.mermaid` 并安装锁定版本的 `mermaid`。现有 19 张思维导图保持原内容，已逐页验证 SVG 渲染。
+- 技术品牌 Logo 使用本地彩色 SVG，不用单色 MDI 品牌图标替代。新增 Java、Chrome、Linux SVG 来自 Devicon：https://github.com/devicons/devicon（MIT）；Vue 和 TypeScript 沿用仓库已有资源。
 
 官方文档：https://theme-hope.vuejs.press/zh/
 图标文档：https://theme-hope.vuejs.press/zh/guide/interface/icon.html
