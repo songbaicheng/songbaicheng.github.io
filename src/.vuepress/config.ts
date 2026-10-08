@@ -1,4 +1,3 @@
-import { fileURLToPath } from "node:url";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
@@ -6,9 +5,6 @@ import theme from "./theme.js";
 export default defineUserConfig({
   base: "/",
   bundler: viteBundler(),
-  alias: {
-    "@theme-hope/components/blog/BlogHero": fileURLToPath(new URL("./components/MorphHero.vue", import.meta.url)),
-  },
   title: "Baicheng's Blog",
   lang: "zh-CN",
 

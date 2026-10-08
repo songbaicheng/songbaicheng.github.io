@@ -81,4 +81,4 @@ export default hopeTheme({
       components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPCard"],
     },
   },
-}, { custom: true });
+});
