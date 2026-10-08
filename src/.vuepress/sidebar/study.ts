@@ -1,6 +1,14 @@
 import {arraySidebar, SidebarArrayOptions} from "vuepress-theme-hope";
+import { aiSidebar } from "./ai";
 
 export const studySidebar:SidebarArrayOptions = arraySidebar([
+    {
+        text: "AI 领域",
+        icon: "/icon/ai.svg",
+        link: "/ai/",
+        collapsible: true,
+        children: aiSidebar,
+    },
     {
         text: '开发知识',
         icon: 'mdi:dots-horizontal',

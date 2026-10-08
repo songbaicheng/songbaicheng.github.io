@@ -4,7 +4,6 @@ export const Navbar = navbar([
     "/",
     {text: "学习之路", icon: "mdi:school-outline", link: "/study/"},
     {text: "工作任务", icon: "mdi:briefcase-outline", link: "/work-task/"},
-    {text: "AI 领域", icon: '/icon/ai.svg', link: "/ai/"},
     {text: "资源分享", icon: "mdi:archive-outline", link: "/resource/"},
     {
         text: "过去", icon: "mdi:history", children: [{

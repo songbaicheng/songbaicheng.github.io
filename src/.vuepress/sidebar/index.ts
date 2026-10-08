@@ -2,7 +2,6 @@ import { sidebar } from "vuepress-theme-hope";
 import { studySidebar } from "./study"
 import { workTaskSidebar } from "./work-task"
 import { resourceSidebar } from "./resource"
-import { aiSidebar } from "./ai"
 
 export const Sidebar = sidebar({
   '/category/': false,
@@ -11,7 +10,7 @@ export const Sidebar = sidebar({
   '/star/': false,
   '/timeline/': false,
   '/study/': studySidebar,
-  '/ai/': aiSidebar,
+  '/ai/': studySidebar,
   '/work-task/': workTaskSidebar,
   '/resource/': resourceSidebar,
 });
