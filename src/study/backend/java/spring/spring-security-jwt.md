@@ -76,14 +76,13 @@ isSessionValid(no)->nine->end-all
 
 虽然看似流程上十分相似，但是每个请求都必须携带包含了所有必要的用户身份信息和声明的令牌来进行身份验证，而且令牌可以通过签名和加密机制来保护身份信息的完整性和真实性，这样极大的保证了安全性的同时也解决了跨域支持的问题。JWT 官网也告诉了我们什么是 JSON Web Token 并告诉我们什么情况下可以去使用它，如果有兴趣可以点击下面链接去深入了解。
 
-```card
-title: JWT 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/backend/java/spring/spring-security/jwt.svg
-link: https://jwt.io/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="JWT 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/backend/java/spring/spring-security/jwt.svg"
+  link="https://jwt.io/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 快速开始
 ### 引入依赖
 

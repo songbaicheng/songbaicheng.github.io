@@ -10,20 +10,20 @@ tag:
 Telegraph-Image，一个免费图片托管解决方案，Flickr/imgur替代品。使用 Cloudflare Pages 和 Telegraph。
 
 :::card
-```card
-title: Telegraph-Image 项目Github官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/common-icon/github-logo.svg
-link: https://github.com/cf-pages/Telegraph-Image
-color: rgba(173, 216, 590, 0.15)
-```
-```card
-title: Cloudflare 官网文档
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/resource/techniques/image-hosting-service/cloudflare.png
-link: https://www.cloudflare.com/zh-cn/
-color: rgba(173, 216, 590, 0.15)
-```
+<VPCard
+  title="Telegraph-Image 项目Github官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/common-icon/github-logo.svg"
+  link="https://github.com/cf-pages/Telegraph-Image"
+  background="rgba(173, 216, 590, 0.15)"
+/>
+<VPCard
+  title="Cloudflare 官网文档"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/resource/techniques/image-hosting-service/cloudflare.png"
+  link="https://www.cloudflare.com/zh-cn/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 :::
 
 ## 优缺点
@@ -41,12 +41,12 @@ color: rgba(173, 216, 590, 0.15)
 ### 图片审查
 搭配 moderatecontent 提供免费图片审查，开启图片审查后，因为审查需要时间，首次的图片加载将会变得缓慢，之后的图片加载由于存在缓存，并不会受到影响。
 
-```card
-title: moderatecontent 官网文档
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/resource/techniques/image-hosting-service/moderatecontent-logo.png
-link: https://moderatecontent.com/
-color: rgba(173, 216, 590, 0.15)
-```
+<VPCard
+  title="moderatecontent 官网文档"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/resource/techniques/image-hosting-service/moderatecontent-logo.png"
+  link="https://moderatecontent.com/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ### 图片管理功能
 图床管理后台，提供统计图片总数量、关键字搜索、图片黑白名单。

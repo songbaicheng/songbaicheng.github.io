@@ -56,14 +56,13 @@ JWT（JSON Web Token）核心在于它的结构，由三部分组成，这些部
    Header 中指定的算法和一个秘钥（对称或非对称）计算得出的。如果使用的是对称算法（如HMAC
    SHA256），则同一秘钥用于签名和验证；如果是非对称算法（如RSA），则使用私钥签名，公钥验证。
 
-```card
-title: JWT 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/backend/java/spring/spring-security/jwt.svg
-link: https://jwt.io/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="JWT 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/backend/java/spring/spring-security/jwt.svg"
+  link="https://jwt.io/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## JWT 简单场景案例
 
 ### 引入依赖

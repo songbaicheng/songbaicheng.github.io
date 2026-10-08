@@ -9,14 +9,13 @@ tag:
 
 我们要学习 Transformers 的模型、任务和设计理念，还有就是配置（configuration）、模型（model）、分词器（tokenizer）和流水线（pipeline）这几个最重要的类。
 
-```card
-title: Hugging Face 官网
-desc: 点击跳转 Hugging Face 查看详细内容
-logo: /assets/images/ai/llm/hugging-face/huggingface_logo.svg
-link: https://huggingface.co/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Hugging Face 官网"
+  desc="点击跳转 Hugging Face 查看详细内容"
+  logo="/assets/images/ai/llm/hugging-face/huggingface_logo.svg"
+  link="https://huggingface.co/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 快速开始
 在开始之前，确保你已经安装了所有必要的库：
 ```bash

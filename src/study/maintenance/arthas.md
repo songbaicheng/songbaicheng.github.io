@@ -19,14 +19,13 @@ Arthas 是阿里提供的一款线上监控诊断产品，通过全局视角实�
 7. 怎么快速定位应用的热点，生成火焰图？
 8. 怎样直接从 JVM 内查找某个类的实例？
 
-```card
-title: Arthas 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/maintenance/arthas/arthas.png
-link: https://arthas.aliyun.com/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Arthas 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/maintenance/arthas/arthas.png"
+  link="https://arthas.aliyun.com/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 快速开始
 ### 下载
 ```shell
@@ -36,14 +35,13 @@ java -jar arthas-boot.jar
 
 # 如果离线或者条件允许的情况下可以去 Github 下载完整安装包
 ```
-```card
-title: Arthas Github 网站发行版
-desc: 点击跳转官网查看详细内容
-logo: /assets/common-icon/github-logo.svg
-link: https://github.com/alibaba/arthas/releases
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Arthas Github 网站发行版"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/common-icon/github-logo.svg"
+  link="https://github.com/alibaba/arthas/releases"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ### 启动
 找到 arthas-boot.jar 包并执行 ```java -jar arthas-boot.jar``` 命令启动 Arthas，这里需要注意，启动 Arthas 必须保证当前环境中有运行的 java 进程，否则会自动退出。
 

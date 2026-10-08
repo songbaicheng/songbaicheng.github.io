@@ -21,14 +21,13 @@ Docker 包括三个基本概念:
 ### 下载并安装
 根据官方文档下载指定操作系统的安装包安装即可。
 
-```card
-title: Docker 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/maintenance/docker/docker.png
-link: https://www.docker.com/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Docker 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/maintenance/docker/docker.png"
+  link="https://www.docker.com/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ### 加速器
 默认的统一镜像仓库是 DockerHub ，不过国内从 DockerHub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。Docker 官方和国内很多云服务商都提供了国内加速器服务，例如：
 - 科大镜像：https://docker.mirrors.ustc.edu.cn/
@@ -84,12 +83,11 @@ Hello World
 
 ## 可视化工具
 
-```card
-title: portainer 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/maintenance/docker/portainer.svg
-link: https://www.portainer.io/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="portainer 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/maintenance/docker/portainer.svg"
+  link="https://www.portainer.io/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## CIG 监控

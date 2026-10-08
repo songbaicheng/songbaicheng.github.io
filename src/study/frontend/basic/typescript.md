@@ -11,14 +11,13 @@ TypeScript 与 JavaScript 有着不同寻常的关系。TypeScript 提供了 Jav
 
 > 所有的测试代码都在博客[首页](/README.md)中的 typescript-study-demo 中找到。
 
-```card
-title: TypeScript 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/frontend/basic/tyepscript/typescript.svg
-link: https://www.typescriptlang.org/zh/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="TypeScript 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/frontend/basic/tyepscript/typescript.svg"
+  link="https://www.typescriptlang.org/zh/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ### 安装 TypeScript
 
 ```node

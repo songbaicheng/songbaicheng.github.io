@@ -3,7 +3,7 @@ import {arraySidebar, SidebarArrayOptions} from "vuepress-theme-hope";
 export const studySidebar:SidebarArrayOptions = arraySidebar([
     {
         text: '开发知识',
-        icon: 'more',
+        icon: 'mdi:dots-horizontal',
         collapsible: true,
         children: [
             '/study/development/ddd.md',
@@ -14,7 +14,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '后端开发',
-        icon: 'java',
+        icon: 'mdi:language-java',
         collapsible: true,
         children: [
             {
@@ -55,12 +55,12 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '持久化',
-        icon: 'storage',
+        icon: 'mdi:database-outline',
         collapsible: true,
         children: [
             '/study/persistence/README.md',
             '/study/persistence/sql.md',
-            '/study/persistence/redis.md',
+            '/study/persistence/Redis.md',
         ]
     },
     {
@@ -82,7 +82,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '前端技术',
-        icon: 'chrome',
+        icon: 'mdi:google-chrome',
         collapsible: true,
         children: [
             '/study/frontend/README.md',
@@ -96,7 +96,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '设计模式',
-        icon: 'quote',
+        icon: 'mdi:format-quote-close',
         collapsible: true,
         children: [
             '/study/design-pattern/README.md',
@@ -106,12 +106,12 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: '计算机基础',
-        icon: 'computer',
+        icon: 'mdi:desktop-classic',
         collapsible: true,
         children: [
             {
                 text: '数据结构',
-                icon: 'tree',
+                icon: 'mdi:file-tree',
                 collapsible: true,
                 children: [
                     '/study/computer-basis/ads/data-structure/README.md',
@@ -128,7 +128,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
             },
             {
                 text: '算法',
-                icon: 'calculate',
+                icon: 'mdi:calculator-variant-outline',
                 collapsible: true,
                 children: [
                     '/study/computer-basis/ads/algorithms/README.md',
@@ -142,7 +142,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
     },
     {
         text: 'Linux 运维',
-        icon: 'linux',
+        icon: 'mdi:linux',
         collapsible: true,
         children: [
             '/study/maintenance/README.md',
@@ -151,7 +151,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
             '/study/maintenance/docker.md',
             {
                 text: 'Nginx',
-                icon: 'web',
+                icon: 'mdi:web',
                 collapsible: true,
                 children: [
                     '/study/maintenance/nginx/nginx.md',
@@ -161,7 +161,7 @@ export const studySidebar:SidebarArrayOptions = arraySidebar([
             '/study/maintenance/arthas.md',
             {
                 text: 'Jenkins',
-                icon: 'flow',
+                icon: 'mdi:sitemap',
                 collapsible: true,
                 children: [
                     '/study/maintenance/jenkins/README.md',

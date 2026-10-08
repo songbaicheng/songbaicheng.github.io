@@ -24,14 +24,13 @@ root((Java 8 新特性))
   Stream API
 ```
 
-```card
-title: oracle JDK 8 介绍
-desc: 点击跳转官网查看详细内容
-logo: /icon/oracle.svg
-link: https://www.oracle.com/java/technologies/javase/8-whats-new.html
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="oracle JDK 8 介绍"
+  desc="点击跳转官网查看详细内容"
+  logo="/icon/oracle.svg"
+  link="https://www.oracle.com/java/technologies/javase/8-whats-new.html"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## Interface
 
 Java 8 中的接口新增默认方法（default）和静态方法（static）,default 修饰的方法，是普通实例方法，可以用 this 调用，可以被子类继承、重写，而

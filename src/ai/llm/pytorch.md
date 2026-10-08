@@ -15,14 +15,13 @@ Python 环境。
 
 比如这次我们要使用 PyTorch 2.6.0 版本，在 Anaconda 中新建一个环境安装 Python 3.12 与 PyTorch 。
 
-```card
-title: Pytorch 官网
-desc: 点击跳转 Pytorch 查看详细内容
-logo: /assets/images/ai/llm/pytorch/logo-icon.svg
-link: https://pytorch.org/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Pytorch 官网"
+  desc="点击跳转 Pytorch 查看详细内容"
+  logo="/assets/images/ai/llm/pytorch/logo-icon.svg"
+  link="https://pytorch.org/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 安装下载的时候如果 pip 速度太低可能会超时，可以尝试使用清华镜像源。
 
 ```Python

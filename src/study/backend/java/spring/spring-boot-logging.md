@@ -10,14 +10,13 @@ tag:
 ## 关于 Spring 日志
 在 Spring Boot 的官方文档的核心功能部分介绍了 Spring 对日志功能的支持，Spring 并没有自己的日志框架实现，而是使用 SLF4J（Simple Logging Facade for Java）作为日志门面，在底层使用 Commons Logging 作为抽象层去识别和对接一些常见的日志框架，如 Logback、Log4j2 等。Spring Boot 默认集成了 Logback 作为日志框架并支持我们在配置文件通过简单的配置就可以开箱即用，如果想了解更多细节可以点击下面卡片跳转官网查看。
 
-```card
-title: Spring Security 官网文档
-desc: 点击跳转官网查看详细内容
-logo: /assets/common-icon/spring-initializr.svg
-link: https://docs.spring.io/spring-boot/docs/3.1.1/reference/htmlsingle/#features.logging
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Spring Security 官网文档"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/common-icon/spring-initializr.svg"
+  link="https://docs.spring.io/spring-boot/docs/3.1.1/reference/htmlsingle/#features.logging"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 简单方案
 ### 极速版
 Spring 默认配置了控制台输出，所以我们可以在配置文件添加以下配置选择文件输出。

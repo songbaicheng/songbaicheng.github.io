@@ -5,6 +5,11 @@ import { resourceSidebar } from "./resource"
 import { aiSidebar } from "./ai"
 
 export const Sidebar = sidebar({
+  '/category/': false,
+  '/tag/': false,
+  '/article/': false,
+  '/star/': false,
+  '/timeline/': false,
   '/study/': studySidebar,
   '/ai/': aiSidebar,
   '/work-task/': workTaskSidebar,

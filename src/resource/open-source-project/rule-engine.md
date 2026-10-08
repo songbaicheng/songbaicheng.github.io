@@ -9,14 +9,13 @@ tag:
 
 # LiteFlow
 
-```card
-title: LiteFlow 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/resource/open-source-project/rule-engine/lite-flow.png
-link: https://liteflow.cc
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="LiteFlow 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/resource/open-source-project/rule-engine/lite-flow.png"
+  link="https://liteflow.cc"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 规则引擎的定义
 很多人容易把规则引擎和流程引擎的概念混在一起，这里我们先将规则引擎和流程引擎区分开：
 - **规则引擎**：通常是嵌入在应用程序组件中的，实现了将业务决策从应用程序代码中分离出来，并使用预定义的语义模块编写业务决策。接受数据输入，解释业务规则，并根据业务规则做出业务决策。

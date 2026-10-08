@@ -1,10 +1,35 @@
-# songbaicheng的个人博客
+# songbaicheng 的个人博客
 
-一个具有强大功能的 vuepress 主题，地址如下：
-> https://theme-hope.vuejs.press/zh/
+VuePress 2 + VuePress Theme Hope，源码在 `src/`，发布产物在 `gh-pages`。
 
-## GitHub部署步骤
-1. 创建代码仓库，名字要使用 _[用户名].github.io_ 这种风格，如 _songbaicheng.github.io_，仓库属性要为 *public*。
-2. 使用 VuePress Theme Hope 网站提供的构建工具在本地创建 VuePress 工程并提交到新建仓库。
-3. 使用 GitHub 的 CI 工具 GitHub Actions，在每次提交代码的时候部署网站。如果你使用 VuePress Theme Hope 构建项目的话，项目的根目录中的 .github 文件中会存在工作流脚本，简单修改使用即可。
-4. 在项目的 *GitHub Pages* 配置界面中 *Build and deployment* 选择你工作流脚本中选择的部署分支。
+## 开发与构建
+
+需要 Node.js 22（最低 22.13）和 pnpm 11.10.0。
+
+```sh
+pnpm install --frozen-lockfile
+pnpm docs:dev
+pnpm docs:build
+```
+
+构建输出为 `src/.vuepress/dist/`。提交 `main` 会触发 GitHub Actions 构建并发布到 `gh-pages`；仅升级分支不会发布。GitHub Pages 应继续使用 `gh-pages` 分支根目录。
+
+## 版本维护
+
+本次固定 Hope `2.0.0-rc.110` 与 VuePress `2.0.0-rc.31`。这是官方当前推荐发布组合，仍是 RC，并非正式 2.0 稳定版。
+
+不要直接安装 `vuepress@latest`（该标签目前指向 VuePress 1）。升级前核对主题包的 `peerDependencies`，在独立分支更新固定版本和 `pnpm-lock.yaml`，本地构建及浏览器检查通过后再合并。避免自动将所有依赖更新到 latest。
+
+## 图标与内容
+
+- 图标配置：`src/.vuepress/theme.ts` 的 `plugins.icon`。
+- 使用 `mdi:<名称>`，对应 `@iconify-json/mdi` 图标集，本地打包，不依赖 Iconify API。
+- 自定义 SVG/图片仍放在 `src/.vuepress/public/`，用 `/icon/...` 等绝对路径引用。
+- 图标具有懒渲染行为；检查项目卡片、折叠导航与侧边栏时应先滚动/展开。
+- 旧 `iconAssets: "iconfont"` 已移除。不要继续使用旧主题私有图标名称。
+- Markdown 增强配置迁移到主题 `markdown`，搜索使用官方 SlimSearch。
+- 原来的 `card` 代码块已迁移为官方 `<VPCard />`；标题、描述、Logo 和链接保留，旧背景色对应 `background`。
+- 保留旧 `mindmap` 内容原样；该非标准语法本次未增加新渲染器。
+
+官方文档：https://theme-hope.vuejs.press/zh/
+图标文档：https://theme-hope.vuejs.press/zh/guide/interface/icon.html

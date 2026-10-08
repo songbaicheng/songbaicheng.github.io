@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { hopeTheme } from "vuepress-theme-hope";
 import { Navbar } from "./navbar";
 import { Sidebar } from "./sidebar/index.js";
@@ -12,12 +13,11 @@ export default hopeTheme({
     url: "https://github.com/songbaicheng", // 作者网站
     email: "songbaicheng16@163.com" // 作者 Email
   },
-  hostname: "https://github.com/songbaicheng/songbaicheng.github.io", // 当前网站部署到的域名
-  iconAssets: "iconfont", // 字体图标资源链接
+  hostname: "https://songbaicheng.github.io", // 当前网站部署到的域名
   logo: "/icon/logo.png", // 网站左上角logo
   logoDark: "/icon/logo-dark.png", // 黑夜模式下网站左上角logo
   repo: "songbaicheng/songbaicheng.github.io", // github地址
-  docsDir: "docs", // 项目主路径
+  docsDir: "src", // 项目主路径
   navbar: Navbar, // 导航栏
   sidebar: Sidebar, // 侧边栏
   headerDepth: 3, // 侧边栏嵌套的标题深度，默认是2
@@ -41,80 +41,43 @@ export default hopeTheme({
     medias: { // 博主的媒体链接配置
       BiliBili: "https://space.bilibili.com/400378627",
       GitHub: "https://github.com/songbaicheng",
-      LeetCode: ["https://leetcode.cn/u/songbaicheng/", "src/.vuepress/public/assets/common-icon/leetcode-dark-cn.svg"],
+      LeetCode: { link: "https://leetcode.cn/u/songbaicheng/", icon: readFileSync("src/.vuepress/public/assets/common-icon/leetcode-dark-cn.svg", "utf8").trim() },
     },
   },
 
   /**
    * 框架配置
    */
+  markdown: {
+    align: true,
+    attrs: true,
+    codeTabs: true,
+    demo: true,
+    figure: true,
+    flowchart: true,
+    gfm: true,
+    imgLazyload: true,
+    imgSize: true,
+    include: true,
+    math: { type: "katex" },
+    mark: true,
+    sub: true,
+    sup: true,
+    tabs: true,
+    vPre: true,
+    stylize: [{
+      matcher: "Recommended",
+      replacer: ({ tag }) => tag === "em"
+        ? { tag: "Badge", attrs: { type: "tip" }, content: "Recommended" }
+        : undefined,
+    }],
+  },
   plugins: {
-    blog: true, // 是否开始博客模式
-
-    /**
-     * 主题中选择启用的功能
-     */
-    mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      codetabs: true,
-      demo: true,
-      echarts: true,
-      figure: true,
-      flowchart: true,
-      gfm: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      katex: true,
-      mark: true,
-      mermaid: true,
-      card: true,
-      sub: true,
-      sup: true,
-      tabs: true,
-      vPre: true,
-      vuePlayground: true,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      presentation: ["highlight", "math", "search", "notes", "zoom"],
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-    },
-
-    /**
-     * 主题启用的组件
-     */
+    icon: { prefix: "mdi:", offline: true },
+    slimsearch: { indexContent: true },
+    blog: true,
     components: {
-      components: [
-        "ArtPlayer",
-        "AudioPlayer",
-        "Badge",
-        "BiliBili",
-        "CodePen",
-        "PDF",
-        "Replit",
-        "Share",
-        "SiteInfo",
-        "StackBlitz",
-        // "VidStack",
-        "VideoPlayer",
-        "XiGua",
-        "YouTube",
-      ],
+      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPCard"],
     },
   },
 });

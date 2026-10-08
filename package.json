@@ -4,18 +4,26 @@
   "description": "A blog created using VuePress with the VuePress Theme Hope theme.",
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@11.10.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
     "docs:build": "vuepress build src",
     "docs:clean-dev": "vuepress dev src --clean-cache",
-    "docs:dev": "vuepress dev src",
-    "docs:update-package": "yarn dlx vp-update"
+    "docs:dev": "vuepress dev src"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.64",
-    "@vuepress/plugin-docsearch": "^2.0.0-beta.64",
-    "vue": "^3.2.47",
-    "vuepress": "2.0.0-beta.64",
-    "vuepress-plugin-search-pro": "^2.0.0-beta.230",
-    "vuepress-theme-hope": "2.0.0-beta.230"
+    "@iconify-json/mdi": "1.2.3",
+    "@vuepress/bundler-vite": "2.0.0-rc.31",
+    "@vuepress/plugin-slimsearch": "2.0.0-rc.137",
+    "flowchart.ts": "3.0.1",
+    "iconify-icon": "3.0.2",
+    "katex": "0.19.0",
+    "sass": "1.105.1",
+    "sass-embedded": "1.105.0",
+    "vue": "3.5.43",
+    "vuepress": "2.0.0-rc.31",
+    "vuepress-theme-hope": "2.0.0-rc.110"
   }
 }

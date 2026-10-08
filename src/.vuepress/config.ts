@@ -1,10 +1,10 @@
-import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-import { searchProPlugin } from 'vuepress-plugin-search-pro';
+import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
-import theme from "./theme";
+import theme from "./theme.js";
 
 export default defineUserConfig({
   base: "/",
+  bundler: viteBundler(),
   title: "Baicheng's Blog",
   lang: "zh-CN",
 
@@ -25,17 +25,5 @@ export default defineUserConfig({
   ],
 
   theme,
-  plugins: [
-    // docsearchPlugin({
-    //   apiKey: '98eef3cbbc84f0cd80b63f4cb53f9a51',
-    //   indexName: 'songbaichengio',
-    //   appId: 'XLRE2KQH6J',
-    // }),
-    searchProPlugin({
-      // 配置选项
-      autoSuggestions: true,
-      // 自定义热键
-      hotKeys: [{ key: 'k', ctrl: true }],
-    }),
-  ],
+
 });

@@ -22,22 +22,20 @@ tag:
 
 > 所有的测试代码都在博客[首页](/README.md)中的 vue3-study-demo 中找到。
 
-::: card
-```card
-title: Vue3 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/frontend/framework/vue3/vue.svg
-link: https://cn.vuejs.org
-color: rgba(173, 216, 590, 0.15)
-```
-```card
-title: Vue2 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/frontend/framework/vue3/vue.svg
-link: https://v2.cn.vuejs.org
-color: rgba(173, 216, 590, 0.15)
-```
-:::
+<VPCard
+  title="Vue3 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/frontend/framework/vue3/vue.svg"
+  link="https://cn.vuejs.org"
+  background="rgba(173, 216, 590, 0.15)"
+/>
+<VPCard
+  title="Vue2 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/frontend/framework/vue3/vue.svg"
+  link="https://v2.cn.vuejs.org"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 
 ## 快速开始
 确保在安装了最新版本的 Node.js，并且你的当前工作目录正是打算创建项目的目录下执行下面命令。

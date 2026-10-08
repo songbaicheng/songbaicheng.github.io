@@ -15,14 +15,13 @@ tag:
 
 我们这里引入一个开源的工作流引擎 Activiti，它可以将业务中复杂的业务流程抽取出来，使用专门的建模语言 BPMN 2.0 进行定义，减少业务系统因为业务改变造成的任务量，提高系统健壮性，降低系统维护成本。
 
-```card
-title: Activiti 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/resource/open-source-project/workflow/activiti.jpg
-link: https://www.activiti.org/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Activiti 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/resource/open-source-project/workflow/activiti.jpg"
+  link="https://www.activiti.org/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 快速开始
 ### 项目启动
 这里我们采用 Spring Boot 2.7.6 + jdk17 + activiti 7.0.0.Beta5 版本来进行学习，这个版本是我经过多次试验才能成功使用的版本，都是血和泪啊，下面是 pom 文件供大家参考。
@@ -176,10 +175,10 @@ activiti 根据配置会在第一次启动的时候创建所需要的表，这�
 ### 流程设计器
 之前较早的版本大家可能为了方便会使用 Eclipse 或者 IDEA 的插件进行 BPMN 流程图设计，但是其插件都过于老旧且一直没有更新了，而在 Activiti6 之后官方推出了一个流程设计器的 war 包工具，可以在本地进行流程图可视化操作，当然在 Activiti7 之后更是有了支持的 Docker 镜像可以使用，如果你不想下载使用的话，最新的官方推荐了一个 Activiti Modeler Application 的在线网站 BPMN.IO 的网站让我们可以在线绘制 BPMN 图，这里我们使用这种方式进行学习。
 
-```card
-title: BPMN.IO 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/resource/open-source-project/workflow/activiti.jpg
-link: https://bpmn.io/
-color: rgba(173, 216, 590, 0.15)
-```
+<VPCard
+  title="BPMN.IO 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/resource/open-source-project/workflow/activiti.jpg"
+  link="https://bpmn.io/"
+  background="rgba(173, 216, 590, 0.15)"
+/>

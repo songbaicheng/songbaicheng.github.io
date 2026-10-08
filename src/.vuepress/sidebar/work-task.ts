@@ -3,7 +3,7 @@ import { arraySidebar } from "vuepress-theme-hope";
 export const workTaskSidebar = arraySidebar([
     {
         text: '开发规范',
-        icon: 'group',
+        icon: 'mdi:account-group-outline',
         collapsible: true,
         children: [
             '/work-task/standard/java.md',
@@ -12,7 +12,7 @@ export const workTaskSidebar = arraySidebar([
     },
     {
         text: '开发任务',
-        icon: 'code',
+        icon: 'mdi:code-tags',
         collapsible: true,
         children: [
             '/work-task/development/ant.md',
@@ -27,7 +27,7 @@ export const workTaskSidebar = arraySidebar([
     },
     {
         text: '设计任务',
-        icon: 'creative',
+        icon: 'mdi:lightbulb-outline',
         collapsible: true,
         children: [
             '/work-task/design/cmds.md',
@@ -36,7 +36,7 @@ export const workTaskSidebar = arraySidebar([
     },
     {
         text: '开发问题',
-        icon: 'ask',
+        icon: 'mdi:help-circle-outline',
         collapsible: true,
         children: [
             '/work-task/problems/spring.md',

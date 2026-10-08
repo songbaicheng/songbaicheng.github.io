@@ -3,7 +3,7 @@ import { arraySidebar } from "vuepress-theme-hope";
 export const resourceSidebar = arraySidebar([
     {
         text: '书籍分享',
-        icon: 'read',
+        icon: 'mdi:book-open-page-variant-outline',
         collapsible: true,
         children: [
             '/resource/books/java.md',
@@ -15,7 +15,7 @@ export const resourceSidebar = arraySidebar([
     },
     {
         text: '工具推荐',
-        icon: 'tool',
+        icon: 'mdi:tools',
         collapsible: true,
         children: [
             '/resource/tools/development-tools.md',
@@ -24,7 +24,7 @@ export const resourceSidebar = arraySidebar([
     },
     {
         text: '开源项目',
-        icon: 'preview',
+        icon: 'mdi:source-repository',
         collapsible: true,
         children: [
             '/resource/open-source-project/jwt.md',
@@ -35,7 +35,7 @@ export const resourceSidebar = arraySidebar([
     },
     {
         text: '奇技淫巧',
-        icon: 'share',
+        icon: 'mdi:share-variant',
         collapsible: true,
         children: [
             '/resource/techniques/image-hosting-service.md',

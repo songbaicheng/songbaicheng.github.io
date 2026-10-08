@@ -4,14 +4,13 @@
 
 下面是数据库排行网站 db-engines 官网，它根据综合指标来评估数据库的受欢迎程度来提供各种数据库的排名和比较，大家可根据火热程度做学习计划参考。
 
-```card
-title: db-engines 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/persistence/db-engines.png
-link: https://db-engines.com/en/ranking
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="db-engines 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/persistence/db-engines.png"
+  link="https://db-engines.com/en/ranking"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 术语
 
 | 术语 | 解释 |

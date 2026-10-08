@@ -434,11 +434,10 @@ class TestClassTest {
 ## 总结
 Mockito 还提供了其他一些高级功能和方法，例如参数匹配、顺序验证、超时验证等，如果想了解更多可以查阅下面的 Mockito的官方文档。
 
-```card
-title: Mockito 官网文档
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/work-task/development/mockito/mockito.png
-link: https://site.mockito.org/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Mockito 官网文档"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/work-task/development/mockito/mockito.png"
+  link="https://site.mockito.org/"
+  background="rgba(173, 216, 590, 0.15)"
+/>

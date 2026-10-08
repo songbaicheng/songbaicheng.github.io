@@ -16,10 +16,10 @@ tag:
 
 并且相对于枯燥的纸质书籍，Github 上还配套在线阅读网站，重点和难点知识将主要通过动画和图解形式展示，并且仓库源代码附有测试样例，可一键运行，对新手非常友好。
 
-```card
-title: 《Hello 算法》项目 Github 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/common-icon/github-logo.svg
-link: https://github.com/krahets/hello-algo
-color: rgba(173, 216, 590, 0.15)
-```
+<VPCard
+  title="《Hello 算法》项目 Github 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/common-icon/github-logo.svg"
+  link="https://github.com/krahets/hello-algo"
+  background="rgba(173, 216, 590, 0.15)"
+/>

@@ -29,10 +29,10 @@ but 作为新时代的青年，就该有拥抱新技术的激情，面对该过�
 
 而目前的组件框架会同时兼顾以上多个功能并且基本已经涵盖到了，详情在下面的 GitHub 仓库中可以看到，我们接下来就跟着组件一步一步完成就可以了。唯一要注意的就是组件版本对应的问题，因为框架过于繁杂，**如果自行组建确实会出现版本兼容一致性的问题，所以 GitHub 里也给出了官方推荐的组件配合建议，请开始之前参考选择**。
 
-```card
-title: Spring Cloud Alibaba GitHub托管网址
-desc: 点击跳转GitHub查看详细内容
-logo: /assets/common-icon/github-logo.svg
-link: https://github.com/alibaba/micro-services
-color: rgba(173, 216, 590, 0.15)
-```
+<VPCard
+  title="Spring Cloud Alibaba GitHub托管网址"
+  desc="点击跳转GitHub查看详细内容"
+  logo="/assets/common-icon/github-logo.svg"
+  link="https://github.com/alibaba/micro-services"
+  background="rgba(173, 216, 590, 0.15)"
+/>

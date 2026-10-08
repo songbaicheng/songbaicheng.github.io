@@ -9,14 +9,13 @@ tag:
 # Redis
 Redis (Remote Dictionary Server) 是一个开源的内存数据结构存储，用作数据库、缓存和消息代理。它支持多种数据结构，如字符串（strings）、哈希（hashes）、列表（lists）、集合（sets）以及有序集合（sorted sets）。因为具有丰富的功能和高性能，现在几乎主流的 Web 项目都已经绑定了 Redis 作为缓存组件。
 
-```card
-title: Redis 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/persistence/redis/redis-cube.svg
-link: https://redis.io/
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Redis 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/persistence/redis/redis-cube.svg"
+  link="https://redis.io/"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 特点
 1. 内存存储：所有数据都保存在内存中，读写速度非常快，非常适合需要快速响应的场景。
 2. 持久化：Redis支持将数据持久化到磁盘，可以通过快照（snapshot）和AOF（Append-Only File）两种方式进行。

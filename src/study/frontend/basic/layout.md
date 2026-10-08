@@ -28,14 +28,13 @@ tag:
 ## Sass
 作为自称世界上最成熟、最稳定、最强大的专业级CSS扩展语言，Sass 拥有更多的功能和特性，如果想详细了解 Sass 可以点击下面卡片去官网学习。
 
-```card
-title: Sass 中文官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/frontend/basic/layout/sass.png
-link: https://www.sass.hk
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Sass 中文官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/frontend/basic/layout/sass.png"
+  link="https://www.sass.hk"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 这里我们只介绍 Sass 中 @at-root 的用法，只需要在全局样式中使用 @at-root 就可以使嵌套的格式变成非嵌套，更好的符合 BEM 规范。
 
 ![@at-root 用法](/assets/images/study/frontend/basic/layout/sass-@at-root.png "@at-root 用法")

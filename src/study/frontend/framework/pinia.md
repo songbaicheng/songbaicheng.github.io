@@ -11,14 +11,13 @@ Pinia 最初是为了探索 Vuex 的下一次迭代会是什么样子，结合�
 与 Vuex 相比，Pinia 提供了一个更简单的 API，具有更少的规范，提供了 Composition-API 风格的 API，最重要的是，在与 TypeScript 一起使用时具有可靠的类型推断支持。
 
 
-```card
-title: Pinia 中文文档
-desc: 点击跳转官网查看详细内容
-logo: /assets/images/study/frontend/framework/pinia/pinia.svg
-link: https://pinia.web3doc.top
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Pinia 中文文档"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/images/study/frontend/framework/pinia/pinia.svg"
+  link="https://pinia.web3doc.top"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ## 快速开始
 ### 引入 Pinia
 ```sh

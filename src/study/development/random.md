@@ -21,14 +21,13 @@ tag:
 ### 数据库号段模式
 每次从数据库批量获取一部分 ID 存放在内存中，每次需要 ID 时，从内存中获取一个，当内存中的 ID 用完之后再去数据库中批量获取一批新的 ID 存入到内存中。像滴滴开源的 Tinyid 就是基于这种方式来做的。不过，TinyId 使用了双号段缓存、增加多 db 支持等方式来进一步优化。
 
-```card
-title: Tinyid 项目 Github 官网
-desc: 点击跳转官网查看详细内容
-logo: /assets/common-icon/github-logo.svg
-link: https://github.com/didi/tinyid/wiki
-color: rgba(173, 216, 590, 0.15)
-```
-
+<VPCard
+  title="Tinyid 项目 Github 官网"
+  desc="点击跳转官网查看详细内容"
+  logo="/assets/common-icon/github-logo.svg"
+  link="https://github.com/didi/tinyid/wiki"
+  background="rgba(173, 216, 590, 0.15)"
+/>
 ### 缓存数据库
 缓存数据库的方案，比如 Redis、MongoDB 等。一般情况下，NoSQL 方案使用 Redis 多一些。我们通过 Redis 的 incr 命令即可实现对 id 原子顺序递增。为了提高可用性和并发，我们可以使用 Redis Cluster，利用集群解决缓存重启机器或者机器故障后造成的数据丢失。
 
