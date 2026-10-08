@@ -1,5 +1,4 @@
-
 User-agent:*
 Disallow:
 
-Sitemap: https://github.com/songbaicheng/songbaicheng.github.io/sitemap.xml
+Sitemap: https://songbaicheng.github.io/sitemap.xml
