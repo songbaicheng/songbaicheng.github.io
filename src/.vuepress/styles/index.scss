@@ -1,1 +1,5 @@
 // place your custom styles here
+
+// External monochrome SVGs use their own color-scheme-aware palette.
+html[data-theme="light"] img.vp-icon { color-scheme: light; }
+html[data-theme="dark"] img.vp-icon { color-scheme: dark; }
