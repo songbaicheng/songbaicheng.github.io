@@ -3,11 +3,7 @@ home: true
 layout: Blog
 icon: mdi:notebook-outline # 主页图标
 title: 主页 # 导航栏文本
-heroImage: /icon/home-hero-image.svg # 主log by swent
-heroText: LOVE AND SHARE # 主标题
-heroFullScreen: true # 背景全屏显示
-bgImage: /icon/background.png # 日间背景图
-bgImageDark: /icon/background-dark.png # 夜晚背景图
+# 首页开场由 .vuepress/components/MorphHero.vue 渲染；原插画资源保留。
 
 projects:
   - icon: /icon/brands/java.svg
