@@ -3,8 +3,8 @@ title: 大模型并行的几种切法
 date: 2026-09-29T10:30:00+08:00
 description: DP、TP、PP、EP、CP 各自切什么？同样八张卡，DP=8、TP=8、DP=4 加 TP=2、DP=4 加 PP=2 有什么不同？从显存、通信、单请求延迟和总吞吐讲清多机多卡的取舍。
 category:
-- AI
-- 大语言模型
+  - AI
+  - 推理与部署
 tag:
 - AI
 - LLM

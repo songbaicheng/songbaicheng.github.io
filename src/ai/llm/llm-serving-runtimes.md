@@ -5,8 +5,8 @@ description: 先按硬件和并发把常见模型运行时分成表，再逐个�
   和 MLX；多请求服务看 vLLM、SGLang、TGI、TensorRT-LLM、LMDeploy 和 Xinference；超大混合专家模型看 KTransformers；多阶段音视频看
   vLLM-Omni 和 SGLang-Omni。
 category:
-- AI
-- 大语言模型
+  - AI
+  - 推理与部署
 tag:
 - AI
 - LLM

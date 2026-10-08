@@ -1,11 +1,13 @@
 ---
-category: AI
+title: 提示工程：原则与案例
+category:
+  - AI
+  - 应用与实践
 tag:
   - 提示工程
   - 指令工程
 ---
 
-# Prompt Engineering
 
 随着 ChatGPT 等 LLM（大语言模型）的出现，自然语言处理的范式正在由 Pretrain-Finetune（预训练-微调）向提示工程演变。
 

@@ -1,10 +1,12 @@
 ---
-category: AI
+title: 深度学习入门
+category:
+  - AI
+  - 基础与原理
 tag: 
   - 深度学习
 ---
 
-# 深度学习入门
 
 ## 感知机
 

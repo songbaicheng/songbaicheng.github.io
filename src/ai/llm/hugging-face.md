@@ -1,10 +1,12 @@
 ---
-category: AI
+title: Hugging Face
+category:
+  - AI
+  - 框架与工具
 tag:
   - Hugging Face
 ---
 
-# Hugging Face
 学习 NLP 最优先级要学习的就是 Hugging Face，它提供了可以轻松地下载并且训练先进的预训练模型的 API 和工具。
 
 我们要学习 Transformers 的模型、任务和设计理念，还有就是配置（configuration）、模型（model）、分词器（tokenizer）和流水线（pipeline）这几个最重要的类。

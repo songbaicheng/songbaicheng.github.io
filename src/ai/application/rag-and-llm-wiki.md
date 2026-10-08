@@ -3,8 +3,8 @@ title: RAG 与 LLM Wiki：两种 AI 知识库方式怎么选
 date: 2026-10-07T11:30:00+08:00
 description: RAG 在提问时检索资料，LLM Wiki 在资料进入时整理知识。用同一套文档解释两者的工作流程、失败原因、维护成本，以及什么时候应该结合使用。
 category:
-- AI
-- AI 应用
+  - AI
+  - 应用与实践
 tag:
 - AI
 - RAG

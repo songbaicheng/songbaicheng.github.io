@@ -1,10 +1,12 @@
 ---
-category: AI
+title: PyTorch
+category:
+  - AI
+  - 框架与工具
 tag:
   - PyTorch
 ---
 
-# PyTorch
 
 Pytorch 是一个开源的机器学习库，主要用于深度学习和自然语言处理。它提供了丰富的API和工具来构建、训练和部署神经网络模型。
 
