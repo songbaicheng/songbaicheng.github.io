@@ -5,7 +5,7 @@ export const aiSidebar = arraySidebar([
     text: "基础与原理",
     icon: "/assets/images/ai/llm/llm.svg",
     collapsible: true,
-    children: ["/ai/llm/ai-model-terms.md", "/ai/llm/deep-learning.md"],
+    children: ["/ai/llm/ai-model-terms.md", "/ai/llm/model-name-quantization-suffixes.md", "/ai/llm/deep-learning.md"],
   },
   {
     text: "框架与工具",
